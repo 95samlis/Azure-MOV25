@@ -116,8 +116,5 @@ Den nya webbplatsen för Novatrix visades med:
 - Information om företaget
 - Formulär med fälten namn, e-post och meddelande
 
-**Länk till webbplatsen:**  
-http://135.225.105.195
-
 ## Resultat
 <img width="1502" height="1504" alt="novatirx kundtjänst html01" src="https://github.com/user-attachments/assets/21e2ff7d-d7e7-4bfa-aaa0-03a829fce83a" />
