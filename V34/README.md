@@ -68,7 +68,7 @@ Efter anslutning till servern installerades webbservern Nginx.
 sudo apt update
 ```
 
-Uppdaterade paketlistan från Ubuntu-repositorierna.
+Uppdaterade paketlistan från Ubuntus repos.
 
 ```bash
 sudo apt install nginx -y
