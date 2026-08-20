@@ -1,3 +1,4 @@
+<img width="1502" height="1504" alt="novatirx kundtjänst html01" src="https://github.com/user-attachments/assets/1e39abc0-46ac-4ea9-8cf7-260941ae3de6" />
 ## v34 – Compute: Driftsättning av Novatrix kundtjänst
 
 **SAMUEL LISSBRO**
@@ -118,3 +119,4 @@ Den nya webbplatsen för Novatrix visades med:
 http://135.225.105.195
 
 ## Resultat
+<img width="1502" height="1504" alt="novatirx kundtjänst html01" src="https://github.com/user-attachments/assets/21e2ff7d-d7e7-4bfa-aaa0-03a829fce83a" />
