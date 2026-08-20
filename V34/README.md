@@ -4,6 +4,8 @@
 
 ### Syfte
 
+Syftet med uppgiften var att sätta upp en virtuell server i Microsoft Azure, ansluta till den via SSH och driftsätta en enkel kundtjänstsida för Novatrix.
+
 ---
 
 ## Azure-miljö
