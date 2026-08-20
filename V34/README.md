@@ -81,3 +81,40 @@ Installerade webbservern Nginx.
 För att verifiera installationen öppnades serverns publika IP-adress i en webbläsare.
 
 Nginx standardsida visades, vilket bekräftade att webbservern var installerad och tillgänglig över nätverket.
+
+---
+
+## Driftsättning av webbplats
+
+Efter att Nginx installerats skapades en egen startsida för Novatrix kundtjänst.
+
+### Kommandon
+
+```bash
+sudo nano /var/www/html/index.html
+```
+
+Öppnade webbplatsens startsida för redigering.
+
+HTML-koden klistrades därefter in och sparades.
+
+```bash
+sudo systemctl reload nginx
+```
+
+Laddade om Nginx för att läsa in den uppdaterade webbplatsen.
+
+### Verifiering
+
+Serverns publika IP-adress öppnades i en webbläsare.
+
+Den nya webbplatsen för Novatrix visades med:
+
+- Rubrik för kundtjänsten
+- Information om företaget
+- Formulär med fälten namn, e-post och meddelande
+
+**Länk till webbplatsen:**  
+http://135.225.105.195
+
+## Resultat
