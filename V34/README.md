@@ -4,7 +4,7 @@
 
 ### Syfte
 
-Att skapa den grundläggande infrastrukturen för Novatrix kundtjänst genom att sätta upp en virtuell server i Microsoft Azure, ansluta till den via SSH och driftsätta en enkel webbplats.
+Att skapa den grundläggande infrastrukturen för Novatrix kundtjänst genom att sätta upp en virtuell server i Azure, ansluta till den via SSH och driftsätta en enkel webbplats.
 
 ---
 
