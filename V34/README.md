@@ -14,7 +14,7 @@ Därefter skapade jag den virtuella servern `vm-novatrix-web` med:
 
 - Ubuntu Server 24.04 LTS Gen2
 - Standard_B2ats_v2
-- Port 80 öppen för inkommande HTTP-trafik
+- Port 80 öppnades för inkommande HTTP-trafik
 
 ### Verifiering
 
