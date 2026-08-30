@@ -175,3 +175,22 @@ Behörigheterna verifierades även via Azure Portal under **Access Control (IAM)
 <img width="1876" height="334" alt="RBAC01" src="https://github.com/user-attachments/assets/b3177567-d021-467f-99ea-90b0c915adab" />
 
 ---
+
+## Managed Identity
+
+För att förbereda kommande integration med Azure Storage skapades en User Assigned Managed Identity.
+
+### Kommando
+
+```bash
+az identity create \
+  --name id-novatrix-app \
+  --resource-group rg-novatrix-v34 \
+  --location swedencentral
+```
+
+Skapar en User Assigned Managed Identity med namnet **id-novatrix-app** i regionen **Sweden Central**.
+
+### Motivering
+
+En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är att applikationen senare ska kunna autentisera sig mot Azure-tjänster utan att lösenord, nycklar eller andra hemligheter behöver lagras i koden.
