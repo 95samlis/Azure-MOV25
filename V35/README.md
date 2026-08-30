@@ -6,7 +6,7 @@
 
 Syftet med denna uppgift är att sätta upp identiteter och behörigheter för Novatrix Azure-miljö genom att använda **Microsoft Entra ID** och **Azure RBAC**. 
 
-Målet är att tillämpa *principen om least privilege* så att användare endast får den åtkomst som krävs för sina arbetsuppgifter. En *Managed Identity* för applikationen förbereds också inför kommande integration med Azure Storage.
+Målet är att tillämpa principen om least privilege så att användare endast får den åtkomst som krävs för sina arbetsuppgifter. En Managed Identity för applikationen förbereds också inför kommande integration med Azure Storage.
 
 ---
 
