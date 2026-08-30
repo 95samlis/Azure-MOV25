@@ -172,7 +172,7 @@ Behörigheterna verifierades även via Azure Portal under **Access Control (IAM)
 
 ## Resultat
 
-<img width="1876" height="334" alt="RBAC01" src="https://github.com/user-attachments/assets/b3177567-d021-467f-99ea-90b0c915adab" />
+<img width="2292" height="334" alt="RBAC01" src="https://github.com/user-attachments/assets/b3177567-d021-467f-99ea-90b0c915adab" />
 
 ---
 
