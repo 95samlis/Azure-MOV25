@@ -56,21 +56,20 @@ Två säkerhetsgrupper skapades för att hantera behörigheter via grupper istä
 
 ### Kommandon
 
+Skapar säkerhetsgruppen Azure-Drift.
+
 ```bash
 az ad group create \
   --display-name "Azure-Drift" \
   --mail-nickname "Azure-Drift"
 ```
-
-Skapar säkerhetsgruppen Azure-Drift.
+Skapar säkerhetsgruppen Azure-Developer.
 
 ```bash
 az ad group create \
   --display-name "Azure-Developer" \
   --mail-nickname "Azure-Developer"
 ```
-
-Skapar säkerhetsgruppen Azure-Developer.
 
 Användarna lades därefter till i respektive grupp.
 
