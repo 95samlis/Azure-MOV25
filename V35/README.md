@@ -16,7 +16,7 @@ Användarkonton skapades för driftteamet och utvecklingsteamet i Novatrix Azure
 
 ### Kommandon
 
-ommandona kördes via Azure CLI för att skapa användarna direkt i Microsoft Entra ID. Genom att använda CLI blir konfigurationen enkel att återanvändas eller automatisera vid behov.
+Kommandona kördes via Azure CLI för att skapa användarna direkt i Microsoft Entra ID. Genom att använda CLI blir konfigurationen enkel att återanvändas eller automatisera vid behov.
 
 Skapar användaren David för driftteamet.
 
