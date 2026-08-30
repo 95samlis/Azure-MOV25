@@ -194,3 +194,10 @@ az identity create \
 ### Motivering
 
 En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är att applikationen senare ska kunna autentisera sig mot Azure-tjänster utan att lösenord, nycklar eller andra hemligheter behöver lagras i koden.
+
+## Resultat
+
+<img width="2292" height="356" alt="RBAC02" src="https://github.com/user-attachments/assets/12f95baa-cc98-4113-8089-6b101a4aedb0" />
+
+
+Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen om least privilege. Driftteamet fick rollen Contributor medan utvecklarna begränsades till Reader. En Managed Identity skapades och förbereddes för framtida integration med Azure Storage utan att lösenord behöver lagras i applikationens kod.
