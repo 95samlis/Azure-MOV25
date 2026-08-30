@@ -42,7 +42,9 @@ Användarna fick temporära lösenord och tvingas byta lösenord vid första inl
 
 ## Verifiering
 
+```bash
 az ad user list --output table
+```
 
 Visar samtliga användare i Entra ID.
 
