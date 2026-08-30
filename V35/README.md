@@ -197,7 +197,7 @@ En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är 
 
 ## Resultat
 
-<img width="1145" height="356" alt="RBAC02" src="https://github.com/user-attachments/assets/12f95baa-cc98-4113-8089-6b101a4aedb0" /> <img width="702" height="690" alt="RBAC03" src="https://github.com/user-attachments/assets/8553a119-3bc0-4dbc-a567-c495ac57d4fa" />
+<img width="1145" height="356" alt="RBAC02" src="https://github.com/user-attachments/assets/12f95baa-cc98-4113-8089-6b101a4aedb0" />
 
 
 
