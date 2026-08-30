@@ -16,15 +16,19 @@ Användarkonton skapades för driftteamet och utvecklingsteamet i Novatrix Azure
 
 ### kommandon
 
+ommandona kördes via Azure CLI för att skapa användarna direkt i Microsoft Entra ID. Genom att använda CLI blir konfigurationen enkel att återanvändas eller automatisera vid behov.
+
+Skapar användaren David för driftteamet.
+
 ```bash
 az ad user create \
   --display-name "David (Drift)" \
   --user-principal-name drift-david@samuellissbrooutlook.onmicrosoft.com \
-  --password "temp_password!" \
+  --password "Temp_password!" \
   --force-change-password-next-sign-in true
 ```
 
-Skapar användaren David för driftteamet.
+Skapar användaren Erik för utvecklingsteamet.
 
 ```bash
 az ad user create \
@@ -34,6 +38,14 @@ az ad user create \
   --force-change-password-next-sign-in true
 ```
 
-Skapar användaren Erik för utvecklingsteamet.
-
 Användarna fick temporära lösenord och tvingas byta lösenord vid första inloggningen.
+
+## Verifiering
+
+az ad user list --output table
+
+Visar samtliga användare i Entra ID.
+
+---
+
+
