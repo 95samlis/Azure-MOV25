@@ -172,6 +172,8 @@ Behörigheterna verifierades även via Azure Portal under **Access Control (IAM)
 
 ## Resultat
 
+Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen om least privilege. Driftteamet fick rollen Contributor medan utvecklarna begränsades till Reader. En Managed Identity skapades och förbereddes för framtida integration med Azure Storage utan att lösenord behöver lagras i applikationens kod.
+
 <img width="2292" height="334" alt="RBAC01" src="https://github.com/user-attachments/assets/b3177567-d021-467f-99ea-90b0c915adab" />
 
 ---
@@ -197,25 +199,25 @@ En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är 
 
 ## Resultat av RBAC
 
-**Azure CLI**
+# Azure CLI
 
 <img width="1876" height="334" alt="RBAC01" src="https://github.com/user-attachments/assets/e8128a55-bddf-446e-90d3-d284b3d8c9b0" />
 
 
-**IAM**
+# IAM
 
 <img width="2292" height="356" alt="RBAC02" src="https://github.com/user-attachments/assets/8cfe0eff-e241-4d36-aa62-f74e45ce5072" />
 
 
-**Check Access**
+# Check Access
 
 <img width="1686" height="686" alt="RBAC04" src="https://github.com/user-attachments/assets/f97456be-44e4-485c-8d2e-e22ec1842fd2" />
 
 
-**Authorization Failed**
+# Authorization Failed
 
 <img width="702" height="690" alt="RBAC03" src="https://github.com/user-attachments/assets/9cf1ce10-f871-4323-aef3-5201def29df5" />
 
 
-Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen om least privilege. Driftteamet fick rollen Contributor medan utvecklarna begränsades till Reader. En Managed Identity skapades och förbereddes för framtida integration med Azure Storage utan att lösenord behöver lagras i applikationens kod.
+
 
