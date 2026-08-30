@@ -170,11 +170,6 @@ az role assignment list \
 ```
 Behörigheterna verifierades även via Azure Portal under **Access Control (IAM) → Check access** samt genom kontroll av användarnas gruppmedlemskap.
 
-## Resultat
-
-Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen om least privilege. Driftteamet fick rollen Contributor medan utvecklarna begränsades till Reader. En Managed Identity skapades och förbereddes för framtida integration med Azure Storage utan att lösenord behöver lagras i applikationens kod.
-
-<img width="2292" height="334" alt="RBAC01" src="https://github.com/user-attachments/assets/b3177567-d021-467f-99ea-90b0c915adab" />
 
 ---
 
