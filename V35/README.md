@@ -52,7 +52,7 @@ Visar samtliga användare i Entra ID.
 
 ## Entra ID – Säkerhetsgrupper
 
-Två säkerhetsgrupper skapades för att hantera behörigheter via grupper istället för enskilda användare. RBAC-roller tilldelas grupperna, vilket gör behörighetshanteringen enklare.
+Två säkerhetsgrupper skapades för att hantera behörigheter via grupper istället för enskilda användare. RBAC-roller tilldelades grupperna, vilket gjorde behörighetshanteringen enklare, mer skalbar och lättare att administrera.
 
 ### Kommandon
 
