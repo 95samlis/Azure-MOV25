@@ -168,7 +168,7 @@ az role assignment list \
   --scope "/subscriptions/6b33d5e0-e2c3-49f5-b867-93aa80cdffcd/resourceGroups/rg-novatrix-v34" \
   --output table
 ```
-Behörigheterna verifierades även via Azure Portal under **Access Control (IAM) → Check access** samt genom kontroll av användarnas gruppmedlemskap.
+Behörigheterna verifierades via Azure Portal under Access Control (IAM) → Check Access samt genom inloggning med användarkontona för att bekräfta att rollerna fungerade korrekt.
 
 
 ---
