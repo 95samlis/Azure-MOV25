@@ -107,6 +107,8 @@ Resultat:
 
 ### Hämta Object ID för grupperna
 
+Hämtar Object ID för säkerhetsgruppen Azure-Drift.
+
 ```bash
 az ad group show \
   --group Azure-Drift \
@@ -114,7 +116,7 @@ az ad group show \
   -o tsv
 ```
 
-Hämtar Object ID för säkerhetsgruppen Azure-Drift.
+Hämtar Object ID för säkerhetsgruppen Azure-Developer.
 
 ```bash
 az ad group show \
@@ -122,8 +124,6 @@ az ad group show \
   --query id \
   -o tsv
 ```
-
-Hämtar Object ID för säkerhetsgruppen Azure-Developer.
 
 ---
 
