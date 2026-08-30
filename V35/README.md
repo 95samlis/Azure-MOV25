@@ -14,7 +14,7 @@ Målet är att tillämpa *principen om least privilege* så att användare endas
 
 Användarkonton skapades för driftteamet och utvecklingsteamet i Novatrix Azure-miljö.
 
-### kommandon
+### Kommandon
 
 ommandona kördes via Azure CLI för att skapa användarna direkt i Microsoft Entra ID. Genom att använda CLI blir konfigurationen enkel att återanvändas eller automatisera vid behov.
 
