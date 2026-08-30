@@ -178,24 +178,6 @@ Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen o
 
 ---
 
-## Managed Identity
-
-För att förbereda kommande integration med Azure Storage skapades en User Assigned Managed Identity.
-
-### Kommando
-
-Skapar en User Assigned Managed Identity med namnet **id-novatrix-app** i regionen **Sweden Central**.
-
-```bash
-az identity create \
-  --name id-novatrix-app \
-  --resource-group rg-novatrix-v34 \
-  --location swedencentral
-```
-
-### Motivering
-
-En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är att applikationen senare ska kunna autentisera sig mot Azure-tjänster utan att lösenord, nycklar eller andra hemligheter behöver lagras i koden.
 
 ## Resultat av RBAC
 
@@ -222,5 +204,23 @@ Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen o
 <img width="600" height="500" alt="RBAC03" src="https://github.com/user-attachments/assets/9cf1ce10-f871-4323-aef3-5201def29df5" />
 
 
+## Managed Identity
+
+För att förbereda kommande integration med Azure Storage skapades en User Assigned Managed Identity.
+
+### Kommando
+
+Skapar en User Assigned Managed Identity med namnet **id-novatrix-app** i regionen **Sweden Central**.
+
+```bash
+az identity create \
+  --name id-novatrix-app \
+  --resource-group rg-novatrix-v34 \
+  --location swedencentral
+```
+
+### Motivering
+
+En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är att applikationen senare ska kunna autentisera sig mot Azure-tjänster utan att lösenord, nycklar eller andra hemligheter behöver lagras i koden.
 
 
