@@ -50,4 +50,36 @@ Visar samtliga användare i Entra ID.
 
 ---
 
+## Entra ID – Säkerhetsgrupper
 
+Två säkerhetsgrupper skapades för att hantera behörigheter via grupper istället för enskilda användare. RBAC-roller tilldelas grupperna, vilket gör behörighetshanteringen enklare.
+
+### Kommandon
+
+```bash
+az ad group create \
+  --display-name "Azure-Drift" \
+  --mail-nickname "Azure-Drift"
+```
+
+Skapar säkerhetsgruppen Azure-Drift.
+
+```bash
+az ad group create \
+  --display-name "Azure-Developer" \
+  --mail-nickname "Azure-Developer"
+```
+
+Skapar säkerhetsgruppen Azure-Developer.
+
+Användarna lades därefter till i respektive grupp.
+
+### Verifiering
+
+```bash
+az ad group list --output table
+```
+
+Visar samtliga grupper i Entra ID.
+
+---
