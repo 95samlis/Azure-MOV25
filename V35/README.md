@@ -176,7 +176,7 @@ Behörigheterna verifierades även via Azure Portal under **Access Control (IAM)
 
 ## Resultat av RBAC
 
-Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen om least privilege. Driftteamet fick rollen Contributor medan utvecklarna begränsades till Reader. En Managed Identity skapades och förbereddes för framtida integration med Azure Storage utan att lösenord behöver lagras i applikationens kod.
+Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen om least privilege. Driftteamet fick rollen Contributor medan utvecklarna begränsades till Reader. 
 
 # Azure CLI
 
@@ -201,7 +201,7 @@ Användare, säkerhetsgrupper och RBAC-behörigheter skapades enligt principen o
 
 ## Managed Identity
 
-För att förbereda kommande integration med Azure Storage skapades en User Assigned Managed Identity.
+En Managed Identity skapades och förbereddes för framtida integration med Azure Storage utan att lösenord behöver lagras i applikationens kod.
 
 ### Kommando
 
