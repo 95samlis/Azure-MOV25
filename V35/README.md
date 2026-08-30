@@ -182,14 +182,14 @@ För att förbereda kommande integration med Azure Storage skapades en User Assi
 
 ### Kommando
 
+Skapar en User Assigned Managed Identity med namnet **id-novatrix-app** i regionen **Sweden Central**.
+
 ```bash
 az identity create \
   --name id-novatrix-app \
   --resource-group rg-novatrix-v34 \
   --location swedencentral
 ```
-
-Skapar en User Assigned Managed Identity med namnet **id-novatrix-app** i regionen **Sweden Central**.
 
 ### Motivering
 
