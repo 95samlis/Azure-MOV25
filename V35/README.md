@@ -24,7 +24,7 @@ Skapar användaren David för driftteamet.
 az ad user create \
   --display-name "David (Drift)" \
   --user-principal-name drift-david@samuellissbrooutlook.onmicrosoft.com \
-  --password "Temp_password!" \
+  --password "fakepassword" \
   --force-change-password-next-sign-in true
 ```
 
@@ -34,7 +34,7 @@ Skapar användaren Erik för utvecklingsteamet.
 az ad user create \
   --display-name "Erik (Developer)" \
   --user-principal-name dev-erik@samuellissbrooutlook.onmicrosoft.com \
-  --password "Temp_password" \
+  --password "fakepassword" \
   --force-change-password-next-sign-in true
 ```
 
