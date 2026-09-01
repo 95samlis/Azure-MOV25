@@ -71,15 +71,15 @@ az ad group create \
   --mail-nickname "Azure-Developer"
 ```
 
-Användarna lades därefter till i respektive grupp.
+Användarna lades därefter till manuellt i respektive grupp.
 
 ### Verifiering
+
+Visar samtliga grupper i Entra ID.
 
 ```bash
 az ad group list --output table
 ```
-
-Visar samtliga grupper i Entra ID.
 
 ---
 
@@ -90,14 +90,14 @@ För att följa principen om least privilege tilldelades roller till grupper ist
 
 ### Hämta Resource Group-ID (Scope)
 
+Hämtar det unika ID:t för resursgruppen som används som scope vid rolltilldelning.
+
 ```bash
 az group show \
   --name rg-novatrix-v34 \
   --query id \
   -o tsv
 ```
-
-Hämtar det unika ID:t för resursgruppen som används som scope vid rolltilldelning.
 
 Resultat:
 
