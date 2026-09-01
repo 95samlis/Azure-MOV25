@@ -214,6 +214,15 @@ az identity create \
   --location swedencentral
 ```
 
+## Verifiering
+
+```bash
+az identity show \
+  --name id-novatrix-app \
+  --resource-group rg-novatrix-v34 \
+  --output table
+```
+
 ### Motivering
 
 En Managed Identity fungerar som ett Azure-konto för applikationen. Syftet är att applikationen senare ska kunna autentisera sig mot Azure-tjänster utan att lösenord, nycklar eller andra hemligheter behöver lagras i koden.
