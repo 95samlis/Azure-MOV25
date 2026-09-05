@@ -37,7 +37,7 @@ cd C:\Azure\Vecka34\Nyckel_Ubuntu
 Navigerade till katalogen där SSH-nyckeln sparades.
 
 ```powershell
-icacls C:\Azure\Vecka34\Nyckel_Ubuntu\vm-novatrix-web_key.pem" /inheritance:r
+icacls C:\Azure\Vecka34\Nyckel_Ubuntu\vm-novatrix-web_key.pem /inheritance:r
 ```
 
 Tog bort ärvda rättigheter från nyckelfilen.
