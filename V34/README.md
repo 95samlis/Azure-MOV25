@@ -31,25 +31,25 @@ För att ansluta till servern laddade jag ner den privata SSH-nyckeln från Azur
 ### Kommandon
 
 ```powershell
-cd "C:\Azure\Vecka34\Nyckel_Ubuntu"
+cd C:\Azure\Vecka34\Nyckel_Ubuntu
 ```
 
 Navigerade till katalogen där SSH-nyckeln sparades.
 
 ```powershell
-icacls "C:\Azure\Vecka34\Nyckel_Ubuntu\vm-novatrix-web_key.pem" /inheritance:r
+icacls C:\Azure\Vecka34\Nyckel_Ubuntu\vm-novatrix-web_key.pem" /inheritance:r
 ```
 
 Tog bort ärvda rättigheter från nyckelfilen.
 
 ```powershell
-icacls .\vm-novatrix-web_key.pem /grant:r "${env:USERNAME}:R"
+icacls .\vm-novatrix-web_key.pem /grant:r "${env:USERNAME}:R
 ```
 
 Gav endast mitt användarkonto läsbehörighet till nyckelfilen.
 
 ```powershell
-ssh -i "C:\Azure\Vecka34\Nyckel_Ubuntu\vm-novatrix-web_key.pem" azureuser@135.225.105.195
+ssh -i C:\Azure\Vecka34\Nyckel_Ubuntu\vm-novatrix-web_key.pem azureuser@135.225.105.195
 ```
 
 Anslöt till den virtuella servern via SSH.
