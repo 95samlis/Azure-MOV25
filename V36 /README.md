@@ -46,7 +46,6 @@ Jag använder:
 
 
 ### Kommando
-
 Jag använder ett privat adressområde för VNetet eftersom det används för kommunikation mellan Azure-resurser. Adressrymden /16 ger också utrymme för flera subnät.
 
 ```bash
@@ -59,7 +58,6 @@ az network vnet create \
 
 
 ### Verifiering
-
 När kommandot har kört kontrolleras VNetet med:
 
 ```bash
@@ -70,7 +68,6 @@ az network vnet show \
 ```
 
 ### Resultat
-
 VNetet skapades med Azure CLI och verifierades därefter för att säkerställa att rätt resursgrupp, region och adressrymd används.
 
 <img width="2728" height="174" alt="image" src="https://github.com/user-attachments/assets/e6e9ae75-62aa-46e1-a546-3bfe497a124b" />
