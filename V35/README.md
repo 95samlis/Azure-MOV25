@@ -40,7 +40,7 @@ az ad user create \
 
 Användarna fick temporära lösenord och tvingas byta lösenord vid första inloggningen.
 
-## Verifiering
+### Verifiering
 
 ```bash
 az ad user list --output table
