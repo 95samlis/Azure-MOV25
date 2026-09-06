@@ -1,8 +1,13 @@
+# v36 – Nätverk och säkerhet
+
+**SAMUEL LISSBRO**
+
+### Syfte och översikt
+
+I denna uppgift byggs ett säkrare nätverk för Novatrix kundtjänst med VNet, subnät och NSG. Webbservern placeras i webbsubnätet och nödvändig trafik tillåts medan övrig trafik blockeras. Ett separat subnät för databas och lagring förbereds för framtida användning.
 
 
-
-
-## Steg 1 – Skapa VNet
+## VNet och subnät
 
 Jag använder:
 
