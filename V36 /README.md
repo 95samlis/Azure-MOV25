@@ -44,6 +44,7 @@ Jag använder:
 
 \* `DenyAllInBound` är en Azure-standardregel som blockerar övrig inkommande trafik.
 
+---
 
 ### Kommando
 Jag använder ett privat adressområde för VNetet eftersom det används för kommunikation mellan Azure-resurser. Adressrymden /16 ger också utrymme för flera subnät.
