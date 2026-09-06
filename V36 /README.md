@@ -43,3 +43,15 @@ Jag använder:
 | – | `DenyAllInBound`* | Övrig inbound | Alla | Blockeras |
 
 \* `DenyAllInBound` är en Azure-standardregel som blockerar övrig inkommande trafik.
+
+
+### Kommando
+
+Jag använder ett privat adressområde för VNetet eftersom det används för kommunikation mellan Azure-resurser. `/16` ger också utrymme för flera subnät.
+
+```bash
+az network vnet create \
+  --resource-group rg-novatrix-v34 \
+  --name vnet-novatrix \
+  --location swedencentral \
+  --address-prefix 172.16.0.0/16
