@@ -10,7 +10,7 @@ Målet är att tillämpa principen om least privilege så att användare endast 
 
 ---
 
-## Entra ID - Användare
+### Entra ID - Användare
 
 Användarkonton skapades för driftteamet och utvecklingsteamet i Novatrix Azure-miljö.
 
@@ -50,7 +50,7 @@ Visar samtliga användare i Entra ID.
 
 ---
 
-## Entra ID – Säkerhetsgrupper
+### Entra ID – Säkerhetsgrupper
 
 Två säkerhetsgrupper skapades för att hantera behörigheter via grupper istället för enskilda användare. RBAC-roller tilldelades grupperna, vilket gjorde behörighetshanteringen enklare, mer skalbar och lättare att administrera.
 
@@ -84,7 +84,7 @@ az ad group list --output table
 ---
 
 
-## RBAC – Behörigheter
+### RBAC – Behörigheter
 
 För att följa principen om least privilege tilldelades roller till grupper istället för enskilda användare.
 
@@ -159,7 +159,7 @@ Azure-Developer tilldelades rollen Reader eftersom utvecklarna behöver kunna se
 
 ---
 
-## Verifiering av RBAC
+### Verifiering av RBAC
 
 Rolltilldelningarna verifierades med Azure CLI.
 
