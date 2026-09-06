@@ -63,6 +63,8 @@ VNetet skapades med Azure CLI och verifierades därefter för att säkerställa 
 
 <img width="2728" height="174" alt="image" src="https://github.com/user-attachments/assets/e6e9ae75-62aa-46e1-a546-3bfe497a124b" />
 
+---
+
 ### Skapa subnät
 
 Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
