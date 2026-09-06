@@ -32,9 +32,6 @@ Jag använder:
 
 ### Nätverksdesign
 
-
-### Nätverksdesign
-
 <img width="680" height="720" alt="v36-network-diagram" src="https://github.com/user-attachments/assets/5f837962-ffbc-463f-807b-d63c5d3628a4" />
 
 ---
@@ -66,6 +63,46 @@ VNetet skapades med Azure CLI och verifierades därefter för att säkerställa 
 
 <img width="2728" height="174" alt="image" src="https://github.com/user-attachments/assets/e6e9ae75-62aa-46e1-a546-3bfe497a124b" />
 
+### Skapa subnät
+
+Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
+
+
+### Kommando
+
+Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
+
+
+```bash
+az network vnet subnet create \
+  --resource-group rg-novatrix-v34 \
+  --vnet-name vnet-novatrix \
+  --name snet-web \
+  --address-prefixes 172.16.1.0/24
+```
+
+Skapar det privata subnätet snet-private i vnet-novatrix med adressrymden 172.16.2.0/24. Subnätet är förberett för framtida lagring och backend.
+
+```bash
+az network vnet subnet create \
+  --resource-group rg-novatrix-v34 \
+  --vnet-name vnet-novatrix \
+  --name snet-db \
+  --address-prefixes 172.16.2.0/24
+```
+
+### Verifikation
+
+Verifierar att båda subnäten finns i vnet-novatrix
+
+Visar subnäten i vnet-novatrix och bekräftar att rätt namn och adress spaces har skapats.
+
+```bash
+az network vnet subnet list \
+  --resource-group rg-novatrix-v34 \
+  --vnet-name vnet-novatrix \
+  --output table
+```
 
 
 
