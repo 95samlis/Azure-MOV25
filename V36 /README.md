@@ -24,7 +24,7 @@ Jag använder:
 | Publikt subnät | `172.16.1.0/24` |
 | Privat subnät | `172.16.2.0/24` |
 
-
+---
 
 
 `172.16.0.0/16` ger gott om adressutrymme och gör nätverket skalbart.
