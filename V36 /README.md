@@ -15,7 +15,7 @@ Jag använder:
 - **VNet:** `vnet-novatrix`
 - **Region:** `Sweden Central`
 - **Address space:** `172.16.0.0/16`
-
+<hr style="border: 0; border-top: 1px solid #ddd;">
 ### IP-planering
 
 | Nätverk | Adressrymd |
