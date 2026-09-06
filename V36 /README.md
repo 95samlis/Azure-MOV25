@@ -105,8 +105,42 @@ az network vnet subnet list \
 <img width="2938" height="266" alt="Resultat 2" src="https://github.com/user-attachments/assets/7584b094-c723-4683-b711-e916234b675d" />
 
 
+### Verifiering i Azure Portal
+
+Verifierar även i portalen att subnäten är kopplade till rätt VNet och att webbserverns nätverkskort och använder rätt privata IP-adress.
+
+<img width="2436" height="304" alt="Resultat 3" src="https://github.com/user-attachments/assets/fe8c8d32-1365-49b8-baee-fdc1cff27386" />
+
+---
+
+### Säkrar trafiken
 
 
+Skapar en Network Security Group med namnet nsg-web i resursgruppen rg-novatrix-v34 och regionen Sweden Central
+
+### Kommandon
+
+```bash
+az network nsg create \
+  --resource-group rg-novatrix-v34 \
+  --name nsg-web \
+  --location swedencentral
+```
+
+Verifiering 
+
+```bash
+az network nsg show \
+  --resource-group rg-novatrix-v34 \
+  --name nsg-web \
+  --output table
+```
+
+NSG:n används för att styra vilken nätverkstrafik som får komma till och från webbsubnätet. Detta gör det möjligt att endast tillåta nödvändig trafik och blockera övrig trafik.
+
+### Resultat 
+
+<img width="1616" height="158" alt="Resultat 5" src="https://github.com/user-attachments/assets/94d2e7b8-fed6-4892-a59d-a0d8708c2243" />
 
 
 
