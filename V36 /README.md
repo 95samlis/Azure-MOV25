@@ -16,6 +16,8 @@ Jag använder:
 - **Region:** `Sweden Central`
 - **Address space:** `172.16.0.0/16`
 
+  <p>────────────────────────────────────</p>
+
 ### IP-planering
 
 | Nätverk | Adressrymd |
