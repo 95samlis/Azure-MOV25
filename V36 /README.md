@@ -8,8 +8,7 @@ I denna uppgift byggs ett säkrare nätverk för Novatrix kundtjänst med VNet, 
 
 ---
 
-## VNet och subnät
-
+### VNet och Subnät
 Jag använder:
 
 - **Resource Group:** `rg-novatrix-v34`
