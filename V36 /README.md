@@ -68,11 +68,7 @@ VNetet skapades med Azure CLI och verifierades därefter för att säkerställa 
 
 Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
 
-
 ### Kommando
-
-Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
-
 
 ```bash
 az network vnet subnet create \
@@ -82,7 +78,7 @@ az network vnet subnet create \
   --address-prefixes 172.16.1.0/24
 ```
 
-Skapar det privata subnätet snet-private i vnet-novatrix med adressrymden 172.16.2.0/24. Subnätet är förberett för framtida lagring och backend.
+Skapar det privata subnätet snet-private i vnet-novatrix med adressrymden 172.16.2.0/24. Subnätet är förberett för framtida lagring.
 
 ```bash
 az network vnet subnet create \
@@ -92,11 +88,10 @@ az network vnet subnet create \
   --address-prefixes 172.16.2.0/24
 ```
 
+
 ### Verifikation
 
-Verifierar att båda subnäten finns i vnet-novatrix
-
-Visar subnäten i vnet-novatrix och bekräftar att rätt namn och adress spaces har skapats.
+Verifierar att båda subnäten finns i `vnet-novatrix` och att rätt namn och adressrymder har skapats.
 
 ```bash
 az network vnet subnet list \
@@ -105,7 +100,9 @@ az network vnet subnet list \
   --output table
 ```
 
+### Resulat
 
+<img width="2938" height="266" alt="Resultat 2" src="https://github.com/user-attachments/assets/7584b094-c723-4683-b711-e916234b675d" />
 
 
 
