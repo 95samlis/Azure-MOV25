@@ -223,9 +223,7 @@ En extra verifiering genomfördes via Azure Portal för att bekräfta att regeln
 
 ## Koppla NSG till subnätet
 
-nsg-web ska kopplas till snet-web så reglerna faktiskt börjar gälla för resurser i webbsubnätet.
-
-Ja. Det här steget är att associera nsg-web med snet-web i vnet-novatrix.
+nsg-web ska kopplas till snet-web så reglerna faktiskt börjar gälla för resurser i webbsubnätet. Genom att koppla NSG:n till subnätet kan samma trafikregler gälla för flera resurser som placeras där, utan att varje maskin behöver egna regler.
 
 ### Kommando
 
