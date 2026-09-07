@@ -109,7 +109,7 @@ az network vnet subnet list \
 
 ### Verifiering i Azure Portal
 
-Verifierar även i portalen att subnäten är kopplade till rätt VNet och att webbserverns nätverkskort och använder rätt privata IP-adress.
+Verifierar även i portalen att subnäten ligger i rätt VNet och att webbservern använder rätt subnet och privat IP-adress.
 
 <img width="2436" height="304" alt="Resultat 3" src="https://github.com/user-attachments/assets/fe8c8d32-1365-49b8-baee-fdc1cff27386" />
 
