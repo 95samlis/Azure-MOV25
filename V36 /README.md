@@ -168,7 +168,7 @@ az network nsg rule create \
 
 Port 80 och 443 behövs för att användare ska kunna nå kundtjänstens webbformulär via HTTP och HTTPS. Endast nödvändig webbtrafik tillåts för att minska onödig exponering. Regeln har prioritet 100, vilket ger den hög prioritet och samtidigt utrymme för framtida regler.
 
-### SSH kommando
+### Allow SSH Admin
 
 Tillåter inkommande SSH-trafik från min publika IP-adress på port 22.
 
@@ -207,41 +207,6 @@ En extra verifiering genomfördes via Azure Portal för att bekräfta att regeln
 
 <img width="2588" height="268" alt="Resultat 7" src="https://github.com/user-attachments/assets/d5c47747-0d12-4b68-a6dc-e092c0c76509" />
 
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-
-
-
-
 
 ### NSG-regler
 
@@ -252,3 +217,39 @@ En extra verifiering genomfördes via Azure Portal för att bekräfta att regeln
 | – | `DenyAllInBound`* | Övrig inbound | Alla | Blockeras |
 
 \* `DenyAllInBound` är en Azure-standardregel som blockerar övrig inkommande trafik.
+
+---
+
+## Koppla NSG till subnätet
+
+nsg-web ska kopplas till snet-web så reglerna faktiskt börjar gälla för resurser i webbsubnätet.
+
+Ja. Det här steget är att associera nsg-web med snet-web i vnet-novatrix.
+
+### Kommando
+
+Kopplar nsg-web till subnätet snet-web i vnet-novatrix.
+
+```bash
+az network vnet subnet update \
+  --resource-group rg-novatrix-v34 \
+  --vnet-name vnet-novatrix \
+  --name snet-web \
+  --network-security-group nsg-web
+```
+### Motivering
+
+När NSG:n kopplas till snet-web börjar dess trafikregler gälla för resurser i subnätet.
+
+### Verifiering
+
+```bash
+az network vnet subnet show \
+  --resource-group rg-novatrix-v34 \
+  --vnet-name vnet-novatrix \
+  --name snet-web \
+  --query networkSecurityGroup.id \
+  -o tsv
+```
+
+
