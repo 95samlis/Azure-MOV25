@@ -68,6 +68,7 @@ VNetet skapades med Azure CLI och verifierades därefter för att säkerställa 
 ### Skapar subnät
 
 Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
+Subnäten används för att hålla webbservern och databasen separerade och göra det enklare att styra trafiken.
 
 ### Kommando
 
