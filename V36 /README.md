@@ -143,13 +143,71 @@ NSG:n används för att styra vilken nätverkstrafik som får komma till och fr�
 
 <img width="1616" height="158" alt="Resultat 5" src="https://github.com/user-attachments/assets/94d2e7b8-fed6-4892-a59d-a0d8708c2243" />
 
+---
+
+### Tillåtna portar och trafik
+
+Skapar en inbound-regel som tillåter inkommande HTTP- och HTTPS-trafik på port 80 och 443 till webbsubnätet.
+
+```bash
+az network nsg rule create \
+  --resource-group rg-novatrix-v34 \
+  --nsg-name nsg-web \
+  --name Allow-Web \
+  --priority 100 \
+  --direction Inbound \
+  --access Allow \
+  --protocol Tcp \
+  --source-address-prefixes Internet \
+  --source-port-ranges '*' \
+  --destination-address-prefixes '*' \
+  --destination-port-ranges 80 443
+```
+
+### Motivering
+
+Port 80 och 443 behövs för att användare ska kunna nå kundtjänstens webbformulär via HTTP och HTTPS. Endast nödvändig webbtrafik tillåts för att minska onödig exponering. Regeln har prioritet 100, vilket ger den hög prioritet och samtidigt utrymme för framtida regler.
+
+### SSH kommando
+
+Tillåter inkommande SSH-trafik från min publika IP-adress på port 22.
+
+```bash
+az network nsg rule create \
+  --resource-group rg-novatrix-v34 \
+  --nsg-name nsg-web \
+  --name Allow-SSH-Admin \
+  --priority 200 \
+  --direction Inbound \
+  --access Allow \
+  --protocol Tcp \
+  --source-address-prefixes 81.226.253.57 \
+  --source-port-ranges '*' \
+  --destination-address-prefixes '*' \
+  --destination-port-ranges 22
+```
 
 
 
+### Motivering
 
+SSH används för administrativ åtkomst. Genom att endast tillåta min egen IP-adress begränsas åtkomsten och risken för obehöriga anslutningar minskar. Regeln har prio 200 för att skapa utrymme för framtida regler mellan webb- och adminåtkomst.
 
+### Verifiering
 
+```bash
+az network nsg rule list \
+  --resource-group rg-novatrix-v34 \
+  --nsg-name nsg-web \
+  --output table
+```
+<img width="3162" height="308" alt="Resultat 6" src="https://github.com/user-attachments/assets/7e86e242-659d-4e31-ac76-9a0c8033e148" />
 
+En extra verifiering genomfördes via Azure Portal för att bekräfta att regeln fungerar som förväntat.
+
+<img width="2588" height="268" alt="Resultat 7" src="https://github.com/user-attachments/assets/d5c47747-0d12-4b68-a6dc-e092c0c76509" />
+
+---
 
 
 
