@@ -80,7 +80,7 @@ az network vnet subnet create \
   --address-prefixes 172.16.1.0/24
 ```
 
-Skapar det privata subnätet snet-private i vnet-novatrix med adressrymden 172.16.2.0/24. Subnätet är förberett för framtida lagring.
+Skapar även det privata subnätet snet-db i vnet-novatrix med adressrymden 172.16.2.0/24. Subnätet är förberett för framtida lagring.
 
 ```bash
 az network vnet subnet create \
