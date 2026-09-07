@@ -37,7 +37,7 @@ Jag använder:
 ---
 
 ### VNet Kommando
-Jag använder ett privat adressområde för VNetet eftersom det används för kommunikation mellan Azure-resurser. Adressrymden /16 ger också utrymme för flera subnät.
+Jag använder ett privat adressområde för VNetet eftersom det används för kommunikation mellan Azure-resurserna. Adressrymden /16 ger också utrymme för flera subnät.
 
 ```bash
 az network vnet create \
