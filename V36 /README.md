@@ -167,7 +167,7 @@ az network nsg rule create \
 
 ### Motivering
 
-Port `80` och `443` behövs för att användare ska kunna nå kundtjänstens webbformulär via HTTP och HTTPS. Endast nödvändig webbtrafik tillåts för att minska onödig exponering. Regeln har prioritet `100` vilket ger den hög prioritet och samtidigt utrymme för framtida regler.
+Port `80` och `443` behövs för att användare ska kunna nå kundtjänstens webbformulär via `HTTP` och `HTTPS`. Endast nödvändig webbtrafik tillåts för att minska onödig exponering. Regeln har prioritet `100` vilket ger den hög prioritet och samtidigt utrymme för framtida regler.
 
 ### Allow SSH Admin
 
