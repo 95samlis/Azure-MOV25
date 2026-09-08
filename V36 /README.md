@@ -49,7 +49,7 @@ az network vnet create \
 
 
 ### Verifiering
-När kommandot har kört kontrolleras VNetet med:
+När kommandot har körts kontrolleras VNetet med:
 
 ```bash
 az network vnet show \
