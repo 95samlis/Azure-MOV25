@@ -148,7 +148,7 @@ NSG:n används för att styra vilken nätverkstrafik som får komma till och fr�
 
 ### Tillåtna portar och trafik
 
-Skapar en inbound-regel som tillåter inkommande HTTP- och HTTPS-trafik på port `80` och `443` till webbsubnätet.
+Skapar en inbound-regel som tillåter inkommande `HTTP` och `HTTPS` trafik på port `80` och `443` till webbsubnätet.
 
 ```bash
 az network nsg rule create \
