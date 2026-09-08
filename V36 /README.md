@@ -331,7 +331,7 @@ az network watcher test-ip-flow \
 
 ### Resultat
 
-<img width="600" height="180" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
+<img width="500" height="110" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
 
 
 Till sist även `HTTPS` port `443`
