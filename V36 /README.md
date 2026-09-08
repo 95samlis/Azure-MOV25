@@ -59,7 +59,7 @@ az network vnet show \
 ```
 
 ### Resultat
-`vnet-novatrix` skapades med Azure CLI och verifierades därefter för att säkerställa att rätt resursgrupp, region och adressrymd används.
+`vnet-novatrix` skapades med CLI och verifierades därefter. Resultatet visar att det virtuella nätverket har skapats korrekt i rätt resursgrupp och region.
 
 <img width="2728" height="174" alt="image" src="https://github.com/user-attachments/assets/e6e9ae75-62aa-46e1-a546-3bfe497a124b" />
 
