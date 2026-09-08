@@ -357,15 +357,15 @@ För extra verifiering kontrollerades IP Flow Verify via Azure Portal
 
 ### SSH DENY 
 
-<img width="970" height="530" alt="dfgdgafgad" src="https://github.com/user-attachments/assets/b20e32af-8bff-46c4-841b-a1ee1fa693f5" />
+<img width="900" height="530" alt="dfgdgafgad" src="https://github.com/user-attachments/assets/b20e32af-8bff-46c4-841b-a1ee1fa693f5" />
 
 
 ---
 
 ### PORT 80 och 443
 
-<img width="700" height="350" alt="Resultat443" src="https://github.com/user-attachments/assets/d2d0a2d2-94ed-42f3-a88f-79466fa4dc81" />
+<img width="700" height="430" alt="Resultat443" src="https://github.com/user-attachments/assets/d2d0a2d2-94ed-42f3-a88f-79466fa4dc81" />
 
 ---
 
-<img width="700" height="350" alt="Resultat 80" src="https://github.com/user-attachments/assets/2f61abd9-ee46-4bcf-9296-382f14bb84f4" />
+<img width="700" height="430" alt="Resultat 80" src="https://github.com/user-attachments/assets/2f61abd9-ee46-4bcf-9296-382f14bb84f4" />
