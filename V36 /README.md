@@ -68,7 +68,7 @@ az network vnet show \
 ### Skapar subnät
 
 Skapar subnätet `snet-web` i `vnet-novatrix` med adressrymden `172.16.1.0/24` Subnätet ska användas för webben och formuläret.
-Subnäten används för att hålla webbservern och databasen separerade och göra det enklare att styra trafiken.
+Subnäten används för att hålla webbservern och databasen separerade och göra det enklare att styra trafiken. Det ger också bättre säkerhet eftersom resurserna hålls åtskilda.
 
 ### Kommando
 
