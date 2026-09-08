@@ -260,7 +260,8 @@ SSH-anslutningen testades från två olika nätverk. Från den tillåtna IP-adre
 
 När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev resultatet Timed out. Detta bekräftar att SSH-åtkomsten är begränsad till den angivna IP-adressen.
 
-<img width="1441" height="670" alt="TimedOut" src="https://github.com/user-attachments/assets/7c2634ec-bcce-4485-9ba9-b931ea19bcca" />
+<img width="980" height="330" alt="tttttttttt" src="https://github.com/user-attachments/assets/006c7d84-f773-4f0a-87fd-2abe9227e638" />
+
 
 
 
