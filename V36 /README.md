@@ -351,10 +351,7 @@ az network watcher test-ip-flow \
 <img width="968" height="182" alt="44333" src="https://github.com/user-attachments/assets/16ccec07-48ce-4f97-b163-aead8c436ebf" />
 
 
-Resultat från verifiering via Aktivitetsloggen i Network Watcher – Sweden Central.
 
-
-Bild
 
 
 
