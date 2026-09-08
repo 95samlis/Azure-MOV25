@@ -333,6 +333,7 @@ az network watcher test-ip-flow \
 
 <img width="600" height="120" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
 
+---
 
 Till sist verifieras även `HTTPS` på port `443`
 
