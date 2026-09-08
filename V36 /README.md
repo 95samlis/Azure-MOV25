@@ -240,15 +240,108 @@ az network vnet subnet update \
 
 När NSG:n kopplas till snet-web börjar dess trafikregler gälla för resurser i subnätet.
 
+### Resultat
+
+<img width="1976" height="274" alt="Resultat 10" src="https://github.com/user-attachments/assets/bdaabe18-ae15-47e3-94ae-854ee001f5df" />
+
+---
+
+## VM och nätverk
+
+Under Settings → IP config ändrade jag VM:ens NIC så att subnetet gick från snet-swedencentral-4 till snet-web i vnet-novatrix. Detta gör att VM:n ligger i det webbsubnät där nsg-web är konfigurerad.
+
+Jag ändrade Network Security Group på VM:ens nätverkskort från den tidigare vm-novatrix-web-nsg till nsg-web. Detta gjordes för att använda den NSG som jag konfigurerat för webbserverns trafik.
+
 ### Verifiering
 
+SSH-anslutningen testades från två olika nätverk. Från den tillåtna IP-adressen 81.226.253.57 lyckades anslutningen. 
+
+<img width="1090" height="220" alt="SSH_LogIn" src="https://github.com/user-attachments/assets/bfe4d1f7-26c0-441e-a4ac-d04e6ea54d2e" />
+
+När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev resultatet Timed out. Detta bekräftar att SSH-åtkomsten är begränsad till den angivna IP-adressen.
+
+<img width="1441" height="670" alt="TimedOut" src="https://github.com/user-attachments/assets/7c2634ec-bcce-4485-9ba9-b931ea19bcca" />
+
+
+### IP Flow Verify
+
+IP Flow Verify i Network Watcher används för att simulera ett nätverkspaket och kontrollera om trafiken tillåts eller blockeras av NSG-reglerna. Resultatet visar även vilken regel som matchar trafiken.  IP Flow Verify testar trafiken på VM:ns nätverkskort, och där används VM:ns privata IP-adress.
+
+Detta används för att verifiera att rätt NSG-regel träffas i rätt riktning och att nätverkstrafiken fungerar som planerat.
+
+### Kommando
+
+Hämtar det nätverkskort (NIC) som används av VM:n. Detta NIC behövs för att kunna genomföra IP Flow Verify-testet.
+
 ```bash
-az network vnet subnet show \
+az vm show \
   --resource-group rg-novatrix-v34 \
-  --vnet-name vnet-novatrix \
-  --name snet-web \
-  --query networkSecurityGroup.id \
+  --name vm-novatrix-web \
+  --query "networkProfile.networkInterfaces[0].id" \
   -o tsv
 ```
 
+Resultatet visar vilket nätverkskort (vm-novatrix-web313) som är kopplat till VM:n. Detta NIC används vid IP Flow Verify-testet.
 
+
+```bash
+az network watcher test-ip-flow \
+  --resource-group rg-novatrix-v34 \
+  --vm vm-novatrix-web \
+  --direction Inbound \
+  --protocol TCP \
+  --local 172.16.1.4:22 \
+  --remote 81.226.253.57:12345
+```
+
+### Resultat
+
+<img width="768" height="156" alt="Resulat 11" src="https://github.com/user-attachments/assets/28a9d0dc-be8d-4279-a0c3-aee130403678" />
+
+Testet visar att SSH-trafiken till port 22 tillåts och att regeln Allow-SSH-Admin matchar trafiken.
+
+---
+
+### IP Flow Verify
+
+IP Flow Verify i Network Watcher används för att simulera nätverkstrafik och kontrollera om den tillåts eller blockeras av NSG-reglerna. Resultatet visar även vilken regel som matchar trafiken.
+
+Testet utförs mot VM:ns nätverkskort (NIC) och använder därför VM:ns privata IP-adress.
+
+
+### Kommando
+
+
+Hämtar det nätverkskort (NIC) som används av VM:n. Detta NIC behövs för att kunna genomföra IP Flow Verify-testet.
+
+```bash
+az vm show \
+  --resource-group rg-novatrix-v34 \
+  --name vm-novatrix-web \
+  --query "networkProfile.networkInterfaces[0].id" \
+  -o tsv
+```
+Resultatet visar vilket nätverkskort (vm-novatrix-web313) som är kopplat till VM:n. Detta NIC används vid IP Flow Verify-testet.
+
+### Kommando
+
+IP Flow Verify-test för SSH.
+
+
+```bash
+az network watcher test-ip-flow \
+  --resource-group rg-novatrix-v34 \
+  --vm vm-novatrix-web \
+  --direction Inbound \
+  --protocol TCP \
+  --local 172.16.1.4:22 \
+  --remote 81.226.253.57:12345
+```
+
+### Resultat 
+
+<img width="768" height="156" alt="Resulat 11" src="https://github.com/user-attachments/assets/f0f3a008-d934-4b04-81cc-c4c15eaf362c" />
+
+För extra verifiering användes IP Flow Verify i Azure Portal. Resultatet visar att SSH-trafiken tillåts av regeln `Allow-SSH-Admin`.
+
+<img width="1398" height="470" alt="SSH_VERIFY_ALLOW" src="https://github.com/user-attachments/assets/e81fd540-b41a-4cf0-88b8-176dc58e9a65" />
