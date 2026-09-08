@@ -262,44 +262,7 @@ När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev res
 
 <img width="1441" height="670" alt="TimedOut" src="https://github.com/user-attachments/assets/7c2634ec-bcce-4485-9ba9-b931ea19bcca" />
 
----
 
-### IP Flow Verify
-
-IP Flow Verify i Network Watcher används för att simulera ett nätverkspaket och kontrollera om trafiken tillåts eller blockeras av NSG-reglerna. Resultatet visar även vilken regel som matchar trafiken.  IP Flow Verify testar trafiken på VM:ns nätverkskort, och där används VM:ns privata IP-adress.
-
-Detta används för att verifiera att rätt NSG-regel träffas i rätt riktning och att nätverkstrafiken fungerar som planerat.
-
-### Kommando
-
-Hämtar det nätverkskort (NIC) som används av VM:n. Detta NIC behövs för att kunna genomföra IP Flow Verify-testet.
-
-```bash
-az vm show \
-  --resource-group rg-novatrix-v34 \
-  --name vm-novatrix-web \
-  --query "networkProfile.networkInterfaces[0].id" \
-  -o tsv
-```
-
-Resultatet visar vilket nätverkskort (vm-novatrix-web313) som är kopplat till VM:n. Detta NIC används vid IP Flow Verify-testet.
-
-
-```bash
-az network watcher test-ip-flow \
-  --resource-group rg-novatrix-v34 \
-  --vm vm-novatrix-web \
-  --direction Inbound \
-  --protocol TCP \
-  --local 172.16.1.4:22 \
-  --remote 81.226.253.57:12345
-```
-
-### Resultat
-
-<img width="768" height="156" alt="Resulat 11" src="https://github.com/user-attachments/assets/28a9d0dc-be8d-4279-a0c3-aee130403678" />
-
-Testet visar att SSH-trafiken till port 22 tillåts och att regeln Allow-SSH-Admin matchar trafiken.
 
 ---
 
