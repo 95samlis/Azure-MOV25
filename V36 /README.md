@@ -351,10 +351,18 @@ az network watcher test-ip-flow \
 <img width="600" height="120" alt="44333" src="https://github.com/user-attachments/assets/16ccec07-48ce-4f97-b163-aead8c436ebf" />
 
 
+För extra verifiering kontrollerades IP Flow Verify via Azure Portal 
 
+### SSH DENY 
 
+<img width="1184" height="858" alt="SSH_DENY" src="https://github.com/user-attachments/assets/abfe46f5-f204-4d24-a1bf-9abaccf8042f" />
 
+---
 
-För extra verifiering kontrollerades IP Flow Verify via Network Watcher i Azure Portal för port 80 och 443.
+### PORT 80 och 443
 
-BILD
+<img width="1014" height="660" alt="Resultat443" src="https://github.com/user-attachments/assets/d2d0a2d2-94ed-42f3-a88f-79466fa4dc81" />
+
+---
+
+<img width="1082" height="730" alt="Resultat 80" src="https://github.com/user-attachments/assets/2f61abd9-ee46-4bcf-9296-382f14bb84f4" />
