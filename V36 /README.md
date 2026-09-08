@@ -49,7 +49,7 @@ az network vnet create \
 
 
 ### Verifiering
-När kommandot har körts kontrolleras VNetet med:
+När kommandot har körts verifieras att `vnet-novatrix` har skapats.
 
 ```bash
 az network vnet show \
