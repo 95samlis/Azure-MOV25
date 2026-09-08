@@ -305,11 +305,11 @@ az network watcher test-ip-flow \
 
 ### Resultat 
 
-<img width="768" height="156" alt="Resulat 11" src="https://github.com/user-attachments/assets/f0f3a008-d934-4b04-81cc-c4c15eaf362c" />
+<img width="600" height="120" alt="Resulat 11" src="https://github.com/user-attachments/assets/f0f3a008-d934-4b04-81cc-c4c15eaf362c" />
 
 För extra verifiering användes IP Flow Verify i Azure Portal. Resultatet visar att SSH-trafiken tillåts av regeln `Allow-SSH-Admin`.
 
-<img width="1398" height="470" alt="SSH_VERIFY_ALLOW" src="https://github.com/user-attachments/assets/e81fd540-b41a-4cf0-88b8-176dc58e9a65" />
+<img width="1000" height="380" alt="SSH_VERIFY_ALLOW" src="https://github.com/user-attachments/assets/e81fd540-b41a-4cf0-88b8-176dc58e9a65" />
 
 ---
 
@@ -334,7 +334,7 @@ az network watcher test-ip-flow \
 <img width="600" height="120" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
 
 
-Till sist även `HTTPS` port `443`
+Till sist verifieras även `HTTPS` på port `443`
 
 ```bash
 az network watcher test-ip-flow \
@@ -355,14 +355,15 @@ För extra verifiering kontrollerades IP Flow Verify via Azure Portal
 
 ### SSH DENY 
 
-<img width="1184" height="858" alt="SSH_DENY" src="https://github.com/user-attachments/assets/abfe46f5-f204-4d24-a1bf-9abaccf8042f" />
+<img width="970" height="530" alt="dfgdgafgad" src="https://github.com/user-attachments/assets/b20e32af-8bff-46c4-841b-a1ee1fa693f5" />
+
 
 ---
 
 ### PORT 80 och 443
 
-<img width="1014" height="660" alt="Resultat443" src="https://github.com/user-attachments/assets/d2d0a2d2-94ed-42f3-a88f-79466fa4dc81" />
+<img width="700" height="350" alt="Resultat443" src="https://github.com/user-attachments/assets/d2d0a2d2-94ed-42f3-a88f-79466fa4dc81" />
 
 ---
 
-<img width="1082" height="730" alt="Resultat 80" src="https://github.com/user-attachments/assets/2f61abd9-ee46-4bcf-9296-382f14bb84f4" />
+<img width="700" height="350" alt="Resultat 80" src="https://github.com/user-attachments/assets/2f61abd9-ee46-4bcf-9296-382f14bb84f4" />
