@@ -67,7 +67,7 @@ VNetet skapades med Azure CLI och verifierades därefter för att säkerställa 
 
 ### Skapar subnät
 
-Skapar subnätet snet-web i vnet-novatrix med adressrymden 172.16.1.0/24. Subnätet ska användas för webben och formuläret.
+Skapar subnätet snet-web i vnet-novatrix med adressrymden `172.16.1.0/24` Subnätet ska användas för webben och formuläret.
 Subnäten används för att hålla webbservern och databasen separerade och göra det enklare att styra trafiken.
 
 ### Kommando
@@ -80,7 +80,7 @@ az network vnet subnet create \
   --address-prefixes 172.16.1.0/24
 ```
 
-Skapar även det privata subnätet snet-db i vnet-novatrix med adressrymden 172.16.2.0/24. Subnätet är  förberett för lagringen och backend som kommer v37.
+Skapar även det privata subnätet snet-db i vnet-novatrix med adressrymden `172.16.2.0/24` Subnätet är  förberett för lagringen och backend som kommer v37.
 
 ```bash
 az network vnet subnet create \
@@ -129,7 +129,7 @@ az network nsg create \
   --location swedencentral
 ```
 
-Verifiering 
+### Verifiering 
 
 ```bash
 az network nsg show \
@@ -148,7 +148,7 @@ NSG:n används för att styra vilken nätverkstrafik som får komma till och fr�
 
 ### Tillåtna portar och trafik
 
-Skapar en inbound-regel som tillåter inkommande HTTP- och HTTPS-trafik på port 80 och 443 till webbsubnätet.
+Skapar en inbound-regel som tillåter inkommande HTTP- och HTTPS-trafik på port `80` och `443` till webbsubnätet.
 
 ```bash
 az network nsg rule create \
@@ -167,11 +167,11 @@ az network nsg rule create \
 
 ### Motivering
 
-Port 80 och 443 behövs för att användare ska kunna nå kundtjänstens webbformulär via HTTP och HTTPS. Endast nödvändig webbtrafik tillåts för att minska onödig exponering. Regeln har prioritet 100, vilket ger den hög prioritet och samtidigt utrymme för framtida regler.
+Port `80` och `443` behövs för att användare ska kunna nå kundtjänstens webbformulär via HTTP och HTTPS. Endast nödvändig webbtrafik tillåts för att minska onödig exponering. Regeln har prioritet `100` vilket ger den hög prioritet och samtidigt utrymme för framtida regler.
 
 ### Allow SSH Admin
 
-Tillåter inkommande SSH-trafik från min publika IP-adress på port 22.
+Tillåter inkommande SSH-trafik från min publika IP-adress på port `22`
 
 ```bash
 az network nsg rule create \
@@ -192,7 +192,7 @@ az network nsg rule create \
 
 ### Motivering
 
-SSH används för administrativ åtkomst. Genom att endast tillåta min egen IP-adress begränsas åtkomsten och risken för obehöriga anslutningar minskar. Regeln har prio 200 för att skapa utrymme för framtida regler mellan webb- och adminåtkomst.
+SSH används för administrativ åtkomst. Genom att endast tillåta min egen IP-adress begränsas åtkomsten och risken för obehöriga anslutningar minskar. Regeln har prio `200` för att skapa utrymme för framtida regler mellan webb- och adminåtkomst.
 
 ### Verifiering
 
@@ -285,7 +285,7 @@ az vm show \
   --query "networkProfile.networkInterfaces[0].id" \
   -o tsv
 ```
-Resultatet visar vilket nätverkskort (vm-novatrix-web313) som är kopplat till VM:n. Detta NIC används vid IP Flow Verify-testet.
+Resultatet visar vilket nätverkskort `vm-novatrix-web313` som är kopplat till VM:n. Detta NIC används vid IP Flow Verify-testet.
 
 ### Kommando
 
@@ -312,9 +312,9 @@ För extra verifiering användes IP Flow Verify i Azure Portal. Resultatet visar
 
 ---
 
-Nästa test är HTTP på port 80.
+Nästa test är HTTP på port `80`.
 
-I denna verifieringen simuleras ett paket som kommer från 8.8.8.8 via Internet till webbserverns port 80 och kontrollerar vilken NSG-regel som träffas.
+I denna verifieringen simuleras ett paket som kommer från `8.8.8.8` via Internet till webbserverns port `80` och kontrollerar vilken NSG-regel som träffas.
 
 ### Kommando
 
@@ -333,7 +333,7 @@ az network watcher test-ip-flow \
 <img width="882" height="240" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
 
 
-Till sist även port 443
+Till sist även port `443`
 
 ```bash
 az network watcher test-ip-flow \
