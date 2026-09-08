@@ -309,3 +309,53 @@ az network watcher test-ip-flow \
 För extra verifiering användes IP Flow Verify i Azure Portal. Resultatet visar att SSH-trafiken tillåts av regeln `Allow-SSH-Admin`.
 
 <img width="1398" height="470" alt="SSH_VERIFY_ALLOW" src="https://github.com/user-attachments/assets/e81fd540-b41a-4cf0-88b8-176dc58e9a65" />
+
+---
+
+Nästa test är HTTP på port 80.
+
+I denna verifieringen simuleras ett paket som kommer från 8.8.8.8 via Internet till webbserverns port 80 och kontrollerar vilken NSG-regel som träffas.
+
+### Kommando
+
+```bash
+az network watcher test-ip-flow \
+  --resource-group rg-novatrix-v34 \
+  --vm vm-novatrix-web \
+  --direction Inbound \
+  --protocol TCP \
+  --local 172.16.1.4:80 \
+  --remote 8.8.8.8:12345
+```
+
+### Resultat
+
+<img width="882" height="240" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
+
+
+Till sist även port 443
+
+```bash
+az network watcher test-ip-flow \
+  --resource-group rg-novatrix-v34 \
+  --vm vm-novatrix-web \
+  --direction Inbound \
+  --protocol TCP \
+  --local 172.16.1.4:443 \
+  --remote 8.8.8.8:12345
+```
+
+### Resultat 
+
+<img width="1014" height="660" alt="Resultat443" src="https://github.com/user-attachments/assets/1b287293-3272-4f71-b426-61d2a2fd0533" />
+
+Resultat från verifiering via Aktivitetsloggen i Network Watcher – Sweden Central.
+
+
+Bild
+
+
+
+För extra verifiering kontrollerades IP Flow Verify via Network Watcher i Azure Portal för port 80 och 443.
+
+BILD
