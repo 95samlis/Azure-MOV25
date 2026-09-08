@@ -4,7 +4,7 @@
 
 ### Syfte och översikt
 
-I denna uppgift byggs ett säkrare nätverk för Novatrix kundtjänst med VNet, subnät och NSG. Webbservern placeras i webbsubnätet och nödvändig trafik tillåts medan övrig trafik blockeras. Ett separat subnät för databas och lagring förbereds för framtida användning.
+I denna uppgift byggs ett säkrare nätverk för Novatrix kundtjänst med `VNet` subnät och `NSG`. Webbservern placeras i webbsubnätet och nödvändig trafik tillåts medan övrig trafik blockeras. Ett separat subnät för databas och lagring förbereds för framtida användning.
 
 ---
 
@@ -37,7 +37,7 @@ Jag använder:
 ---
 
 ### VNet Kommando
-Jag använder ett privat adressområde för VNetet eftersom det används för kommunikation mellan Azure-resurserna. Adressrymden /16 ger också utrymme för flera subnät.
+Jag använder ett privat adressområde för `VNet` eftersom det används för kommunikation mellan Azure-resurserna. Adressrymden /16 ger också utrymme för flera subnät.
 
 ```bash
 az network vnet create \
@@ -59,7 +59,7 @@ az network vnet show \
 ```
 
 ### Resultat
-VNetet skapades med Azure CLI och verifierades därefter för att säkerställa att rätt resursgrupp, region och adressrymd används.
+`vnet-novatrix` skapades med Azure CLI och verifierades därefter för att säkerställa att rätt resursgrupp, region och adressrymd används.
 
 <img width="2728" height="174" alt="image" src="https://github.com/user-attachments/assets/e6e9ae75-62aa-46e1-a546-3bfe497a124b" />
 
@@ -67,7 +67,7 @@ VNetet skapades med Azure CLI och verifierades därefter för att säkerställa 
 
 ### Skapar subnät
 
-Skapar subnätet snet-web i vnet-novatrix med adressrymden `172.16.1.0/24` Subnätet ska användas för webben och formuläret.
+Skapar subnätet `snet-web` i `vnet-novatrix` med adressrymden `172.16.1.0/24` Subnätet ska användas för webben och formuläret.
 Subnäten används för att hålla webbservern och databasen separerade och göra det enklare att styra trafiken.
 
 ### Kommando
@@ -80,7 +80,7 @@ az network vnet subnet create \
   --address-prefixes 172.16.1.0/24
 ```
 
-Skapar även det privata subnätet snet-db i vnet-novatrix med adressrymden `172.16.2.0/24` Subnätet är  förberett för lagringen och backend som kommer v37.
+Skapar även det privata subnätet `snet-db` i `vnet-novatrix` med adressrymden `172.16.2.0/24` Subnätet är  förberett för lagringen och backend som kommer v37.
 
 ```bash
 az network vnet subnet create \
@@ -109,7 +109,7 @@ az network vnet subnet list \
 
 ### Verifiering i Azure Portal
 
-Verifierar även i portalen att subnäten ligger i rätt VNet och att webbservern använder rätt subnet och privat IP-adress.
+Verifierar även i portalen att subnäten ligger i rätt `VNet` och att webbservern använder rätt subnet och privat IP-adress.
 
 <img width="2436" height="304" alt="Resultat 3" src="https://github.com/user-attachments/assets/fe8c8d32-1365-49b8-baee-fdc1cff27386" />
 
@@ -118,7 +118,7 @@ Verifierar även i portalen att subnäten ligger i rätt VNet och att webbserver
 ### Säkrar trafiken
 
 
-Skapar en Network Security Group med namnet nsg-web i resursgruppen rg-novatrix-v34 och regionen Sweden Central
+Skapar en Network Security Group med namnet `nsg-web` i resursgruppen `rg-novatrix-v34` och regionen Sweden Central
 
 ### Kommandon
 
@@ -223,11 +223,11 @@ En extra verifiering genomfördes via Azure Portal för att bekräfta att regeln
 
 ## Koppla NSG till subnätet
 
-nsg-web ska kopplas till snet-web så reglerna faktiskt börjar gälla för resurser i webbsubnätet. Genom att koppla NSG:n till subnätet kan samma trafikregler gälla för flera resurser som placeras där, utan att varje maskin behöver egna regler.
+`nsg-web` ska kopplas till `snet-web` så reglerna faktiskt börjar gälla för resurser i webbsubnätet. Genom att koppla NSG:n till subnätet kan samma trafikregler gälla för flera resurser som placeras där, utan att varje maskin behöver egna regler.
 
 ### Kommando
 
-Kopplar nsg-web till subnätet snet-web i vnet-novatrix.
+Kopplar `nsg-web` till subnätet `snet-web` i `vnet-novatrix`
 
 ```bash
 az network vnet subnet update \
@@ -248,9 +248,9 @@ När NSG:n kopplas till snet-web börjar dess trafikregler gälla för resurser 
 
 ## VM och nätverk
 
-Under Settings → IP config ändrade jag VM:ens NIC så att subnetet gick från snet-swedencentral-4 till snet-web i vnet-novatrix. Detta gör att VM:n ligger i det webbsubnät där nsg-web är konfigurerad.
+Under Settings → IP config ändrade jag VM:ens NIC så att subnetet gick från snet-swedencentral-4 till `snet-web` i `vnet-novatrix`. Detta gör att VM:n ligger i det webbsubnät där `nsg-web` är konfigurerad.
 
-Jag ändrade Network Security Group på VM:ens nätverkskort från den tidigare vm-novatrix-web-nsg till nsg-web. Detta gjordes för att använda den NSG som jag konfigurerat för webbserverns trafik.
+Jag ändrade Network Security Group på VM:ens nätverkskort från den tidigare `vm-novatrix-web-nsg` till `nsg-web`. Detta gjordes för att använda den NSG som jag konfigurerat för webbserverns trafik.
 
 ### Verifiering
 
@@ -270,13 +270,13 @@ När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev res
 
 IP Flow Verify i Network Watcher används för att simulera nätverkstrafik och kontrollera om den tillåts eller blockeras av NSG-reglerna. Resultatet visar även vilken regel som matchar trafiken.
 
-Testet utförs mot VM:ns nätverkskort (NIC) och använder därför VM:ns privata IP-adress.
+Testet utförs mot VM:ns nätverkskort `NIC` och använder därför VM:ns privata IP-adress.
 
 
 ### Kommando
 
 
-Hämtar det nätverkskort (NIC) som används av VM:n. Detta NIC behövs för att kunna genomföra IP Flow Verify-testet.
+Hämtar det nätverkskort `NIC` som används av VM:n. Detta `NIC` behövs för att kunna genomföra IP Flow Verify-testet.
 
 ```bash
 az vm show \
