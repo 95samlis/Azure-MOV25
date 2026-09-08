@@ -120,7 +120,7 @@ Verifierar även i portalen att nätverkskortet `vm-novatrix-web313` som använd
 ### Säkrar trafiken
 
 
-Skapar en Network Security Group med namnet `nsg-web` i resursgruppen `rg-novatrix-v34` i regionen Sweden Central
+Skapar en Network Security Group med namnet `nsg-web` i resursgruppen `rg-novatrix-v34` som placeras i regionen Sweden Central
 
 ### Kommandon
 
@@ -206,6 +206,8 @@ az network nsg rule list \
 ```
 <img width="3162" height="308" alt="Resultat 6" src="https://github.com/user-attachments/assets/7e86e242-659d-4e31-ac76-9a0c8033e148" />
 
+---
+
 En extra verifiering genomfördes via Azure Portal för att bekräfta att regeln fungerar som förväntat.
 
 <img width="2588" height="268" alt="Resultat 7" src="https://github.com/user-attachments/assets/d5c47747-0d12-4b68-a6dc-e092c0c76509" />
@@ -240,7 +242,7 @@ az network vnet subnet update \
 ```
 ### Motivering
 
-När NSG:n kopplas till snet-web börjar dess trafikregler gälla för resurser i subnätet.
+När NSG:n kopplas till `snet-web` börjar dess trafikregler gälla för resurser i subnätet.
 
 ### Resultat
 
@@ -258,11 +260,11 @@ Jag ändrade Network Security Group på VM:ens nätverkskort från den tidigare 
 
 SSH-anslutningen testades från två olika nätverk. Från den tillåtna IP-adressen `81.226.253.57` lyckades anslutningen. 
 
-<img width="1090" height="220" alt="SSH_LogIn" src="https://github.com/user-attachments/assets/bfe4d1f7-26c0-441e-a4ac-d04e6ea54d2e" />
+<img width="980" height="220" alt="SSH_LogIn" src="https://github.com/user-attachments/assets/bfe4d1f7-26c0-441e-a4ac-d04e6ea54d2e" />
 
 När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev resultatet Timed out. Detta bekräftar att SSH-åtkomsten är begränsad till den angivna IP-adressen.
 
-<img width="980" height="330" alt="tttttttttt" src="https://github.com/user-attachments/assets/006c7d84-f773-4f0a-87fd-2abe9227e638" />
+<img width="980" height="220" alt="tttttttttt" src="https://github.com/user-attachments/assets/006c7d84-f773-4f0a-87fd-2abe9227e638" />
 
 
 
@@ -279,7 +281,7 @@ Testet utförs mot VM:ns nätverkskort `NIC` och använder därför VM:ns privat
 ### Kommando
 
 
-Hämtar det nätverkskort `NIC` som är kopplat till VM:n. Nätverkskortet används vid `IP Flow Verify` testet.
+Hämtar det nätverkskort som är kopplat till VM:n. Detta används vid `IP Flow Verify`-testet.
 
 ```bash
 az vm show \
@@ -288,7 +290,7 @@ az vm show \
   --query "networkProfile.networkInterfaces[0].id" \
   -o tsv
 ```
-Resultatet visar vilket nätverkskort `vm-novatrix-web313` som är kopplat till VM:n. Detta `NIC` används vid `IP Flow Verify` testet.
+Resultatet visar vilket nätverkskort `vm-novatrix-web313` som är kopplat till VM:n. Detta `NIC` används vid `IP Flow Verify`-testet.
 
 ### Kommando
 
