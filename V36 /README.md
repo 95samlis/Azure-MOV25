@@ -260,11 +260,11 @@ Jag ändrade Network Security Group på VM:ens nätverkskort från den tidigare 
 
 SSH-anslutningen testades från två olika nätverk. Från den tillåtna IP-adressen `81.226.253.57` lyckades anslutningen. 
 
-<img width="980" height="220" alt="SSH_LogIn" src="https://github.com/user-attachments/assets/bfe4d1f7-26c0-441e-a4ac-d04e6ea54d2e" />
+<img width="980" height="190" alt="SSH_LogIn" src="https://github.com/user-attachments/assets/bfe4d1f7-26c0-441e-a4ac-d04e6ea54d2e" />
 
 När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev resultatet Timed out. Detta bekräftar att SSH-åtkomsten är begränsad till den angivna IP-adressen.
 
-<img width="980" height="220" alt="tttttttttt" src="https://github.com/user-attachments/assets/006c7d84-f773-4f0a-87fd-2abe9227e638" />
+<img width="980" height="240" alt="tttttttttt" src="https://github.com/user-attachments/assets/006c7d84-f773-4f0a-87fd-2abe9227e638" />
 
 
 
