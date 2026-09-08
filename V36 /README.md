@@ -254,7 +254,7 @@ Jag ändrade Network Security Group på VM:ens nätverkskort från den tidigare 
 
 ### Verifiering
 
-SSH-anslutningen testades från två olika nätverk. Från den tillåtna IP-adressen 81.226.253.57 lyckades anslutningen. 
+SSH-anslutningen testades från två olika nätverk. Från den tillåtna IP-adressen `81.226.253.57` lyckades anslutningen. 
 
 <img width="1090" height="220" alt="SSH_LogIn" src="https://github.com/user-attachments/assets/bfe4d1f7-26c0-441e-a4ac-d04e6ea54d2e" />
 
