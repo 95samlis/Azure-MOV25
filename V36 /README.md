@@ -111,7 +111,7 @@ az network vnet subnet list \
 
 Verifierar även i portalen att nätverkskortet `vm-novatrix-web313` som används av webbservern, är anslutet till subnätet `snet-web` och har den privata IP-adressen `172.16.1.4`.
 
-<img width="1130" height="480" alt="uuuhh" src="https://github.com/user-attachments/assets/e699ccb6-4ceb-45ca-b93b-f6aef3d75432" />
+<img width="1130" height="350" alt="uuuhh" src="https://github.com/user-attachments/assets/e699ccb6-4ceb-45ca-b93b-f6aef3d75432" />
 
 
 
