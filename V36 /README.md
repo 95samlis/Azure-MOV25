@@ -277,7 +277,7 @@ Testet utförs mot VM:ns nätverkskort `NIC` och använder därför VM:ns privat
 ### Kommando
 
 
-Hämtar det nätverkskort 'NIC' som är kopplat till VM:n. Nätverkskortet används vid 'IP Flow Verify' testet.
+Hämtar det nätverkskort `NIC` som är kopplat till VM:n. Nätverkskortet används vid `IP Flow Verify` testet.
 
 ```bash
 az vm show \
