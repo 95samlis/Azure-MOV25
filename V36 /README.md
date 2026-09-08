@@ -120,7 +120,7 @@ Verifierar även i portalen att nätverkskortet `vm-novatrix-web313` som använd
 ### Säkrar trafiken
 
 
-Skapar en Network Security Group med namnet `nsg-web` i resursgruppen `rg-novatrix-v34` och regionen Sweden Central
+Skapar en Network Security Group med namnet `nsg-web` i resursgruppen `rg-novatrix-v34` i regionen Sweden Central
 
 ### Kommandon
 
