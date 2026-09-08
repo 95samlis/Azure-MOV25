@@ -347,7 +347,8 @@ az network watcher test-ip-flow \
 
 ### Resultat 
 
-<img width="1014" height="660" alt="Resultat443" src="https://github.com/user-attachments/assets/1b287293-3272-4f71-b426-61d2a2fd0533" />
+<img width="968" height="182" alt="44333" src="https://github.com/user-attachments/assets/16ccec07-48ce-4f97-b163-aead8c436ebf" />
+
 
 Resultat från verifiering via Aktivitetsloggen i Network Watcher – Sweden Central.
 
