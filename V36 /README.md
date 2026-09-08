@@ -192,7 +192,7 @@ az network nsg rule create \
 
 ### Motivering
 
-SSH används för administrativ åtkomst. Genom att endast tillåta min egen IP-adress begränsas åtkomsten och risken för obehöriga anslutningar minskar. Regeln har prio `200` för att skapa utrymme för framtida regler mellan webb- och adminåtkomst.
+SSH används för administrativ åtkomst. Genom att endast tillåta min egen IP-adress begränsas åtkomsten och risken för obehöriga anslutningar minskar. Regeln har prio `200` för att skapa utrymme för framtida regler mellan webb och adminåtkomst.
 
 ### Verifiering
 
@@ -268,7 +268,7 @@ När anslutningen gjordes via mobilnätet med en annan publik IP-adress blev res
 
 ### IP Flow Verify
 
-IP Flow Verify i Network Watcher används för att simulera nätverkstrafik och kontrollera om den tillåts eller blockeras av NSG-reglerna. Resultatet visar även vilken regel som matchar trafiken.
+`IP Flow Verify` i `Network Watcher` används för att simulera nätverkstrafik och kontrollera om den tillåts eller blockeras av NSG-reglerna. Resultatet visar även vilken regel som matchar trafiken.
 
 Testet utförs mot VM:ns nätverkskort `NIC` och använder därför VM:ns privata IP-adress.
 
@@ -276,7 +276,7 @@ Testet utförs mot VM:ns nätverkskort `NIC` och använder därför VM:ns privat
 ### Kommando
 
 
-Hämtar det nätverkskort `NIC` som används av VM:n. Detta `NIC` behövs för att kunna genomföra IP Flow Verify-testet.
+Hämtar det nätverkskort `NIC` som används av VM:n. Detta `NIC` behövs för att kunna genomföra `IP Flow Verify` testet.
 
 ```bash
 az vm show \
@@ -285,11 +285,11 @@ az vm show \
   --query "networkProfile.networkInterfaces[0].id" \
   -o tsv
 ```
-Resultatet visar vilket nätverkskort `vm-novatrix-web313` som är kopplat till VM:n. Detta NIC används vid IP Flow Verify-testet.
+Resultatet visar vilket nätverkskort `vm-novatrix-web313` som är kopplat till VM:n. Detta `NIC` används vid `IP Flow Verify` testet.
 
 ### Kommando
 
-IP Flow Verify-test för SSH.
+`IP Flow Verify` test för SSH.
 
 
 ```bash
@@ -312,7 +312,7 @@ För extra verifiering användes IP Flow Verify i Azure Portal. Resultatet visar
 
 ---
 
-Nästa test är HTTP på port `80`.
+Nästa test är `HTTP` på port `80`.
 
 I denna verifieringen simuleras ett paket som kommer från `8.8.8.8` via Internet till webbserverns port `80` och kontrollerar vilken NSG-regel som träffas.
 
@@ -333,7 +333,7 @@ az network watcher test-ip-flow \
 <img width="882" height="240" alt="Resultat_KOD80" src="https://github.com/user-attachments/assets/4cbe82f1-445c-4c94-920a-12dc4f0bc7ea" />
 
 
-Till sist även port `443`
+Till sist även `HTTPS` port `443`
 
 ```bash
 az network watcher test-ip-flow \
