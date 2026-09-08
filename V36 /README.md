@@ -109,9 +109,10 @@ az network vnet subnet list \
 
 ### Verifiering i Azure Portal
 
-Verifierar även i portalen att subnäten ligger i rätt `VNet` och att webbservern använder rätt subnet och privat IP-adress.
+Verifierar även i portalen att nätverkskortet `vm-novatrix-web313` som används av webbservern, är anslutet till subnätet `snet-web` och har den privata IP-adressen `172.16.1.4`.
 
-<img width="2436" height="304" alt="Resultat 3" src="https://github.com/user-attachments/assets/fe8c8d32-1365-49b8-baee-fdc1cff27386" />
+<img width="2446" height="628" alt="tthbfg" src="https://github.com/user-attachments/assets/cf7a77ae-6512-4506-9cff-b59553db1158" />
+
 
 ---
 
