@@ -10,7 +10,11 @@
 ## Skapa lagring
 
 
-Jag skapade ett Storage Account som ska användas för att lagra ärenden och bifogade filer. Jag valde StorageV2 eftersom det fungerar med Blob Storage. Standard_LRS valdes eftersom det är ett kostnadseffektivt alternativ och samtidigt ger lokal redundans inom samma Azure-region.
+
+
+
+Jag skapade ett Storage Account som ska användas för lagringen i lösningen. Jag valde StorageV2 eftersom det fungerar med Blob Storage. Standard_LRS valdes eftersom det är tillräckligt för den här labben samtidigt som kostnaden hålls nere.
+
 
 ### Kommandon
 
@@ -23,7 +27,12 @@ az storage account create \
   --kind StorageV2
 ```
 
-Skapar den privata Blob-containern arenden i Storage Account stnovatrix34. Den används som lagringsplats för ärenden och filer.
+### Resultat
+
+
+
+Jag skapade den privata Blob-containern arenden i Storage Account stnovatrixv34. Containern används som lagringsplats för ärenden och bifogade filer.
+
 
 ```bash
 az storage container create \
