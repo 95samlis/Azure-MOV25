@@ -1,3 +1,4 @@
+<img width="2478" height="524" alt="lllgffd" src="https://github.com/user-attachments/assets/6e39d9cf-33d4-482b-be3c-657e59b87c5d" />
 # V37 - Storage
 
 **Samuel Lissbro**
@@ -29,9 +30,11 @@ az storage account create \
 
 ### Resultat
 
+<img width="2478" height="524" alt="lllgffd" src="https://github.com/user-attachments/assets/fe10207a-173e-42ab-95dd-f0f9e1cbba64" />
 
 
 Jag skapade den privata Blob-containern arenden i Storage Account stnovatrixv34. Containern används som lagringsplats för ärenden och bifogade filer.
+Testade att ladda upp en fil till Blob Storage för att säkerhetsställa att lagringen fungerade.
 
 
 ```bash
@@ -40,4 +43,7 @@ az storage container create \
   --name arenden \
   --auth-mode login
 ```
+### Resultat
 
+
+<img width="2712" height="506" alt="STRS02" src="https://github.com/user-attachments/assets/11e5fe14-6032-4b93-b5f3-ff52c4c4568a" />
