@@ -9,11 +9,7 @@
 
 ## Skapa lagring
 
-
-
-
-
-Jag skapade ett Storage Account som ska användas för lagringen i lösningen. Jag valde StorageV2 eftersom det fungerar med Blob Storage. Standard_LRS valdes eftersom det är tillräckligt för den här labben samtidigt som kostnaden hålls nere.
+Jag skapade ett `Storage Account` som ska användas för lagringen i lösningen. Jag valde `StorageV2` eftersom det fungerar med `Blob Storage`. `Standard_LRS` valdes eftersom det är tillräckligt för den här labben samtidigt som kostnaden hålls nere.
 
 
 ### Kommandon
@@ -32,8 +28,8 @@ az storage account create \
 <img width="2478" height="524" alt="lllgffd" src="https://github.com/user-attachments/assets/fe10207a-173e-42ab-95dd-f0f9e1cbba64" />
 
 
-Jag skapade den privata Blob-containern arenden i Storage Account stnovatrixv34. Containern används som lagringsplats för ärenden och bifogade filer.
-Testade att ladda upp en fil till Blob Storage för att säkerhetsställa att lagringen fungerade.
+Jag skapade den privata `Blob-containern` arenden i `Storage Account` `stnovatrixv34`. Containern används som lagringsplats för ärenden och bifogade filer.
+Testade att ladda upp en fil till `Blob Storage` för att säkerhetsställa att lagringen fungerade.
 
 
 ```bash
