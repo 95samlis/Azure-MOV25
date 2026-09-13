@@ -9,7 +9,7 @@
 
 ## Skapa lagring
 
-Jag skapade den privata `Blob-containern` arenden i Storage Account stnovatrixv34. För att verifiera lagringen laddade jag upp en testfil. Filen syntes i containern, men kunde inte nås direkt via URL eftersom publik åtkomst är avstängd (PublicAccessNotPermitted). `
+Jag skapade den privata `Blob-containern` `arenden` i `Storage Account` `stnovatrixv34`. För att verifiera lagringen laddade jag upp en testfil. Filen syntes i containern, men kunde inte nås direkt via URL eftersom publik åtkomst är avstängd `(PublicAccessNotPermitted). `
 
 
 ### Kommandon
