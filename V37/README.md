@@ -9,7 +9,7 @@
 
 ## Skapa lagring
 
-Jag skapade ett `Storage Account` som ska användas för lagringen i lösningen. Jag valde `StorageV2` eftersom det fungerar med `Blob Storage`. `Standard_LRS` valdes eftersom det är tillräckligt för den här labben samtidigt som kostnaden hålls nere.
+Jag skapade den privata `Blob-containern` arenden i Storage Account stnovatrixv34. För att verifiera lagringen laddade jag upp en testfil. Filen syntes i containern, men kunde inte nås direkt via URL eftersom publik åtkomst är avstängd (PublicAccessNotPermitted). `
 
 
 ### Kommandon
