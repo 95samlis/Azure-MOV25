@@ -1,4 +1,3 @@
-<img width="2478" height="524" alt="lllgffd" src="https://github.com/user-attachments/assets/6e39d9cf-33d4-482b-be3c-657e59b87c5d" />
 # V37 - Storage
 
 **Samuel Lissbro**
