@@ -31,7 +31,7 @@ az storage account create \
 
 
 Jag skapade den privata `Blob-containern` arenden i `Storage Account` `stnovatrixv34`. Containern används som lagringsplats för ärenden och bifogade filer.
-Testade att ladda upp en fil till `Blob Storage` för att säkerhetsställa att lagringen fungerade.
+Testade även att ladda upp en fil till `Blob Storage` för att säkerhetsställa att lagringen fungerade.
 
 
 ```bash
