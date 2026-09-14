@@ -105,7 +105,8 @@ az role assignment list \
 
 ### Resultat
 
-<img width="894" height="114" alt="VERI01" src="https://github.com/user-attachments/assets/bcb8743a-52fa-443d-8b6d-37214a145f68" />
+<img width="490" height="94" alt="hh" src="https://github.com/user-attachments/assets/bdd210d2-c366-47e6-9c00-de4791d3fede" />
+
 
 <img width="2424" height="124" alt="Skärmbild 2026-09-14 174446" src="https://github.com/user-attachments/assets/ab20b59e-2423-460d-9909-4a78c67841af" />
 
