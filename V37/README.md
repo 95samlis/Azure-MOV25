@@ -33,7 +33,7 @@ az storage account create \
 
 ---
 
-Jag skapade den privata `Blob-containern` `arenden` i `Storage Account` `stnovatrixv34`. Där sparas de ärenden och filer som skickas in via formuläret. För att verifiera lagringen laddade jag upp en testfil. Filen lagrades korrekt i containern men kunde inte nås publikt eftersom anonym åtkomst är avstängd. 
+Jag skapade den privata `Blob-containern` `arenden` i `Storage Account` `stnovatrixv34`. Där sparas de ärenden och filer som skickas in via formuläret. För att verifiera lagringen laddade jag upp en testfil. Filen lagrades korrekt i containern men kunde inte nås publikt eftersom den anonyma åtkomsten är avstängd. 
 
 ### Kommando
 
