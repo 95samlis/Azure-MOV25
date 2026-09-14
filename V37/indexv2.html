@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novatrix AB</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f4f4f4;
+}
+
+header{
+    background:#002050;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+main{
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1,h2{
+    color:#002050;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:10px;
+    font-size:16px;
+}
+
+button{
+    background:#0078d4;
+    color:white;
+    border:none;
+    padding:12px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#005ea6;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Novatrix AB</h1>
+    <p>Ärendehantering</p>
+</header>
+
+<main>
+
+    <h2>Skicka in ett ärende</h2>
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+
+        <label for="name">Namn</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            required>
+
+        <label for="mail">E-post</label>
+        <input
+            type="email"
+            id="mail"
+            name="mail"
+            required>
+
+        <label for="msg">Beskriv ditt ärende</label>
+        <textarea
+            id="msg"
+            name="msg"
+            rows="6"
+            required></textarea>
+
+        <label for="bild">Bifoga bild</label>
+        <input
+            type="file"
+            id="bild"
+            name="bild"
+            accept="image/*">
+
+        <button type="submit">
+            Skicka ärende
+        </button>
+
+    </form>
+
+</main>
+
+<footer>
+    <p>© Novatrix AB</p>
+</footer>
+
+</body>
+</html>
