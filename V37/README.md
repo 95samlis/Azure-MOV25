@@ -23,6 +23,7 @@ az storage account create \
   --sku Standard_LRS \
   --kind StorageV2
 ```
+`Standard_LRS` valdes för lokal redundans med tre kopior av datan inom samma region.
 
 ### Test
 
