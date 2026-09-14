@@ -55,7 +55,7 @@ Jag använde standardinställningen Hot Tier eftersom ärenden och bifogade file
 ## Säkra åtkomsten
 
 
-För att webbapplikationen ska kunna använda Blob Storage behöver den få åtkomst till lagringskontot. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
+För att appen ska kunna använda Blob Storage behöver den få åtkomst till lagringskontot. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
 
 ### Kommando
 
