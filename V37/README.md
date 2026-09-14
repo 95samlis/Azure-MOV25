@@ -89,8 +89,25 @@ az role assignment create \
       --output tsv
 ```
 
+### Verifikation
+
+Verifierade att rollen `Storage Blob Data Reader` tilldelades till identiteten `id-novatrix-app`.
 
 
+### Kommando 
+
+```bash
+az role assignment list \
+  --assignee 1e9073bb-485c-409b-a049-71e5fee3ba36 \
+  --all \
+  --output table
+```
+
+### Resultat
+
+<img width="894" height="114" alt="VERI01" src="https://github.com/user-attachments/assets/bcb8743a-52fa-443d-8b6d-37214a145f68" />
+
+<img width="2424" height="124" alt="Skärmbild 2026-09-14 174446" src="https://github.com/user-attachments/assets/ab20b59e-2423-460d-9909-4a78c67841af" />
 
 
 
