@@ -105,7 +105,7 @@ az role assignment list \
 
 ### Resultat
 
-<img width="1104" height="120" alt="image" src="https://github.com/user-attachments/assets/a816c6a8-1e4f-4781-9338-c5f40dd47f3f" />
+<img width="980" height="90" alt="image" src="https://github.com/user-attachments/assets/a816c6a8-1e4f-4781-9338-c5f40dd47f3f" />
 
 
 
