@@ -42,6 +42,8 @@ az storage container create \
   --name arenden \
   --auth-mode login
 ```
+
+Jag använde standardinställningen Hot Tier. Eftersom lagringen ska användas för aktiva ärenden och bifogade filer behöver innehållet vara lättillgängligt. Archive passar bättre för långtidslagring och Cool för data som används mer sällan. Verifierade även i portalen att `Secure transfer required` var aktiverat samt att den anonyma åtkomsten var avstängd.
 ### Resultat
 
 
