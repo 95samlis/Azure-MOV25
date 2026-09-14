@@ -9,7 +9,7 @@
 
 ## Skapa lagring
 
-Jag skapade ett Storage Account med namnet `stnovatrixv34`. För att verifiera lagringen laddade jag upp en testfil. Filen syntes i lagringen men kunde inte nås direkt via URL eftersom publik åtkomst är avstängd.
+Jag skapade ett Storage Account med namnet `stnovatrixv34` för att lagra inkomna ärenden och bifogade filer från webbapplikationens formulär.
 
 
 
@@ -25,9 +25,7 @@ az storage account create \
 ```
 `Standard_LRS` valdes för lokal redundans med tre kopior av datan inom samma region.
 
-### Test
 
-<img width="1840" height="120" alt="image" src="https://github.com/user-attachments/assets/333c4f75-da39-4e53-8a1b-338dc3aa0327" />
 
 ### Resultat
 
@@ -35,9 +33,7 @@ az storage account create \
 
 ---
 
-
-Jag skapade den privata `Blob-containern` `arenden` i `Storage Account` `stnovatrixv34`. Containern används som lagringsplats för ärenden och bifogade filer.
-Testade även att ladda upp en fil till `Blob Storage` för att säkerhetsställa att lagringen fungerade.
+Jag skapade den privata `Blob-containern` `arenden` i `Storage Account` `stnovatrixv34`. Där sparas de ärenden och filer som skickas in via formuläret. För att verifiera lagringen laddade jag upp en testfil. Filen lagrades korrekt i containern men kunde inte nås publikt eftersom anonym åtkomst är avstängd. 
 
 ### Kommando
 
@@ -47,6 +43,10 @@ az storage container create \
   --name arenden \
   --auth-mode login
 ```
+
+### Test
+
+<img width="1840" height="120" alt="image" src="https://github.com/user-attachments/assets/333c4f75-da39-4e53-8a1b-338dc3aa0327" />
 
 Jag använde standardinställningen Hot Tier eftersom ärenden och bifogade filer förväntas användas regelbundet och därför behöver vara lättillgängliga. Verifierade även i portalen att `Secure transfer required` var aktiverat samt att den anonyma åtkomsten var avstängd.
 
