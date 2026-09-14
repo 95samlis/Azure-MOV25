@@ -52,8 +52,8 @@ Jag använde standardinställningen Hot Tier eftersom ärenden och bifogade file
 
 
 ---
+## Säkra åtkomsten
 
-## Koppla formuläret till lagringen
 
 För att webbapplikationen ska kunna använda Blob Storage behöver den få åtkomst till lagringskontot. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
 
@@ -113,5 +113,5 @@ az role assignment create \
 
 
 ---
+## Koppla formuläret till lagringen
 
-## Säkra åtkomsten
