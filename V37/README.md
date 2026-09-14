@@ -112,25 +112,12 @@ az role assignment list \
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## Koppla formuläret till lagringen
+
+För att kunna ta emot ärenden från webbplatsen skapades en Flask-backend som tar emot formulärdata från hemsidan.
+När användaren skickar in ett ärende sparas informationen i Blob-containern `arenden`. Om en bild bifogas sparas även den i samma container.
+
+För att webbservern skulle kunna lagra ärenden i Blob Storage tilldelades rollen `Storage Blob Data Contributor` till `vm-novatrix-web`. Behörigheten begränsades till containern `arenden` för att undvika onödigt bred åtkomst.
+
 
