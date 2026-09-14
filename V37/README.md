@@ -55,8 +55,39 @@ Jag använde standardinställningen Hot Tier eftersom ärenden och bifogade file
 
 ## Koppla formuläret till lagringen
 
+För att webbapplikationen ska kunna använda Blob Storage behöver den få åtkomst till lagringskontot. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
+
+### Kommando
+
+För att ge applikationen åtkomst till Blob Storage utan att använda lagringsnycklar används Azure RBAC med den hanterade identiteten `id-novatrix-app`.
+
+Först hämtas identitetens `Principal ID`, vilket behövs när en roll ska tilldelas.
+
+```bash
+az identity show \
+  --resource-group rg-novatrix-v34 \
+  --name id-novatrix-app \
+  --query principalId \
+  --output tsv
+```
 
 
+
+Därefter tilldelas rollen `Storage Blob Data Reader` till identiteten.
+
+
+### Kommando
+
+```bash
+az role assignment create \
+  --assignee 1e9073bb-485c-409b-a049-71e5fee3ba36 \
+  --role "Storage Blob Data Reader" \
+  --scope $(az storage account show \
+      --resource-group rg-novatrix-v34 \
+      --name stnovatrixv34 \
+      --query id \
+      --output tsv)
+```
 
 
 
