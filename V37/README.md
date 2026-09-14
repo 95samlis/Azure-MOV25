@@ -9,9 +9,7 @@
 
 ## Skapa lagring
 
-Jag skapade ett Storage Account med namnet `stnovatrixv34` och därefter den privata Blob-containern `arenden`. Containern används som lagringsplats för ärenden och bifogade filer.
-
-För att verifiera lagringen laddade jag upp en testfil. Filen syntes i containern, men kunde inte nås direkt via URL eftersom publik åtkomst är avstängd:
+Jag skapade ett Storage Account med namnet `stnovatrixv34`. För att verifiera lagringen laddade jag upp en testfil. Filen syntes i lagringen men kunde inte nås direkt via URL eftersom publik åtkomst är avstängd:
 
 <img width="1840" height="120" alt="image" src="https://github.com/user-attachments/assets/333c4f75-da39-4e53-8a1b-338dc3aa0327" />
 
