@@ -55,7 +55,7 @@ Jag använde standardinställningen Hot Tier eftersom ärenden och bifogade file
 ## Säkra åtkomsten
 
 
-För att appen ska kunna använda Blob Storage behöver den få åtkomst till lagringskontot. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
+För att appen ska kunna använda Blob Storage behöver den få åtkomst till `containern` arenden. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
 
 ### Kommando
 
@@ -72,26 +72,22 @@ az identity show \
 ```
 
 
-
-Därefter tilldelas rollen `Storage Blob Data Contributor` till identiteten.
-
-
 ### Kommando
+
+Rollen `Storage Blob Data Contributor` tilldelades den hanterade identiteten `id-novatrix-app` så att webbapplikationen kan lagra inkomna ärenden och bifogade filer i containern `arenden`.
+Behörigheten begränsas till containern `arenden` enligt RBAC.
+
 
 ```bash
 az role assignment create \
   --assignee 1e9073bb-485c-409b-a049-71e5fee3ba36 \
   --role "Storage Blob Data Contributor" \
-  --scope $(az storage account show \
-      --resource-group rg-novatrix-v34 \
-      --name stnovatrixv34 \
-      --query id \
-      --output tsv)
+  --scope "/subscriptions/6b33d5e0-e2c3-49f5-b867-93aa80cdffcd/resourceGroups/rg-novatrix-v34/providers/Microsoft.Storage/storageAccounts/stnovatrixv34/blobServices/default/containers/arenden"
 ```
 
 ### Verifikation
 
-Verifierade att rollen `Storage Blob Data Contributor` tilldelades till identiteten `id-novatrix-app`.
+Verifierade att rollen `Storage Blob Data Contributor` tilldelades till identiteten `id-novatrix-app` och att behörigheten begränsades till containern `arenden`.
 
 
 ### Kommando 
