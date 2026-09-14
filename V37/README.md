@@ -111,7 +111,8 @@ az role assignment list \
 
 
 
-<img width="2400" height="144" alt="image" src="https://github.com/user-attachments/assets/a721555c-16e5-4593-a61b-a8e8c49e447c" />
+<img width="1908" height="134" alt="image" src="https://github.com/user-attachments/assets/5f398970-8391-436f-b3af-21d81aad74d0" />
+
 
 
 
