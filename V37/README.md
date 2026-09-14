@@ -73,7 +73,7 @@ az identity show \
 
 
 
-Därefter tilldelas rollen `Storage Blob Data Reader` till identiteten.
+Därefter tilldelas rollen `Storage Blob Data Contributor` till identiteten.
 
 
 ### Kommando
@@ -91,7 +91,7 @@ az role assignment create \
 
 ### Verifikation
 
-Verifierade att rollen `Storage Blob Data Reader` tilldelades till identiteten `id-novatrix-app`.
+Verifierade att rollen `Storage Blob Data Contributor` tilldelades till identiteten `id-novatrix-app`.
 
 
 ### Kommando 
@@ -105,7 +105,8 @@ az role assignment list \
 
 ### Resultat
 
-<img width="704" height="80" alt="image" src="https://github.com/user-attachments/assets/a71904ca-8f8e-4e33-ab8c-ea5744fd4ca9" />
+<img width="1104" height="120" alt="image" src="https://github.com/user-attachments/assets/a816c6a8-1e4f-4781-9338-c5f40dd47f3f" />
+
 
 
 
