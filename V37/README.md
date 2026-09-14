@@ -23,6 +23,7 @@ az storage account create \
   --kind StorageV2
 ```
 
+
 ### Resultat
 
 <img width="2478" height="524" alt="lllgffd" src="https://github.com/user-attachments/assets/fe10207a-173e-42ab-95dd-f0f9e1cbba64" />
@@ -45,3 +46,38 @@ az storage container create \
 
 
 <img width="2712" height="506" alt="STRS02" src="https://github.com/user-attachments/assets/11e5fe14-6032-4b93-b5f3-ff52c4c4568a" />
+
+
+---
+
+## Koppla formuläret till lagringen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+## Säkra åtkomsten
