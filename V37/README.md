@@ -81,12 +81,12 @@ Därefter tilldelas rollen `Storage Blob Data Reader` till identiteten.
 ```bash
 az role assignment create \
   --assignee 1e9073bb-485c-409b-a049-71e5fee3ba36 \
-  --role "Storage Blob Data Reader" \
-  --scope $az storage account show \
+  --role "Storage Blob Data Contributor" \
+  --scope $(az storage account show \
       --resource-group rg-novatrix-v34 \
       --name stnovatrixv34 \
       --query id \
-      --output tsv
+      --output tsv)
 ```
 
 ### Verifikation
