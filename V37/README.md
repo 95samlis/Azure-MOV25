@@ -111,7 +111,8 @@ az role assignment list \
 
 
 
-<img width="2424" height="124" alt="Skärmbild 2026-09-14 174446" src="https://github.com/user-attachments/assets/ab20b59e-2423-460d-9909-4a78c67841af" />
+<img width="2400" height="144" alt="image" src="https://github.com/user-attachments/assets/a721555c-16e5-4593-a61b-a8e8c49e447c" />
+
 
 
 
