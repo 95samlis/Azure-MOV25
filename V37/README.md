@@ -125,4 +125,16 @@ När användaren skickar in ett ärende sparas informationen i Blob-containern `
 
 För att webbservern skulle kunna lagra ärenden i Blob Storage tilldelades rollen `Storage Blob Data Contributor` till `vm-novatrix-web`. Behörigheten begränsades till containern `arenden` för att undvika onödigt bred åtkomst.
 
+## Resultat
+
+Testade formuläret genom att skicka ett ärende med bilaga. Både ärendedata (arende.json) och den bifogade bilden sparades korrekt i Blob Storage.
+
+<img width="1616" height="1690" alt="Formular_Resultat01" src="https://github.com/user-attachments/assets/8f99cb37-c5d4-4067-b5a5-32c781802f59" />
+
+<img width="1610" height="382" alt="Formular0022" src="https://github.com/user-attachments/assets/6850c357-1abf-4b6c-846b-e09158a7d277" />
+
+
+<img width="2304" height="392" alt="login ärende" src="https://github.com/user-attachments/assets/3a21276a-fe86-4c1a-97ab-a60f863ee168" />
+
+<img width="1460" height="162" alt="Skärmbild 2026-09-15 203205" src="https://github.com/user-attachments/assets/f78d6eaf-6224-41a6-9c1b-cb3f956a5669" />
 
