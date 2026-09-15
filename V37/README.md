@@ -60,13 +60,13 @@ Jag använde standardinställningen Hot Tier eftersom ärenden och bifogade file
 ## Säkra åtkomsten
 
 
-För att appen ska kunna använda Blob Storage behöver den få åtkomst till `containern` `arenden`. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
+För att appen ska kunna använda Blob Storage behöver den få åtkomst till containern `arenden`. Istället för att använda lagringsnycklar används den hanterade identiteten `id-novatrix-app` tillsammans med Azure RBAC.
 
 ### Kommando
 
 För att ge applikationen åtkomst till Blob Storage utan att använda lagringsnycklar används Azure RBAC med den hanterade identiteten `id-novatrix-app`.
 
-Först hämtas identitetens `Principal ID`, vilket behövs när en roll ska tilldelas.
+Först hämtas identitetens `Principal ID` vilket behövs när en roll ska tilldelas.
 
 ```bash
 az identity show \
@@ -80,7 +80,7 @@ az identity show \
 ### Kommando
 
 Rollen `Storage Blob Data Contributor` tilldelades den hanterade identiteten `id-novatrix-app` så att webbapplikationen kan lagra inkomna ärenden och bifogade filer i containern `arenden`.
-Behörigheten begränsas till containern `arenden` enligt RBAC.
+Behörigheten begränades till containern `arenden` enligt RBAC.
 
 
 ```bash
@@ -129,7 +129,7 @@ Flask-applikationen använder VM:ns hanterade identitet tillsammans med `Default
 
 ## Resultat
 
-Testade formuläret genom att skicka ett ärende med bilaga. Både ärendedata (arende.json) och den bifogade bilden sparades i Blob Storage.
+Både ärendedata (arende.json) och den bifogade bilden sparades i Blob Storage.
 
 <img width="504" height="536" alt="Skärmbild 2026-09-15 203621" src="https://github.com/user-attachments/assets/d48adf82-e505-438d-8281-b6bd3944538d" />
 
