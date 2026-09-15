@@ -4,7 +4,7 @@
 
 ## Syfte
  
-
+Syftet med uppgiften är att skapa en säker lagringslösning för webbapplikationens ärenden och bifogade filer med hjälp av Azure Blob Storage och Azure RBAC.
 
 
 ## Skapa lagring
