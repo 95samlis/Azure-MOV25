@@ -120,14 +120,16 @@ az role assignment list \
 ---
 ## Koppla formuläret till lagringen
 
-För att kunna ta emot ärenden från webbplatsen skapades en Flask-backend som tar emot formulärdata från hemsidan.
-När användaren skickar in ett ärende sparas informationen i Blob-containern `arenden`. Om en bild bifogas sparas även den i samma container.
-
 För att webbservern skulle kunna lagra ärenden i Blob Storage tilldelades rollen `Storage Blob Data Contributor` till `vm-novatrix-web`. Behörigheten begränsades till containern `arenden` för att undvika onödigt bred åtkomst.
+
+<img width="1240" height="430" alt="image" src="https://github.com/user-attachments/assets/97030e36-dccf-48f8-b1c4-e91aa8514f64" />
+
+
+Flask-applikationen använder VM:ns hanterade identitet tillsammans med `DefaultAzureCredential()` för att autentisera mot Blob Storage utan lagringsnycklar.
 
 ## Resultat
 
-Testade formuläret genom att skicka ett ärende med bilaga. Både ärendedata (arende.json) och den bifogade bilden sparades korrekt i Blob Storage.
+Testade formuläret genom att skicka ett ärende med bilaga. Både ärendedata (arende.json) och den bifogade bilden sparades i Blob Storage.
 
 <img width="504" height="536" alt="Skärmbild 2026-09-15 203621" src="https://github.com/user-attachments/assets/d48adf82-e505-438d-8281-b6bd3944538d" />
 
