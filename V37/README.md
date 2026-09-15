@@ -129,7 +129,8 @@ För att webbservern skulle kunna lagra ärenden i Blob Storage tilldelades roll
 
 Testade formuläret genom att skicka ett ärende med bilaga. Både ärendedata (arende.json) och den bifogade bilden sparades korrekt i Blob Storage.
 
-<img width="1616" height="1690" alt="Formular_Resultat01" src="https://github.com/user-attachments/assets/8f99cb37-c5d4-4067-b5a5-32c781802f59" />
+<img width="504" height="536" alt="Skärmbild 2026-09-15 203621" src="https://github.com/user-attachments/assets/d48adf82-e505-438d-8281-b6bd3944538d" />
+
 
 <img width="1610" height="382" alt="Formular0022" src="https://github.com/user-attachments/assets/6850c357-1abf-4b6c-846b-e09158a7d277" />
 
