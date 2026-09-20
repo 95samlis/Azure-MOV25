@@ -7,6 +7,12 @@
     },
     "location": {
       "value": "swedencentral"
+    },
+    "vnetName": {
+      "value": "vnet-novatrix"
+    },
+    "subnetName": {
+      "value": "subnet-web"
     }
   }
 }
