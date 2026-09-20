@@ -4,23 +4,28 @@
   "parameters": {
     "storageName": {
       "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "swedencentral"
     }
   },
-  "resources":[
+  "resources": [
     {
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2023-01-01",
       "name": "[parameters('storageName')]",
-      "location": "swedencentral",
+      "location": "[parameters('location')]",
       "sku": {
         "name": "Standard_LRS"
       },
       "kind": "StorageV2"
     }
   ],
-"outputs": {
-  "storageId": {
-    "type": "string",
-    "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]"
+  "outputs": {
+    "storageId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]"
+    }
   }
 }
