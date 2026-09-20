@@ -18,5 +18,9 @@
       "kind": "StorageV2"
     }
   ],
-  "outputs": {}
+"outputs": {
+  "storageId": {
+    "type": "string",
+    "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]"
+  }
 }
