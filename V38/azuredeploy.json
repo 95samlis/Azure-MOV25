@@ -6,6 +6,17 @@
       "type": "string"
     }
   },
-  "resources": [],
+  "resources":[
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-01-01",
+      "name": "[parameters('storageName')]",
+      "location": "swedencentral",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2"
+    }
+  ],
   "outputs": {}
 }
