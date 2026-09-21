@@ -14,7 +14,10 @@
     },
     "subnetName": {
       "type": "string"
-    }
+    },
+    "nsgName": {
+      "type": "string"
+  }
   },
   "resources": [
     {
