@@ -13,6 +13,8 @@
     },
     "subnetName": {
       "value": "subnet-web"
-    }
+    },
+    "nsgName": }
+      "value": "nsg-novatrix"
   }
 }
