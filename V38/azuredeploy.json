@@ -43,7 +43,28 @@
       "sku": {
         "name": "Standard_LRS"
       },
-      "kind": "StorageV2"
+      "kind": "StorageV2",
+      "properties": {
+        "allowBlobPublicAccess": false,
+        "supportsHttpsTrafficOnly": true
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2023-01-01",
+      "name": "[concat(parameters('storageName'), '/default/arenden')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]"
+      ],
+      "properties": {
+        "publicAccess": "None"
+      }
+    },
+    {
+      "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+      "apiVersion": "2023-01-31",
+      "name": "id-novatrix-app",
+      "location": "[parameters('location')]"
     },
     {
       "type": "Microsoft.Network/virtualNetworks",
@@ -149,8 +170,15 @@
       "apiVersion": "2023-09-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('location')]",
+      "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+          "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-novatrix-app')]": {}
+        }
+      },
       "dependsOn": [
-        "[resourceId('Microsoft.Network/networkInterfaces', parameters('nicName'))]"
+        "[resourceId('Microsoft.Network/networkInterfaces', parameters('nicName'))]",
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-novatrix-app')]"
       ],
       "properties": {
         "hardwareProfile": {
@@ -192,6 +220,21 @@
             }
           ]
         }
+      }
+    },
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2022-04-01",
+      "name": "[guid(resourceId('Microsoft.Storage/storageAccounts/blobServices/containers', parameters('storageName'), 'default', 'arenden'), 'blob-contributor')]",
+      "scope": "[resourceId('Microsoft.Storage/storageAccounts/blobServices/containers', parameters('storageName'), 'default', 'arenden')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-novatrix-app')]",
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices/containers', parameters('storageName'), 'default', 'arenden')]"
+      ],
+      "properties": {
+        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
+        "principalId": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-novatrix-app'), '2023-01-31').principalId]",
+        "principalType": "ServicePrincipal"
       }
     }
   ],
