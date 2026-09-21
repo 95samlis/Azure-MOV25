@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-  "contentVersion": "1.0.0.2",
+  "contentVersion": "1.0.0.3",
   "parameters": {
     "storageName": {
       "value": "stnovatrixv388"
@@ -22,6 +22,9 @@
     },
     "adminUsername": {
       "value": "azureuser"
+    },
+    "publicIpName": {
+      "value": "pip-novatrix-web"
     }
   }
 }
