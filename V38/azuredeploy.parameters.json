@@ -18,7 +18,7 @@
       "value": "nsg-novatrix-v38"
     },
     "vmName": {
-      "value": "vm-novatrix-web"
+      "value": "vm-novatrix-web-v38"
     },
     "adminUsername": {
       "value": "azureuser"
