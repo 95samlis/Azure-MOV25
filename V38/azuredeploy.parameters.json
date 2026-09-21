@@ -9,13 +9,13 @@
       "value": "swedencentral"
     },
     "vnetName": {
-      "value": "vnet-novatrix"
+      "value": "vnet-novatrix-v38"
     },
     "subnetName": {
-      "value": "subnet-web"
+      "value": "subnet-web-v38"
     },
     "nsgName": {
-      "value": "nsg-novatrix"
+      "value": "nsg-novatrix-v38"
     },
     "vmName": {
       "value": "vm-novatrix-web"
@@ -24,10 +24,10 @@
       "value": "azureuser"
     },
     "publicIpName": {
-      "value": "pip-novatrix-web"
+      "value": "pip-novatrix-web-v38"
     },
     "nicName": {
-      "value": "nic-novatrix-web"
+      "value": "nic-novatrix-web-v38"
     },
     "sshPublicKey": {
       "value": "<SSH_PUBLIC_KEY>"
