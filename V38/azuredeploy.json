@@ -17,7 +17,7 @@
     },
     "nsgName": {
       "type": "string"
-  }
+    }
   },
   "resources": [
     {
@@ -50,6 +50,12 @@
           }
         ]
       }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2023-09-01",
+      "name": "[parameters('nsgName')]",
+      "location": "[parameters('location')]"
     }
   ],
   "outputs": {
