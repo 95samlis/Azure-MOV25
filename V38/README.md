@@ -186,7 +186,7 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 
 ## Verifiering av Virtual Network och subnät
 
-<img width="1000" height="100" alt="Virtual Network och subnät" src="https://github.com/user-attachments/assets/88055aa7-be8c-4f28-871c-b2c68105ae50" />
+<img width="300" height="50" alt="Virtual Network och subnät" src="https://github.com/user-attachments/assets/88055aa7-be8c-4f28-871c-b2c68105ae50" />
 
 ## Verifiering av rolltilldelning
 
