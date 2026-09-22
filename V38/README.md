@@ -114,7 +114,7 @@ Managed Identity tilldelas rollen **Storage Blob Data Contributor** på Blob-con
 
 ### Output
 
-Templaten returnerar även resurs-ID:t för Storage Account genom ett output-värde. Detta kan användas av andra templates eller automatiserade deployments.
+Output-värdet `storageId` returnerar resurs-ID:t för Storage Account så att det enkelt kan användas av andra templates eller automatiserade deploymentsteg.
 
 ```json
 {
