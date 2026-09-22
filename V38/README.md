@@ -161,6 +161,21 @@ az deployment group create `
 
 Deploymenten skapade samtliga resurser som definierades i templaten, bland annat Virtual Machine, Storage Account, Virtual Network, Managed Identity och Blob Container.
 
-### Verifiering
+### Verifiering av resurser
 
-För att verifiera deploymenten kontrollerades att webbservern var nåbar via den publika IP-adressen och att webbformuläret kunde öppnas i en webbläsare.
+Deploymenten skapade samtliga resurser som definierades i templaten, bland annat Virtual Machine, Storage Account, Network Security Group, Public IP, Managed Identity och Network Interface.
+
+<img width="1092" height="362" alt="Veri0tttttt" src="https://github.com/user-attachments/assets/ccdb375a-1e8a-4afd-9f4a-fca4abdf4bd6" />
+
+<img width="1684" height="362" alt="534534534" src="https://github.com/user-attachments/assets/9bc0d7e7-d338-4792-9930-a9eb9e69b787" />
+
+---
+
+### Verifiering av webplats
+
+Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adressen och att formuläret kunde öppnas i en webbläsare.
+
+<img width="1830" height="905" alt="Skärmbild 2026-09-22 235144" src="https://github.com/user-attachments/assets/09f31b9d-9479-4c34-b41e-bbcf26793f3f" />
+
+
+
