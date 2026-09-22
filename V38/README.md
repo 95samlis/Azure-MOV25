@@ -175,7 +175,7 @@ Deploymenten skapade samtliga resurser som definierades i templaten, bland annat
 
 Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adressen och att formuläret kunde öppnas i en webbläsare.
 
-<img width="1830" height="905" alt="Skärmbild 2026-09-22 235144" src="https://github.com/user-attachments/assets/09f31b9d-9479-4c34-b41e-bbcf26793f3f" />
+<img width="1300" height="700" alt="Skärmbild 2026-09-22 235144" src="https://github.com/user-attachments/assets/09f31b9d-9479-4c34-b41e-bbcf26793f3f" />
 
 
 
