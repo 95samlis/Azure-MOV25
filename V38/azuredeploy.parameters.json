@@ -12,7 +12,7 @@
       "value": "vnet-novatrix-v38"
     },
     "subnetName": {
-      "value": "subnet-web-v38"
+      "value": "snet-web"
     },
     "nsgName": {
       "value": "nsg-novatrix-v38"
