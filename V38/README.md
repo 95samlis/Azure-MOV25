@@ -193,7 +193,7 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 
 <img width="2540" height="124" alt="fdgdgdzggfd" src="https://github.com/user-attachments/assets/fe43689c-5b14-409a-9e6c-b91ad5c966ea" />
 
-## Verifiering av NSG och Portar
+## Verifiering av NSG och portar
 
 <img width="2200" height="210" alt="verifiering brandvägg" src="https://github.com/user-attachments/assets/4f81d5c9-443f-437e-bf20-94ec6f1afe89" />
 
