@@ -214,3 +214,32 @@ Bilden nedan visar ett urval av commits som gjorts under utvecklingen av lösnin
 
 
 Versionshantering gör det enklare att följa ändringar, gå tillbaka till tidigare versioner och se hur infrastrukturen har utvecklats. Det underlättar också när flera personer arbetar med samma projekt.
+
+---
+
+## Återskapa miljön
+
+Miljön kan återskapas genom att klona repot, logga in i Azure och köra ARM-deploymenten.
+
+### 1. Klona repot
+
+```bash
+git clone https://github.com/95samlis/Azure-MOV25.git
+cd Azure-MOV25
+```
+
+### 2. Logga in i Azure
+
+```powershell
+az login
+```
+
+### 3. Deploya ARM-templaten
+
+```powershell
+az deployment group create `
+  --resource-group rg-novatrix `
+  --template-file V38/azuredeploy.json `
+  --parameters "@V38/azuredeploy.parameters.json"
+```
+Efter deployment installeras Nginx automatiskt via VM Extension. Extensionen hämtar även webbplatsens filer från GitHub och konfigurerar webbservern, vilket gör att miljön blir redo att användas direkt efter att ARM-templaten körts.
