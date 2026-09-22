@@ -165,9 +165,9 @@ Deploymenten skapade samtliga resurser som definierades i templaten, bland annat
 
 Deploymenten skapade samtliga resurser som definierades i templaten, bland annat Virtual Machine, Storage Account, Network Security Group, Public IP, Managed Identity och Network Interface.
 
-<img width="1092" height="362" alt="Veri0tttttt" src="https://github.com/user-attachments/assets/ccdb375a-1e8a-4afd-9f4a-fca4abdf4bd6" />
+<img width="600" height="200" alt="Veri0tttttt" src="https://github.com/user-attachments/assets/ccdb375a-1e8a-4afd-9f4a-fca4abdf4bd6" />
 
-<img width="1684" height="362" alt="534534534" src="https://github.com/user-attachments/assets/9bc0d7e7-d338-4792-9930-a9eb9e69b787" />
+<img width="1100" height="222" alt="534534534" src="https://github.com/user-attachments/assets/9bc0d7e7-d338-4792-9930-a9eb9e69b787" />
 
 ---
 
