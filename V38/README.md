@@ -1,4 +1,4 @@
-# V37 - Infrastructure as Code med ARM Templates
+# V38 - Infrastructure as Code med ARM Templates
 
 
 **Samuel Lissbro** 
@@ -29,3 +29,100 @@ Följande resurser skapas:
 - VM Extension för installation av Nginx
 - Role Assignment (Storage Blob Data Contributor)
 
+---
+
+### Storage Account
+
+Ett Storage Account används för att lagra de ärenden som skickas in via webbformuläret.
+
+```json
+{
+  "type": "Microsoft.Storage/storageAccounts",
+  "apiVersion": "2023-01-01",
+  "name": "[parameters('storageName')]"
+}
+```
+
+### Blob Container
+
+I Storage Account skapas en container med namnet `arenden` där Flask-applikationen sparar inkomna ärenden.
+
+```json
+{
+  "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+  "name": "[concat(parameters('storageName'), '/default/arenden')]"
+}
+```
+
+### User Assigned Managed Identity
+
+En User Assigned Managed Identity används för att ge applikationen åtkomst till Blob Storage utan att lagra några lösenord eller nycklar.
+
+```json
+{
+  "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+  "name": "id-novatrix-app"
+}
+```
+
+### Virtual Network och Subnät
+
+Ett virtuellt nätverk skapades för att organisera infrastrukturen. Två subnät definierades:
+
+- `snet-web` för webbservern
+- `snet-db` reserverat för databastjänster
+
+```json
+{
+  "type": "Microsoft.Network/virtualNetworks",
+  "name": "[parameters('vnetName')]"
+}
+```
+
+### Network Security Group
+
+En Network Security Group (NSG) skapades för att styra vilken trafik som får nå den virtuella maskinen. Regler skapades för att tillåta HTTP (80), HTTPS (443) och SSH (22).
+
+### Public IP och NIC
+
+VM:n behöver en publik IP-adress för att kunna nås via webbläsare och SSH. Ett nätverkskort kopplar VM:n till nätverket.
+
+### Virtual Machine
+
+En Ubuntu Linux VM provisioneras för att köra webbservern och Flask-applikationen.
+
+```json
+{
+  "type": "Microsoft.Compute/virtualMachines",
+  "name": "[parameters('vmName')]"
+}
+```
+
+### VM Extension
+
+En Custom Script Extension används för att automatisera den initiala konfigurationen av servern. Extensionen installerar Nginx och Git, klonar GitHub-repot `Azure-MOV25`, kopierar webbplatsfilen `indexv2.html` från V37 och startar webbservern efter deployment.
+
+### Role Assignment
+
+Managed Identity tilldelas rollen **Storage Blob Data Contributor** på Blob-containern. Detta gör att Flask-applikationen kan läsa och skriva ärenden i Blob Storage utan att använda lagringsnycklar eller lösenord.
+
+```json
+{
+  "type": "Microsoft.Authorization/roleAssignments"
+}
+```
+
+### Output
+
+Templaten returnerar även resurs-ID:t för Storage Account genom ett output-värde. Detta kan användas av andra templates eller automatiserade deployments.
+
+```json
+{
+  "outputs": {
+    "storageId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]"
+    }
+  }
+}
+```
