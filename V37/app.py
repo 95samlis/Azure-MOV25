@@ -17,7 +17,7 @@ from azure.storage.blob import BlobServiceClient, ContentSettings
 
 # --- Settings students may change -------------------------------------------
 # Your globally unique storage account name (no https, no .blob..., just name).
-STORAGE_ACCOUNT = "stnovatrixXXXX"
+STORAGE_ACCOUNT = "stnovatrixv388"
 # Container that receives the tickets (created by the provisioning script).
 CONTAINER = "arenden"
 # ----------------------------------------------------------------------------
