@@ -147,3 +147,20 @@ Parametervärdena lagras i filen `azuredeploy.parameters.json`, vilket gör att 
 ```
 
 ---
+
+## Delmoment 3 – Deploya från kod
+
+När ARM-templaten var färdig deployerades miljön med Azure CLI.
+
+```powershell
+az deployment group create `
+  --resource-group rg-novatrix `
+  --template-file V38/azuredeploy.json `
+  --parameters "@V38/azuredeploy.parameters.json"
+```
+
+Deploymenten skapade samtliga resurser som definierades i templaten, bland annat Virtual Machine, Storage Account, Virtual Network, Managed Identity och Blob Container.
+
+### Verifiering
+
+För att verifiera deploymenten kontrollerades att webbservern var nåbar via den publika IP-adressen och att webbformuläret kunde öppnas i en webbläsare.
