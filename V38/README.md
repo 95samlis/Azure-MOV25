@@ -171,7 +171,7 @@ Deploymenten skapade samtliga resurser som definierades i templaten, bland annat
 
 ---
 
-## Verifiering av webplats
+## Verifiering av webbplats
 
 Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adressen och att formuläret kunde öppnas i en webbläsare.
 
