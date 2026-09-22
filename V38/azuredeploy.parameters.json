@@ -30,7 +30,7 @@
       "value": "nic-novatrix-web-v38"
     },
     "sshPublicKey": {
-      "value": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAzMHMUR7nnqI2dOTaVzy8Yn+tf3Z9AL0h1WrwMUQwCP samuel.lissbro@outlook.com"
+      "value": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANmd5mESUXjQBXbdh9ut3YUsGRg4G5ea9WqVMN6QWdD samuel.lissbro@outlook.com"
     }
   }
 }
