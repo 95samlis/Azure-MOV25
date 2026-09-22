@@ -210,7 +210,7 @@ Versionshantering användes under utvecklingen av ARM-templaten. Genom Git och G
 
 Bilden nedan visar ett urval av commits som gjorts under utvecklingen av lösningen, bland annat tillägg av Managed Identity, Blob Container, RBAC-behörigheter och VM Extension.
 
-<img width="1200" height="200" alt="Skärmbild 2026-09-23 003318" src="https://github.com/user-attachments/assets/0737b324-eddb-47d1-b931-5f297846deb0" />
+<img width="1200" height="270" alt="Skärmbild 2026-09-23 003318" src="https://github.com/user-attachments/assets/0737b324-eddb-47d1-b931-5f297846deb0" />
 
 
 Versionshantering gör det enklare att följa ändringar, gå tillbaka till tidigare versioner och se hur infrastrukturen har utvecklats. Det underlättar också när flera personer arbetar med samma projekt.
