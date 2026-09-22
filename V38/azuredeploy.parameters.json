@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-  "contentVersion": "1.0.0.5",
+  "contentVersion": "1.0.0.6",
   "parameters": {
     "storageName": {
       "value": "stnovatrixv388"
@@ -30,7 +30,7 @@
       "value": "nic-novatrix-web-v38"
     },
     "sshPublicKey": {
-      "value": "<SSH_PUBLIC_KEY>"
+      "value": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAzMHMUR7nnqI2dOTaVzy8Yn+tf3Z9AL0h1WrwMUQwCP samuel.lissbro@outlook.com"
     }
   }
 }
