@@ -178,7 +178,8 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 <img width="750" height="450" alt="Skärmbild 2026-09-22 235144" src="https://github.com/user-attachments/assets/09f31b9d-9479-4c34-b41e-bbcf26793f3f" />
 
 
-<img width="1748" height="124" alt="ggg66666" src="https://github.com/user-attachments/assets/fafa485b-08ed-4a15-80e0-d00987b570e6" />
+<img width="1596" height="514" alt="ewefweewf" src="https://github.com/user-attachments/assets/30169145-9886-43dd-9760-8f2b8da440cc" />
+
 
 ## Verifiering av Blob Container
 
