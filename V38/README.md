@@ -171,7 +171,7 @@ Deploymenten skapade samtliga resurser som definierades i templaten, bland annat
 
 ---
 
-### Verifiering av webplats
+## Verifiering av webplats
 
 Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adressen och att formuläret kunde öppnas i en webbläsare.
 
@@ -180,17 +180,17 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 
 <img width="1748" height="124" alt="ggg66666" src="https://github.com/user-attachments/assets/fafa485b-08ed-4a15-80e0-d00987b570e6" />
 
-#### Verifiering av Blob Container
+## Verifiering av Blob Container
 
 <img width="1150" height="260" alt="adzfsffsfsf" src="https://github.com/user-attachments/assets/7de7e0b5-2965-4672-bcfe-d30f30d50371" />
 
-#### Verifiering av Virtual Network och subnät
+## Verifiering av Virtual Network och subnät
 
 <img width="1896" height="156" alt="Virtual Network och subnät" src="https://github.com/user-attachments/assets/88055aa7-be8c-4f28-871c-b2c68105ae50" />
 
-#### Verifiering av rolltilldelning
+## Verifiering av rolltilldelning
 
-<img width="2540" height="124" alt="fdgdgdzggfd" src="https://github.com/user-attachments/assets/667c1bf2-3859-4013-89e5-0cd23e2e53dc" />
+<img width="1500" height="60" alt="fdgdgdzggfd" src="https://github.com/user-attachments/assets/667c1bf2-3859-4013-89e5-0cd23e2e53dc" />
 
 
 ---
