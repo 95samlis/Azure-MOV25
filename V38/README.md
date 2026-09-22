@@ -182,11 +182,11 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 
 ## Verifiering av Blob Container
 
-<img width="1150" height="260" alt="adzfsffsfsf" src="https://github.com/user-attachments/assets/7de7e0b5-2965-4672-bcfe-d30f30d50371" />
+<img width="560" height="170" alt="adzfsffsfsf" src="https://github.com/user-attachments/assets/7de7e0b5-2965-4672-bcfe-d30f30d50371" />
 
 ## Verifiering av Virtual Network och subnät
 
-<img width="300" height="50" alt="Virtual Network och subnät" src="https://github.com/user-attachments/assets/88055aa7-be8c-4f28-871c-b2c68105ae50" />
+<img width="1000" height="260" alt="Virtual Network och subnät" src="https://github.com/user-attachments/assets/88055aa7-be8c-4f28-871c-b2c68105ae50" />
 
 ## Verifiering av rolltilldelning
 
