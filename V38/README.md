@@ -182,16 +182,20 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 
 ## Verifiering av Blob Container
 
-<img width="560" height="170" alt="adzfsffsfsf" src="https://github.com/user-attachments/assets/7de7e0b5-2965-4672-bcfe-d30f30d50371" />
+<img width="600" height="150" alt="adzfsffsfsf" src="https://github.com/user-attachments/assets/7de7e0b5-2965-4672-bcfe-d30f30d50371" />
 
 ## Verifiering av Virtual Network och subnät
 
-<img width="1000" height="260" alt="Virtual Network och subnät" src="https://github.com/user-attachments/assets/88055aa7-be8c-4f28-871c-b2c68105ae50" />
+<img width="2166" height="148" alt="verifiering subnät" src="https://github.com/user-attachments/assets/62b0bf8d-4989-4dea-9c39-15d1b9b5abc5" />
+
 
 ## Verifiering av rolltilldelning
 
-<img width="1500" height="60" alt="fdgdgdzggfd" src="https://github.com/user-attachments/assets/667c1bf2-3859-4013-89e5-0cd23e2e53dc" />
+<img width="2540" height="124" alt="fdgdgdzggfd" src="https://github.com/user-attachments/assets/fe43689c-5b14-409a-9e6c-b91ad5c966ea" />
 
+## Verifiering av NSG och Portar
+
+<img width="2200" height="210" alt="verifiering brandvägg" src="https://github.com/user-attachments/assets/4f81d5c9-443f-437e-bf20-94ec6f1afe89" />
 
 ---
 
