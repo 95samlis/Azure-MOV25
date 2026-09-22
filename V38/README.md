@@ -148,7 +148,7 @@ Parametervärdena lagras i filen `azuredeploy.parameters.json`, vilket gör att 
 
 ---
 
-## Delmoment 3 – Deploya från kod
+## Deployment från kod
 
 När ARM-templaten var färdig deployerades miljön med Azure CLI.
 
@@ -201,4 +201,16 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 
 ---
 
+## Versionshantering
 
+Versionshantering användes under utvecklingen av ARM-templaten. Genom Git och GitHub kunde ändringar sparas som commits och historiken användas för att följa hur infrastrukturen utvecklades över tid.
+
+
+### Commit-historik
+
+Bilden nedan visar ett urval av commits som gjorts under utvecklingen av lösningen, bland annat tillägg av Managed Identity, Blob Container, RBAC-behörigheter och VM Extension.
+
+<img width="1472" height="346" alt="Skärmbild 2026-09-23 003318" src="https://github.com/user-attachments/assets/0737b324-eddb-47d1-b931-5f297846deb0" />
+
+
+Versionshantering gör det enklare att följa ändringar, gå tillbaka till tidigare versioner och se hur infrastrukturen har utvecklats. Det underlättar också när flera personer arbetar med samma projekt.
