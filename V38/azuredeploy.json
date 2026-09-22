@@ -249,7 +249,7 @@
         "typeHandlerVersion": "2.1",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "commandToExecute": "sudo apt-get update && sudo apt-get install -y nginx"
+          "commandToExecute": "apt-get update && apt-get install -y nginx git && rm -rf /tmp/Azure-MOV25 && git clone https://github.com/95samlis/Azure-MOV25.git /tmp/Azure-MOV25 && cp /tmp/Azure-MOV25/V37/indexv2.html /var/www/html/index.html && systemctl enable nginx && systemctl restart nginx"
         }
       }
     },
