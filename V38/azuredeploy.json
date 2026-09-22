@@ -119,6 +119,19 @@
               "destinationAddressPrefix": "*",
               "destinationPortRange": "443"
             }
+          },
+          {
+            "name": "Allow-SSH",
+            "properties": {
+              "priority": 120,
+              "protocol": "Tcp",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "22"
+            }
           }
         ]
       }
