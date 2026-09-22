@@ -126,3 +126,24 @@ Output-värdet `storageId` returnerar resurs-ID:t för Storage Account så att d
   }
 }
 ```
+
+---
+
+## Parametrar
+
+För att göra templaten återanvändbar parametriserades variabla värden istället för att hårdkodas i koden. Exempel på parametrar är namn på Storage Account, Virtual Machine, Virtual Network, användarnamn och SSH-nyckel.
+
+Parametervärdena lagras i filen `azuredeploy.parameters.json`, vilket gör att samma template kan användas i olika miljöer genom att endast parameterfilen ändras.
+
+```json
+{
+  "storageName": {
+    "value": "stnovatrixv388"
+  },
+  "vmName": {
+    "value": "vm-novatrix-web-v38"
+  }
+}
+```
+
+---
