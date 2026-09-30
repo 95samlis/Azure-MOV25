@@ -134,7 +134,7 @@ Dessa värden används senare för att skapa e-postmeddelanden och hantera event
 
 Så här ser flödet ut efter att JSON-filen har lästs in och ärendedatan har extraherats.
 
-<img width="1242" height="660" alt="Skärmbild 2026-09-30 222114" src="https://github.com/user-attachments/assets/7a5829c1-bbaa-4455-a682-0a67f4a60c9f" />
+<img width="1226" height="638" alt="image" src="https://github.com/user-attachments/assets/c7bbb193-df80-41c5-ba10-e9352f999b48" />
 
 ---
 
