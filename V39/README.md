@@ -51,11 +51,17 @@ JSON-filen kompletterades med information om den uppladdade bilden:
 
 ### Motivering
 
-Power Automate behövde kunna hitta både ärendedata och tillhörande bilaga i Azure Blob Storage. Genom att spara både bildens URL och blobnamn kunde flödet senare hämta rätt fil och bifoga den i e-postmeddelandet som skickas till kundtjänst. Lösningen innebar att ärendedata och bilagor lagras separat men fortfarande kan kopplas samman via informationen som sparas i JSON-filen.
+Power Automate behövde kunna hitta både ärendedata och tillhörande bilaga i Azure Blob Storage. Genom att spara både bildens URL och blobnamn kunde flödet senare hämta rätt fil och bifoga den i e-postmeddelandet som skickas till kundtjänst. Lösningen innebar att ärendedata och bilagor lagras separat men fortfarande kan kopplas samman via informationen som sparas i JSON-filen. 
+
+### Verifiering
+
+Power Automate-flödet har exporterats som en JSON-fil och finns som en separat fil i repot. Filen innehåller flödets konfiguration och kan användas för att verifiera hur flödet är uppbyggt.
+
+**Verifieringsfil:** `TicketBlob-Flow.V39.json`
 
 ---
 
-## Steg 1 – Trigger från Azure Blob Storage
+## Trigger från Azure Blob Storage
 
 Flödet startar med triggern **"När en blob läggs till eller ändras (enbart egenskaper) (V2)"**.
 
@@ -77,13 +83,13 @@ Anslutningen autentiserades med Storage Account-nyckeln från Azure.
 
 Genom att använda Azure Blob Storage som triggerpunkt skapas en automatisk koppling mellan webbapplikationen och Microsoft 365. När ett nytt ärende sparas i lagringskontot startas flödet utan manuell hantering.
 
-## Steg 2 - Villkor
+## Villkor 1 
 
 Eftersom containern får in både JSON-filer och PNG-bilder aktiverades triggern för båda filtyperna. Flödet försökte då behandla PNG-filer som JSON, vilket ledde till fel i mitt fall. Därför lades villkoret "body/Name slutar med .json" till för att endast bearbeta JSON-filer. Falskt-grenen lämnades tom eftersom flödet bara ska hantera JSON-filer. Om filen inte är en JSON-fil (till exempel en PNG-bild) ska inget hända, och flödet avslutas direkt.
 
 ---
 
-## Steg 3 - Parse JSON
+## Parse JSON
 
 ### Syfte
 Åtgärden **Parse JSON** används för att tolka innehållet i JSON-filen så att fälten kan användas som dynamiskt innehåll i resten av flödet.
@@ -139,7 +145,7 @@ Så här ser flödet ut efter att JSON-filen har lästs in och ärendedatan har 
 
 ---
 
-## Steg - 4 Villkor 2
+## Villkor 2
 
 
 Detta villkor används för att kontrollera om ärendet innehåller en bild som ska bifogas i e-postmeddelandet.
@@ -293,7 +299,7 @@ E-postmeddelandet skickas med ärendeinformationen och den bifogade bilden. Geno
 
 Här visas ett test av hela flödet där ett ärende skickas in med en bifogad bild. Testet visar att ärendet tas emot, att bilden sparas och att den sedan skickas vidare som bilaga i e-postmeddelandet.
 
-Nedan visas även **hela flödet i sin helhet**, från att ärendet skickas in till att e-postmeddelandet skickas.
+Nedan visas även **hela flödet i sin helhet**, från att ärendet skickas in till att e-postmeddelandet skickas. Åtgärderna har fått logiska namn för att göra flödet enklare att förstå och följa.
 
 <img width="1000" height="800" alt="Skärmbild 2026-10-01 001356" src="https://github.com/user-attachments/assets/2c917c13-f539-4abb-872e-02aff20e2b9d" />
 
