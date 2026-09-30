@@ -77,6 +77,59 @@ Anslutningen autentiserades med Storage Account-nyckeln från Azure.
 
 Genom att använda Azure Blob Storage som triggerpunkt skapas en automatisk koppling mellan webbapplikationen och Microsoft 365. När ett nytt ärende sparas i lagringskontot startas flödet utan manuell hantering.
 
+## Steg 2 - Villkor
+
+Eftersom containern får in både JSON-filer och PNG-bilder aktiverades triggern för båda filtyperna. Flödet försökte då behandla PNG-filer som JSON, vilket ledde till fel i mitt fall. Därför lades villkoret "body/Name slutar med .json" till för att endast bearbeta JSON-filer. Falskt-grenen lämnades tom eftersom flödet bara ska hantera JSON-filer. Om filen inte är en JSON-fil (till exempel en PNG-bild) ska inget hända, och flödet avslutas direkt.
+
 ---
+
+## Steg 3 - Parse JSON
+
+### Syfte
+Åtgärden **Parse JSON** används för att tolka innehållet i JSON-filen så att fälten kan användas som dynamiskt innehåll i resten av flödet.
+
+### Content
+
+När filen läses från Azure Blob Storage tas innehållet emot i Base64-format. Därför används uttrycket nedan för att omvandla innehållet till vanlig text innan det parsas.
+
+```text
+base64ToString(body('Read_Json_File')?['$content'])
+```
+
+### Schema
+
+Schemat beskriver vilka fält som finns i JSON-filen och vilken datatyp varje fält har.
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "image_name": {
+      "type": "string"
+    }
+  }
+}
+```
+
+Dessa värden används senare för att skapa e-postmeddelanden och hantera eventuella bilagor.
+
 
 
