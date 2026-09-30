@@ -176,7 +176,68 @@ Ett testärende utan bifogad bild skickades för att verifiera Falskt-grenen. Ef
 
 <img width="386" height="688" alt="Skärmbild 2026-09-30 231840" src="https://github.com/user-attachments/assets/d959633d-8488-4631-900f-7293ec7d1a0a" />
 
+
 <img width="1956" height="500" alt="Skärmbild 2026-09-30 225910" src="https://github.com/user-attachments/assets/e65a54e3-261a-4756-963a-25f2f6dbc193" />
 
+---
+
+## Sant-gren – Skicka e-post med bilaga
+
+Om villkoret **Check if Image Exists** är sant betyder det att fältet `image_name` innehåller ett värde och att en bild har bifogats i ärendet.
+
+Flödet läser därför bildfilen från Azure Blob Storage och använder informationen från den parsade JSON-filen för att skapa e-postmeddelandet.
+
+Bilden bifogas sedan till e-postmeddelandet tillsammans med följande information:
+
+- Namn
+- E-postadress
+- Meddelande
+
+Denna gren säkerställer att ärenden med bifogade bilder skickas vidare med korrekt bilaga.
 
 
+## Extract Image Filename
+
+### Syfte
+
+Åtgärden **Extract Image Filename** används för att hämta namnet på den bifogade bildfilen från JSON-datan.
+
+### Indata
+
+Åtgärden använder informationen från **Extract Ticket Data**.
+
+### Resultat
+
+Steget hämtar värdet från fältet `image_name`. Filnamnet används senare för att läsa in rätt bild från Azure Blob Storage och bifoga den i e-postmeddelandet.
+
+## Read Attached Image
+
+### Syfte
+
+Åtgärden **Read Attached Image** används för att läsa den bild som har bifogats i ärendet från Azure Blob Storage.
+
+### Blob-sökväg
+
+För att hitta rätt bildfil används följande uttryck:
+
+```text
+concat('arenden/', body('Extract_Ticket_Data')?['image_name'])
+```
+
+Uttrycket kombinerar mappnamnet `arenden/` med filnamnet som hämtas från fältet `image_name` i JSON-datan.
+
+Om `image_name` exempelvis innehåller:
+
+```text
+skrivare.png
+```
+
+blir den fullständiga sökvägen:
+
+```text
+arenden/skrivare.png
+```
+
+### Resultat
+
+Steget läser bildfilen från Azure Blob Storage och gör innehållet tillgängligt för nästa steg, där bilden bifogas i e-postmeddelandet.
