@@ -52,3 +52,31 @@ JSON-filen kompletterades med information om den uppladdade bilden:
 ### Motivering
 
 Power Automate behövde kunna hitta både ärendedata och tillhörande bilaga i Azure Blob Storage. Genom att spara både bildens URL och blobnamn kunde flödet senare hämta rätt fil och bifoga den i e-postmeddelandet som skickas till kundtjänst. Lösningen innebar att ärendedata och bilagor lagras separat men fortfarande kan kopplas samman via informationen som sparas i JSON-filen.
+
+---
+
+## Steg 1 – Trigger från Azure Blob Storage
+
+Flödet startar med triggern **"När en blob läggs till eller ändras (enbart egenskaper) (V2)"**.
+
+Triggern övervakar containern `arenden` i Azure Blob Storage. När backend-applikationen sparar en ny JSON-fil för ett inskickat ärende upptäcker Power Automate förändringen och startar flödet automatiskt.
+
+### Konfiguration
+
+För att Power Automate skulle kunna läsa från Azure Storage skapades en anslutning mot Storage Account `stnovatrixv388`.
+
+```text
+Storage Account: stnovatrixv388
+Container: arenden
+Trigger: När en blob läggs till eller ändras (enbart egenskaper) (V2)
+```
+
+Anslutningen autentiserades med Storage Account-nyckeln från Azure.
+
+### Motivering
+
+Genom att använda Azure Blob Storage som triggerpunkt skapas en automatisk koppling mellan webbapplikationen och Microsoft 365. När ett nytt ärende sparas i lagringskontot startas flödet utan manuell hantering.
+
+---
+
+
