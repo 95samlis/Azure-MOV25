@@ -139,7 +139,44 @@ Så här ser flödet ut efter att JSON-filen har lästs in och ärendedatan har 
 
 ---
 
+## Steg - 4 Villkor 2
 
+
+Detta villkor används för att kontrollera om ärendet innehåller en bild som ska bifogas i e-postmeddelandet.
+
+Efter att JSON-filen har lästs in finns flera fält tillgängliga, bland annat `image_name`. Detta fält innehåller filnamnet på bilden om en bild har bifogats tillsammans med ärendet.
+
+Villkoret kontrollerar därför om `image_name` inte är tomt.
+
+- **Sant (True)** – Ett filnamn finns i `image_name`. Flödet fortsätter då med att hämta bilden från Blob Storage och bifoga den i e-postmeddelandet.
+- **Falskt (False)** – Fältet `image_name` är tomt. Det betyder att ingen bild finns kopplad till ärendet och e-postmeddelandet skickas utan bilaga.
+
+Detta villkor behövs för att flödet ska kunna hantera både ärenden med bild eller utan bild. 
+
+
+### Falskt-gren – Skicka e-post
+
+Om villkoret **Check if Image Exists** är falskt betyder det att fältet `image_name` är tomt och att ingen bild har bifogats i ärendet.
+
+Därför behöver flödet inte läsa någon bild från Blob Storage eller lägga till någon bilaga i e-postmeddelandet. Istället skickas endast informationen från JSON-filen:
+
+- Namn
+- E-postadress
+- Meddelande
+
+Denna gren säkerställer att ärenden utan bilder fortfarande hanteras korrekt och att e-postmeddelandet skickas utan att flödet försöker använda en bilaga som inte finns.
+
+---
+
+## Testresultat – Ärende utan bilaga
+
+Ett testärende utan bifogad bild skickades för att verifiera Falskt-grenen. Eftersom fältet `image_name` var tomt skickades e-postmeddelandet utan bilaga.
+
+<img width="1122" height="772" alt="Skärmbild 2026-09-30 225840" src="https://github.com/user-attachments/assets/f200f933-19b0-4654-ad5a-a79b8ab02516" />
+
+<img width="594" height="1002" alt="Skärmbild 2026-09-30 230010" src="https://github.com/user-attachments/assets/8e554cea-fdea-45e9-a92f-9371904afe76" />
+
+<img width="1956" height="554" alt="Skärmbild 2026-09-30 225910" src="https://github.com/user-attachments/assets/e65a54e3-261a-4756-963a-25f2f6dbc193" />
 
 
 
