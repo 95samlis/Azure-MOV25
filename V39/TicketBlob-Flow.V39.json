@@ -1,0 +1,247 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_azureblob": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedazureblob_76c77"
+        },
+        "api": {
+          "name": "shared_azureblob"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedoffice365_295a0"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "Blob_Trigger": {
+          "recurrence": {
+            "frequency": "Minute",
+            "interval": 1
+          },
+          "splitOn": "@triggerOutputs()?['body']",
+          "metadata": {
+            "JTJmYXJlbmRlbg==": "/arenden",
+            "operationMetadataId": "8a41ca7e-510a-4f15-8187-49f3ed07e827"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "AccountNameFromSettings",
+              "folderId": "JTJmYXJlbmRlbg=="
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_azureblob",
+              "operationId": "OnUpdatedFiles_V2",
+              "connectionName": "shared_azureblob"
+            }
+          }
+        }
+      },
+      "actions": {
+        "Is_JSON_File": {
+          "actions": {
+            "Read_Json_File": {
+              "metadata": {
+                "operationMetadataId": "01dc3d78-1f7d-4747-8d01-0babf7db055a"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "AccountNameFromSettings",
+                  "id": "@triggerOutputs()?['body/Path']",
+                  "inferContentType": true
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_azureblob",
+                  "operationId": "GetFileContent_V2",
+                  "connectionName": "shared_azureblob"
+                }
+              }
+            },
+            "Extract_Ticket_Data": {
+              "runAfter": {
+                "Read_Json_File": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "8636c65a-6c71-4334-9df8-941d12821d10"
+              },
+              "type": "ParseJson",
+              "inputs": {
+                "content": "@base64ToString(body('Read_Json_File')?['$content'])",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "mail": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "image_name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "Villkor": {
+              "actions": {
+                "Extract_Image_Filename": {
+                  "type": "Compose",
+                  "inputs": "@body('Extract_Ticket_Data')?['image_name']"
+                },
+                "Read_Attached_Image": {
+                  "runAfter": {
+                    "Extract_Image_Filename": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8cde666a-3577-40bc-9ff8-0f9c5ecdf9b5"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "AccountNameFromSettings",
+                      "id": "@concat('arenden/', body('Extract_Ticket_Data')?['image_name'])",
+                      "inferContentType": true
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_azureblob",
+                      "operationId": "GetFileContent_V2",
+                      "connectionName": "shared_azureblob"
+                    }
+                  }
+                },
+                "Send_Notification_Email": {
+                  "runAfter": {
+                    "Read_Attached_Image": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "41621763-d710-4984-8389-6fab57e3cd05"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "emailMessage/To": "azureuser@samuellissbrooutlook.onmicrosoft.com",
+                      "emailMessage/Subject": "Ärende",
+                      "emailMessage/Body": "<p class=\"editor-paragraph\">Namn: @{body('Extract_Ticket_Data')?['name']}<br>Mail: @{body('Extract_Ticket_Data')?['mail']}</p><p class=\"editor-paragraph\">Medelande: @{body('Extract_Ticket_Data')?['message']}<br></p><br>",
+                      "emailMessage/Attachments": [
+                        {
+                          "Name": "@body('Extract_Ticket_Data')?['image_name']",
+                          "ContentBytes": "@body('Read_Attached_Image')"
+                        }
+                      ],
+                      "emailMessage/Importance": "Normal"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                      "operationId": "SendEmailV2",
+                      "connectionName": "shared_office365"
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "Extract_Ticket_Data": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Sen_Notification_Email": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "emailMessage/To": "azureuser@samuellissbrooutlook.onmicrosoft.com",
+                        "emailMessage/Subject": "Ärende",
+                        "emailMessage/Body": "<p class=\"editor-paragraph\">Namn: @{body('Extract_Ticket_Data')?['name']}<br>E-Post: @{body('Extract_Ticket_Data')?['mail']}</p><p class=\"editor-paragraph\">Medelande: @{body('Extract_Ticket_Data')?['message']}</p>",
+                        "emailMessage/Importance": "Normal"
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                        "operationId": "SendEmailV2",
+                        "connectionName": "shared_office365"
+                      }
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "and": [
+                  {
+                    "not": {
+                      "equals": [
+                        "@body('Extract_Ticket_Data')?['image_name']",
+                        ""
+                      ]
+                    }
+                  }
+                ]
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {},
+          "else": {
+            "actions": {}
+          },
+          "expression": {
+            "and": [
+              {
+                "endsWith": [
+                  "@triggerOutputs()?['body/Name']",
+                  ".json"
+                ]
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "2c72801a-a8d4-42a8-8552-6f5911b9cb74"
+          },
+          "type": "If"
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
