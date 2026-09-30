@@ -284,7 +284,7 @@ E-postmeddelandet skickas med ärendeinformationen och den bifogade bilden. Geno
 
 ### Flödesstruktur
 
-<img width="500" height="600" alt="Skärmbild 2026-09-30 234534" src="https://github.com/user-attachments/assets/d7f14153-356f-446f-81fa-a23c22275117" />
+<img width="550" height="580" alt="Skärmbild 2026-09-30 234534" src="https://github.com/user-attachments/assets/d7f14153-356f-446f-81fa-a23c22275117" />
 
 
 ### 
