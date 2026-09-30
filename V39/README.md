@@ -5,7 +5,7 @@
 
 ## Syfte 
 
-Syftet var att koppla samman Azure och Microsoft 365 med hjälp av Power Automate. När ett ärende skickas in via formuläret ska ett automatiskt flöde triggas som hämtar ärendedata och skickar en notifiering via e-post till ansvarig person i Microsoft 365-miljön. Detta skapar en automatiserad kedja från inskickat ärende till hantering av kundtjänst.
+Syftet är att koppla samman Azure och Microsoft 365 med hjälp av Power Automate. När ett ärende skickas in via formuläret ska ett automatiskt flöde triggas som hämtar ärendedata och skickar en notifiering via e-post till ansvarig person i Microsoft 365-miljön. Detta skapar en automatiserad kedja från inskickat ärende till hantering av kundtjänst.
 
 ---
 
@@ -69,7 +69,7 @@ Triggern övervakar containern `arenden` i Azure Blob Storage. När backend-appl
 
 ### Konfiguration
 
-För att Power Automate skulle kunna läsa från Azure Storage skapades en anslutning mot Storage Account `stnovatrixv388`.
+För att Power Automate skulle kunna läsa från Azure Storage skapades en anslutning mot Storage Account `stnovatrixv388`. 
 
 ```text
 Storage Account: stnovatrixv388
@@ -85,7 +85,7 @@ Genom att använda Azure Blob Storage som triggerpunkt skapas en automatisk kopp
 
 ## Villkor 1 
 
-Eftersom containern får in både JSON-filer och PNG-bilder aktiverades triggern för båda filtyperna. Flödet försökte då behandla PNG-filer som JSON, vilket ledde till fel i mitt fall. Därför lades villkoret "body/Name slutar med .json" till för att endast bearbeta JSON-filer. Falskt-grenen lämnades tom eftersom flödet bara ska hantera JSON-filer. Om filen inte är en JSON-fil (till exempel en PNG-bild) ska inget hända, och flödet avslutas direkt.
+Eftersom containern får in både JSON-filer och PNG-bilder aktiverades triggern för båda filtyperna. Flödet försökte då behandla PNG-filer som JSON, vilket ledde till problem i mitt fall. Därför lades villkoret "body/Name slutar med .json" till för att endast bearbeta JSON-filer. Falskt-grenen lämnades tom eftersom flödet bara ska hantera JSON-filer. Om filen inte är en JSON-fil (till exempel en PNG-bild) ska inget hända, och flödet avslutas direkt.
 
 ---
 
@@ -251,8 +251,6 @@ Steget läser bildfilen från Azure Blob Storage och gör innehållet tillgängl
 ---
 
 ## Send Notification Email
-
-### Syfte
 
 Åtgärden **Send Notification Email** skickar ett e-postmeddelande med informationen från ärendet och den bifogade bilden.
 
