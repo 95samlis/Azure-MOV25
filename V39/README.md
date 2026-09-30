@@ -241,3 +241,51 @@ arenden/skrivare.png
 ### Resultat
 
 Steget läser bildfilen från Azure Blob Storage och gör innehållet tillgängligt för nästa steg, där bilden bifogas i e-postmeddelandet.
+
+---
+
+## Send Notification Email
+
+### Syfte
+
+Åtgärden **Send Notification Email** skickar ett e-postmeddelande med informationen från ärendet och den bifogade bilden.
+
+### Innehåll
+
+Följande värden hämtas från den parsade JSON-datan och läggs in i e-postmeddelandet:
+
+- **Name** → Avsändarens namn
+- **Mail** → Avsändarens e-postadress
+- **Message** → Ärendebeskrivningen
+
+### Bilaga
+
+För att bifoga bilden används följande värden:
+
+#### Namn
+
+```text
+body('Extract_Ticket_Data')?['image_name']
+```
+
+Detta hämtar filnamnet från JSON-datan och används som bilagans namn i e-postmeddelandet.
+
+#### Innehåll
+
+```text
+body('Read_Attached_Image')
+```
+
+Detta innehåller bildfilen som lästes från Azure Blob Storage i föregående steg och används som innehåll i bilagan.
+
+### Resultat
+
+E-postmeddelandet skickas med ärendeinformationen och den bifogade bilden. Genom att använda `image_name` som namn och innehållet från **Read Attached Image** säkerställs att rätt bild bifogas i e-postmeddelandet.
+
+### Flödesstruktur
+
+<img width="1279" height="1230" alt="Flödesstruktur_Sant" src="https://github.com/user-attachments/assets/743a970d-f121-4398-9a7b-1c55c44d895e" />
+
+
+### 
+
