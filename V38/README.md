@@ -1,18 +1,18 @@
 # V38 - Infrastructure as Code med ARM Templates
 
 
-**Samuel Lissbro** 
+**Samuel Lissbro**  Github repo: https://github.com/95samlis/Azure-MOV25/tree/main/V38
 
 
 ## Syfte
 
 Syftet med uppgiften var att använda Infrastructure as Code (IaC) med ARM Templates för att automatisera uppsättningen av Novatrix kundtjänstmiljö i Azure.
 
-Genom att beskriva infrastrukturen som kod kan miljön återskapas på samma sätt varje gång, utan att man behöver klicka sig fram manuellt i Azure Portal. Koden versionshanteras i GitHub, vilket gör det enkelt att se vad som ändrats över tid.
+Genom att beskriva infrastrukturen som kod kan miljön återskapas på samma sätt varje gång, utan att man behöver klicka sig fram manuellt i Azure Portalen. Koden versionshanteras i GitHub, vilket gör det enkelt att se vad som ändrats över tid.
 
 ## ARM Template
 
-Jag skapade en ARM-template som provisionerar centrala delar av Novatrix miljö.
+ARM-templaten innehåller all konfiguration för resurserna, men i dokumentationen visas bara korta utdrag som exempel på hur resurserna definieras.
 
 Följande resurser skapas:
 
@@ -45,7 +45,7 @@ Ett Storage Account används för att lagra de ärenden som skickas in via webbf
 
 ### Blob Container
 
-I Storage Account skapas en container med namnet `arenden` där Flask-applikationen sparar inkomna ärenden.
+I Storage Account skapas en container med namnet arenden för lagring av inkomna ärenden.
 
 ```json
 {
@@ -81,15 +81,29 @@ Ett virtuellt nätverk skapades för att organisera infrastrukturen. Två subnä
 
 ### Network Security Group
 
-En Network Security Group (NSG) skapades för att styra vilken trafik som får nå den virtuella maskinen. Regler skapades för att tillåta HTTP (80), HTTPS (443) och SSH (22).
+En Network Security Group skapades för att styra vilken trafik som får nå den virtuella maskinen. Regler skapades för att tillåta HTTP (80)  HTTPS (443) och SSH (22).
 
 ### Public IP och NIC
 
-VM:n behöver en publik IP-adress för att kunna nås via webbläsare och SSH. Ett nätverkskort kopplar VM:n till nätverket.
+En publik IP-adress kopplas till VM:n genom ett `NIC`. IP-adressen används för att nå VM:n via webbläsare och SSH, medan NIC:en kopplar VM:n till nätverket.
+
+```json
+{
+  "type": "Microsoft.Network/publicIPAddresses",
+  "name": "[parameters('publicIpName')]"
+}
+```
+
+```json
+{
+  "type": "Microsoft.Network/networkInterfaces",
+  "name": "[parameters('nicName')]"
+}
+```
 
 ### Virtual Machine
 
-En Ubuntu Linux VM provisioneras för att köra webbservern och Flask-applikationen.
+En Ubuntu Linux VM provisioneras för att köra webbservern.
 
 ```json
 {
@@ -104,7 +118,7 @@ En Custom Script Extension används för att automatisera den initiala konfigura
 
 ### Role Assignment
 
-Managed Identity tilldelas rollen **Storage Blob Data Contributor** på Blob-containern. Detta gör att Flask-applikationen kan läsa och skriva ärenden i Blob Storage utan att använda lagringsnycklar eller lösenord.
+Managed Identity tilldelas rollen **Storage Blob Data Contributor** på Blob-containern. Detta ger applikationen åtkomst till Blob Storage utan att använda lagringsnycklar eller lösenord.
 
 ```json
 {
@@ -206,7 +220,7 @@ Efter deployment verifierades att webbplatsen var nåbar via den publika IP-adre
 Versionshantering användes under utvecklingen av ARM-templaten. Genom Git och GitHub kunde ändringar sparas som commits och historiken användas för att följa hur infrastrukturen utvecklades över tid.
 
 
-### Commit-historik
+## Commit-historik
 
 Bilden nedan visar ett urval av commits som gjorts under utvecklingen av lösningen, bland annat tillägg av Managed Identity, Blob Container, RBAC-behörigheter och VM Extension.
 
@@ -242,4 +256,4 @@ az deployment group create `
   --template-file V38/azuredeploy.json `
   --parameters "@V38/azuredeploy.parameters.json"
 ```
-Efter deployment installeras Nginx automatiskt via VM Extension. Extensionen hämtar även webbplatsens filer från GitHub och konfigurerar webbservern, vilket gör att miljön blir redo att användas direkt efter att ARM-templaten körts.
+Efter deployment installeras Nginx automatiskt via VM Extension. Extensionen hämtar även HTML-filen från GitHub och placerar den i Nginx.
