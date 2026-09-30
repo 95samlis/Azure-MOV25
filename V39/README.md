@@ -287,5 +287,22 @@ E-postmeddelandet skickas med ärendeinformationen och den bifogade bilden. Geno
 <img width="550" height="580" alt="Skärmbild 2026-09-30 234534" src="https://github.com/user-attachments/assets/d7f14153-356f-446f-81fa-a23c22275117" />
 
 
-### 
+---
+
+### Test – Ärende med bild
+
+Här visas ett test av hela flödet där ett ärende skickas in med en bifogad bild. Testet visar att ärendet tas emot, att bilden sparas och att den sedan skickas vidare som bilaga i e-postmeddelandet.
+
+Nedan visas även **hela flödet i sin helhet**, från att ärendet skickas in till att e-postmeddelandet skickas.
+
+<img width="1440" height="1234" alt="Skärmbild 2026-10-01 001356" src="https://github.com/user-attachments/assets/2c917c13-f539-4abb-872e-02aff20e2b9d" />
+
+<img width="1562" height="604" alt="Skärmbild 2026-10-01 002044" src="https://github.com/user-attachments/assets/8070eec2-d7ce-49b5-9b6c-c238d6568a64" />
+
+<img width="636" height="722" alt="Skärmbild 2026-10-01 003317" src="https://github.com/user-attachments/assets/fe82c369-24a9-4c2e-8634-e0698d0335ba" />
+
+
+
+
+
 
