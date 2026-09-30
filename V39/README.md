@@ -131,6 +131,7 @@ Schemat beskriver vilka fält som finns i JSON-filen och vilken datatyp varje f�
 
 Dessa värden används senare för att skapa e-postmeddelanden och hantera eventuella bilagor.
 
+### Resultat
 
 Så här ser flödet ut efter att JSON-filen har lästs in och ärendedatan har extraherats.
 
