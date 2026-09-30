@@ -174,9 +174,9 @@ Ett testärende utan bifogad bild skickades för att verifiera Falskt-grenen. Ef
 
 <img width="600" height="400" alt="Skärmbild 2026-09-30 225840" src="https://github.com/user-attachments/assets/f200f933-19b0-4654-ad5a-a79b8ab02516" />
 
-<img width="594" height="900" alt="Skärmbild 2026-09-30 230010" src="https://github.com/user-attachments/assets/8e554cea-fdea-45e9-a92f-9371904afe76" />
+<img width="594" height="700" alt="Skärmbild 2026-09-30 230010" src="https://github.com/user-attachments/assets/8e554cea-fdea-45e9-a92f-9371904afe76" />
 
-<img width="1956" height="400" alt="Skärmbild 2026-09-30 225910" src="https://github.com/user-attachments/assets/e65a54e3-261a-4756-963a-25f2f6dbc193" />
+<img width="1956" height="500" alt="Skärmbild 2026-09-30 225910" src="https://github.com/user-attachments/assets/e65a54e3-261a-4756-963a-25f2f6dbc193" />
 
 
 
