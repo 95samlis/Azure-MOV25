@@ -295,7 +295,7 @@ Här visas ett test av hela flödet där ett ärende skickas in med en bifogad b
 
 Nedan visas även **hela flödet i sin helhet**, från att ärendet skickas in till att e-postmeddelandet skickas.
 
-<img width="1440" height="1234" alt="Skärmbild 2026-10-01 001356" src="https://github.com/user-attachments/assets/2c917c13-f539-4abb-872e-02aff20e2b9d" />
+<img width="1000" height="800" alt="Skärmbild 2026-10-01 001356" src="https://github.com/user-attachments/assets/2c917c13-f539-4abb-872e-02aff20e2b9d" />
 
 <img width="1562" height="604" alt="Skärmbild 2026-10-01 002044" src="https://github.com/user-attachments/assets/8070eec2-d7ce-49b5-9b6c-c238d6568a64" />
 
