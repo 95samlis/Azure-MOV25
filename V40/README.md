@@ -145,7 +145,7 @@ För att verifiera att den containerbaserade lösningen fungerade öppnades appl
 
 Ett testärende skickades därefter in tillsammans med en bifogad bild.
 
-<img width="1000" height="500" alt="Skärmbild 2026-10-06 032735" src="https://github.com/user-attachments/assets/625fa805-bb11-442a-bc99-9f499877bfdc" />
+<img width="900" height="550" alt="Skärmbild 2026-10-06 032735" src="https://github.com/user-attachments/assets/625fa805-bb11-442a-bc99-9f499877bfdc" />
 
 
 Efter inskick verifierades att ärendet och den uppladdade filen hade sparats i `Azure Blob Storage`.
