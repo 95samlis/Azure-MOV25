@@ -110,8 +110,6 @@ az container show `
 
   ---
 
-## Skapa container i ACI
-
 När container-imagen hade byggts och lagrats i `ACR` skapades en container i `Azure Container Instances (ACI)`.
 
 ```powershell
@@ -130,6 +128,31 @@ az container create `
 ```
 
 Kommandot skapar en container baserad på imagen `novatrix-app:v1` från `ACR`. Containern tilldelas `1 vCPU`, `1 GB RAM` och exponeras via port `80` med ett publikt DNS-namn.
+
+### Miljövariabel för Storage Account
+
+```text
+ACCOUNT_KEY="DIN_STORAGE_ACCOUNT_KEY"
+```
+
+`ACCOUNT_KEY` används för att ansluta applikationen till `Azure Blob Storage` utan att lagringsnyckeln behöver sparas i koden.
+
+---
+
+## Verifiering
+
+För att verifiera att containern hade startats korrekt användes följande kommando:
+
+```powershell
+az container show `
+  --resource-group rg-novatrix `
+  --name novatrix-app `
+  --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"
+```
+
+<img width="1151" height="176" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
+
+Resultatet visar att containern har status `Running` och att den tilldelats den publika adressen `novatrix-app388.swedencentral.azurecontainer.io`.
 
 ### Miljövariabel för Storage Account
 
