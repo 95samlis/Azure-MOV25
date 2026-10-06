@@ -1,11 +1,10 @@
 # V40 – Virtualiseringsnivåer
 
-**Samuel Lissbro** 
+**Samuel Lissbro**
 
 ## Syfte
 
 Syftet med uppgiften är att köra en del av Novatrix kundtjänst på en annan virtualiseringsnivå än den tidigare VM-baserade lösningen samt att jämföra virtuella maskiner, containers och serverless-tjänster.
-
 
 ## Motivering av vald lösning
 
@@ -16,28 +15,26 @@ Applikationen är relativt liten och passar därför bra för en containerbasera
 ---
 
 ### Skapa ACR
+
 För att kunna lagra applikationens `Docker`-image skapade jag ett `Azure Container Registry (ACR)`. Här lagras imagen innan den används för att skapa en container i `ACI` där applikationen senare körs. ACR fungerar som ett privat containerregister som gör det möjligt för ACI att hämta rätt image vid deployment.
 
 ### Registrera resursleverantör
-
 
 ```bash
 az provider register --namespace Microsoft.ContainerRegistry
 ```
 
-Registrerar resursleverantören `Microsoft.ContainerRegistry` i prenumerationen. 
+Registrerar resursleverantören `Microsoft.ContainerRegistry` i prenumerationen.
 
-
-### Skapa ACR
-
+### Kommando
 
 ```bash
 az acr create --resource-group rg-novatrix --name novatrixacr388 --sku Basic
 ```
+
 Skapar ett ACR med namnet `novatrixacr388` i resursgruppen `rg-novatrix`.
 
 Nivån `Basic` valdes eftersom den räcker för lösningens omfattning.
-
 
 ## Aktivera administratörskonto i ACR
 
@@ -64,7 +61,6 @@ Visar användarnamn och lösenord för registret. Uppgifterna används senare n�
 ## Bygga container-imagen
 
 När `Dockerfile` och appen var färdiga byggdes en container-image och lagrades i `ACR`.
-
 
 ```bash
 az acr build --registry novatrixacr388 --image novatrix-app:v1 .
@@ -93,21 +89,9 @@ if __name__ == '__main__':
 
 `host='0.0.0.0'` gör att applikationen kan ta emot externa anslutningar, medan `port=80` gör att samma port används i både `Flask` och containern.
 
-## Verifiering
+---
 
-För att verifiera att containern hade startats korrekt användes följande kommando:
-
-```az container show `
-  --resource-group rg-novatrix `
-  --name novatrix-app `
-  --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"```
-
- <img width="1151" height="176" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
-
-  
-  Resultatet visar att containern har status Running och att den tilldelats den publika adressen novatrix-app388.swedencentral.azurecontainer.io.
-
-  ---
+## Skapa container i ACI
 
 När container-imagen hade byggts och lagrats i `ACR` skapades en container i `Azure Container Instances (ACI)`.
 
@@ -142,7 +126,7 @@ ACCOUNT_KEY="DIN_STORAGE_ACCOUNT_KEY"
 
 För att verifiera att containern hade startats korrekt användes följande kommando:
 
-```powershell
+```bash
 az container show `
   --resource-group rg-novatrix `
   --name novatrix-app `
@@ -152,13 +136,3 @@ az container show `
 <img width="1151" height="176" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
 
 Resultatet visar att containern har status `Running` och att den tilldelats den publika adressen `novatrix-app388.swedencentral.azurecontainer.io`.
-
-### Miljövariabel för Storage Account
-
-```text
-ACCOUNT_KEY="DIN_STORAGE_ACCOUNT_KEY"
-```
-
-`ACCOUNT_KEY` används för att ansluta applikationen till `Azure Blob Storage` utan att lagringsnyckeln behöver sparas i koden.
-
----
