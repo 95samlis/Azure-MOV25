@@ -133,6 +133,6 @@ az container show `
   --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"
 ```
 
-<img width="1151" height="176" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
+<img width="800" height="130" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
 
 Resultatet visar att containern har status `Running` och att den tilldelats den publika adressen `novatrix-app388.swedencentral.azurecontainer.io`.
