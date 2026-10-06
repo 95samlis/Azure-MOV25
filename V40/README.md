@@ -12,11 +12,13 @@ Jag valde att köra kundtjänstens webbapplikation som en `Docker`-container i `
 
 Applikationen är relativt liten och passar därför bra för en containerbaserad lösning. Genom att använda en container kunde applikationen paketeras som en container-image med samma körmiljö från utveckling till drift. Lösningen blev samtidigt enkel att distribuera i Azure utan att en egen `VM` behövde administreras.
 
+Serverless hade också varit ett möjligt alternativ för applikationen. Jag valde dock en containerlösning eftersom hela applikationen kunde paketeras i en `Docker`-image som sparas i `Azure Container Registry (ACR)` och kan återanvändas vid framtida distributioner.
+
 ---
 
 ### Skapa ACR
 
-För att kunna lagra applikationens `Docker`-image skapade jag ett `Azure Container Registry (ACR)`. Här lagras imagen innan den används för att skapa en container i `ACI` där applikationen senare körs. ACR fungerar som ett privat containerregister som gör det möjligt för ACI att hämta rätt image vid deployment.
+För att kunna lagra applikationens `Docker`-image skapade jag ett `Azure Container Registry (ACR)`. Här lagras imagen innan den används för att skapa en container i `ACI` där applikationen senare körs. ACR fungerar som ett privat containerregister som gör det möjligt för `ACI` att hämta rätt image vid deployment.
 
 ### Registrera resursleverantör
 
@@ -156,3 +158,75 @@ Efter inskick verifierades att ärendet och den uppladdade filen hade sparats i 
 Resultatet visar att applikationen som körs i `ACI` kan ta emot ärenden och lagra information i `Azure Blob Storage`.
 
 # Jämförelse mellan VM, Containers och Serverless
+
+### Virtuell maskin 
+
+En virtuell maskin är en komplett server med eget operativsystem. Applikationen körs på servern och användaren ansvarar själv för uppdateringar, säkerhet, konfiguration och underhåll.
+
+En VM ger hög kontroll eftersom användaren har tillgång till hela servern och OS:et. Det går att installera egna program, ändra inställningar, konfigurera nätverk och anpassa miljön efter appens behov. Därför används VM ofta när en applikation har särskilda krav eller när äldre system behöver flyttas till molnet utan större förändringar.
+
+### Fördelar
+
+- Hög kontroll över servern och operativsystemet
+- Passar äldre applikationer
+- Kan anpassas efter egna behov
+- Stöd för många olika program och operativsystem
+
+### Nackdelar
+
+- Kräver mer administration
+- Ansvar för uppdateringar och säkerhet
+- Skalning är långsammare
+- Kostar även när maskinen inte används
+
+### Exempel
+
+Ett företag har en äldre Windows-applikation som kräver särskilda inställningar i operativsystemet. Då kan en Azure VM vara ett bra val eftersom företaget får full kontroll över servern och kan installera och konfigurera programvaran efter egna behov.
+
+---
+
+### Containers
+
+En container innehåller appen och det som behövs för att den ska fungera. Den har inget eget operativsystem utan delar operativsystem med värden. Därför startar den snabbt och använder mindre resurser än en VM.
+
+### Fördelar
+
+- Startar snabbt
+- Tar mindre resurser än en VM
+- Samma container fungerar i olika miljöer
+- Enkel att flytta mellan olika system
+  
+### Nackdelar
+
+- Mindre kontroll än en VM
+- Kräver kunskap om Docker och containers
+- Kan vara svårare att felsöka
+  
+### Exempel
+
+Ett företag har en webbapplikation som ska köras i både test- och produktionsmiljö. Genom att använda en container kan samma version av appen köras överallt. I Azure kan containern till exempel köras i `ACI`.
+
+Om ett företag ska lansera en ny kundportal kan det vara praktiskt att använda containrar istället för att sätta upp och underhålla egna servrar. Det gör att appen kan köras på samma sätt oavsett miljö och förenklar både drift och uppdateringar.
+
+---
+
+### Serverless
+
+Med serverless skriver man bara koden och låter molnet sköta resten. Det finns ingen server som behöver installeras eller underhållas. Koden är händelsestyrt, till exempel när ett formulär skickas in eller en fil laddas upp.
+
+### Fördelar
+
+- Ingen server att hantera
+- Kan hantera fler användare automatiskt när belastningen ökar
+- Betalar bara när funktionen används
+- Kräver lite administration
+  
+### Nackdelar
+
+- Minst kontroll över miljön
+- Kan bli långsammare vid första anropet (cold start)
+- Passar inte alla typer av applikationer
+  
+### Exempel
+
+Ett företag har ett kontaktformulär på sin webbplats. När en användare skickar in formuläret startas en Azure Function som sparar informationen i en databas eller ett lagringskonto. När jobbet är klart avslutas funktionen automatiskt.
