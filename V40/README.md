@@ -136,3 +136,21 @@ az container show `
 <img width="800" height="130" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
 
 Resultatet visar att containern har status `Running` och att den tilldelats den publika adressen `novatrix-app388.swedencentral.azurecontainer.io`.
+
+---
+
+## Verifiering av applikationen
+
+För att verifiera att den containerbaserade lösningen fungerade öppnades applikationen via den publika adress som tilldelats av `Azure Container Instances (ACI)`.
+
+Ett testärende skickades därefter in tillsammans med en bifogad bild.
+
+<img width="1000" height="700" alt="Skärmbild 2026-10-06 032735" src="https://github.com/user-attachments/assets/625fa805-bb11-442a-bc99-9f499877bfdc" />
+
+
+Efter inskick verifierades att ärendet och den uppladdade filen hade sparats i `Azure Blob Storage`.
+
+<img width="1000" height="410" alt="Skärmbild 2026-10-06 032831" src="https://github.com/user-attachments/assets/2dd5f8f5-a0f8-43d0-b7c7-0ada53024bf3" />
+
+
+Resultatet visar att applikationen som körs i `ACI` kan ta emot ärenden och lagra information i `Azure Blob Storage`.
