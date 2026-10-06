@@ -16,7 +16,7 @@ Applikationen är relativt liten och passar därför bra för en containerbasera
 ---
 
 ### Skapa ACR
-För att kunna lagra applikationens `Docker`-image skapade jag ett `Azure Container Registry (ACR)`. Här lagras imagen innan den används för att skapa en container i `Azure Container Instances (ACI)`, där applikationen senare körs. ACR fungerar som ett privat containerregister som gör det möjligt för ACI att hämta rätt image vid deployment.
+För att kunna lagra applikationens `Docker`-image skapade jag ett `Azure Container Registry (ACR)`. Här lagras imagen innan den används för att skapa en container i `ACI` där applikationen senare körs. ACR fungerar som ett privat containerregister som gör det möjligt för ACI att hämta rätt image vid deployment.
 
 ### Registrera resursleverantör
 
@@ -103,9 +103,40 @@ az container show `
   --name novatrix-app `
   --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"
 
- 
+ <img width="1151" height="176" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
+
   
   Resultatet visar att containern har status Running och att den tilldelats den publika adressen novatrix-app388.swedencentral.azurecontainer.io.
 
   ---
 
+## Skapa container i ACI
+
+När container-imagen hade byggts och lagrats i `ACR` skapades en container i `Azure Container Instances (ACI)`.
+
+```powershell
+az container create `
+  --resource-group rg-novatrix `
+  --name novatrix-app `
+  --image novatrixacr388.azurecr.io/novatrix-app:v1 `
+  --os-type Linux `
+  --cpu 1 `
+  --memory 1 `
+  --ports 80 `
+  --dns-name-label novatrix-app388 `
+  --registry-username novatrixacr388 `
+  --registry-password "DITT_ACR_LÖSENORD" `
+  --environment-variables ACCOUNT_KEY="DIN_STORAGE_ACCOUNT_KEY"
+```
+
+Kommandot skapar en container baserad på imagen `novatrix-app:v1` från `ACR`. Containern tilldelas `1 vCPU`, `1 GB RAM` och exponeras via port `80` med ett publikt DNS-namn.
+
+### Miljövariabel för Storage Account
+
+```text
+ACCOUNT_KEY="DIN_STORAGE_ACCOUNT_KEY"
+```
+
+`ACCOUNT_KEY` används för att ansluta applikationen till `Azure Blob Storage` utan att lagringsnyckeln behöver sparas i koden.
+
+---
