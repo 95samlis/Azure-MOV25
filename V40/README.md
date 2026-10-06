@@ -41,7 +41,7 @@ Nivån `Basic` valdes eftersom den räcker för lösningens omfattning.
 
 ## Aktivera administratörskonto i ACR
 
-För att `Azure Container Instances (ACI)` skulle kunna hämta container-imagen från registret aktiverades administratörskontot i `ACR`. Detta gör det möjligt att använda användarnamn och lösenord för autentisering mot registret.
+För att `ACI` skulle kunna hämta container-imagen från registret aktiverades administratörskontot i `ACR`. Detta gör det möjligt att använda användarnamn och lösenord för autentisering mot registret.
 
 ### Aktivera administratörskontot
 
@@ -59,6 +59,53 @@ az acr credential show --name novatrixacr388
 
 Visar användarnamn och lösenord för registret. Uppgifterna används senare när containern skapas och behöver åtkomst till den lagrade imagen.
 
-### Sammanfattning
+---
 
-Administratörskontot aktiverades för att `ACI` skulle kunna autentisera sig mot `ACR` och hämta den container-image som används för att köra applikationen.
+## Bygga container-imagen
+
+När `Dockerfile` och appen var färdiga byggdes en container-image och lagrades i `ACR`.
+
+
+```bash
+az acr build --registry novatrixacr388 --image novatrix-app:v1 .
+```
+
+Kommandot bygger en container-image utifrån projektets `Dockerfile` och lagrar den i `ACR` med namnet `novatrix-app:v1`.
+
+### Exponera port 80
+
+I `Dockerfile` exponerades port `80`.
+
+```dockerfile
+EXPOSE 80
+```
+
+Port `80` valdes eftersom det är standardporten för `HTTP`-trafik och gör att applikationen kan nås via webbläsare.
+
+### Anpassa Flask-applikationen
+
+För att applikationen skulle kunna nås via webben konfigurerades `Flask` att använda port `80` och ta emot anslutningar utanför containern.
+
+```python
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
+```
+
+`host='0.0.0.0'` gör att applikationen kan ta emot externa anslutningar, medan `port=80` gör att samma port används i både `Flask` och containern.
+
+## Verifiering
+
+För att verifiera att containern hade startats korrekt användes följande kommando:
+
+```powershell
+az container show `
+  --resource-group rg-novatrix `
+  --name novatrix-app `
+  --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"
+
+ 
+  
+  Resultatet visar att containern har status Running och att den tilldelats den publika adressen novatrix-app388.swedencentral.azurecontainer.io.
+
+  ---
+
