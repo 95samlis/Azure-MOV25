@@ -154,3 +154,5 @@ Efter inskick verifierades att ärendet och den uppladdade filen hade sparats i 
 
 
 Resultatet visar att applikationen som körs i `ACI` kan ta emot ärenden och lagra information i `Azure Blob Storage`.
+
+# Jämförelse mellan VM, Containers och Serverless
