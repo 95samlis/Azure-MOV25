@@ -145,12 +145,12 @@ För att verifiera att den containerbaserade lösningen fungerade öppnades appl
 
 Ett testärende skickades därefter in tillsammans med en bifogad bild.
 
-<img width="1000" height="700" alt="Skärmbild 2026-10-06 032735" src="https://github.com/user-attachments/assets/625fa805-bb11-442a-bc99-9f499877bfdc" />
+<img width="1000" height="500" alt="Skärmbild 2026-10-06 032735" src="https://github.com/user-attachments/assets/625fa805-bb11-442a-bc99-9f499877bfdc" />
 
 
 Efter inskick verifierades att ärendet och den uppladdade filen hade sparats i `Azure Blob Storage`.
 
-<img width="1000" height="410" alt="Skärmbild 2026-10-06 032831" src="https://github.com/user-attachments/assets/2dd5f8f5-a0f8-43d0-b7c7-0ada53024bf3" />
+<img width="1250" height="410" alt="Skärmbild 2026-10-06 032831" src="https://github.com/user-attachments/assets/2dd5f8f5-a0f8-43d0-b7c7-0ada53024bf3" />
 
 
 Resultatet visar att applikationen som körs i `ACI` kan ta emot ärenden och lagra information i `Azure Blob Storage`.
