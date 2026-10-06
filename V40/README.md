@@ -122,8 +122,8 @@ az container create `
   --ports 80 `
   --dns-name-label novatrix-app388 `
   --registry-username novatrixacr388 `
-  --registry-password "DITT_ACR_LÖSENORD" `
-  --environment-variables ACCOUNT_KEY="DIN_STORAGE_ACCOUNT_KEY"
+  --registry-password "MITT_ACR_LÖSENORD" `
+  --environment-variables ACCOUNT_KEY="MIN_STORAGE_ACCOUNT_KEY"
 ```
 
 Kommandot skapar en container baserad på imagen `novatrix-app:v1` från `ACR`. Containern tilldelas `1 vCPU`, `1 GB RAM` och exponeras via port `80` med ett publikt DNS-namn.
