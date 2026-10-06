@@ -101,7 +101,7 @@ För att verifiera att containern hade startats korrekt användes följande komm
 az container show `
   --resource-group rg-novatrix `
   --name novatrix-app `
-  --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"
+  --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"```
 
  <img width="1151" height="176" alt="container-running png" src="https://github.com/user-attachments/assets/46c5bb1f-3ba0-4910-9a98-04986df47278" />
 
