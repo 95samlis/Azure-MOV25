@@ -97,8 +97,7 @@ if __name__ == '__main__':
 
 För att verifiera att containern hade startats korrekt användes följande kommando:
 
-```powershell
-az container show `
+```az container show `
   --resource-group rg-novatrix `
   --name novatrix-app `
   --query "{State:instanceView.state,FQDN:ipAddress.fqdn}"```
