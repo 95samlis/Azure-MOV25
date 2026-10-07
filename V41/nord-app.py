@@ -8,9 +8,9 @@ from azure.storage.blob import BlobServiceClient, ContentSettings
 
 app = Flask(__name__)
 
-ACCOUNT_URL = "https://stnovatrixv388.blob.core.windows.net"
+ACCOUNT_URL = "https://stnordviksamlis9501.blob.core.windows.net"
 ACCOUNT_KEY = os.environ["ACCOUNT_KEY"]  # sätts som miljövariabel, aldrig i koden
-CONTAINER_NAME = "arenden"
+CONTAINER_NAME = "nordvik-arenden"
 
 blob_service_client = BlobServiceClient(
     account_url=ACCOUNT_URL,
