@@ -22,6 +22,7 @@ container_client = blob_service_client.get_container_client(CONTAINER_NAME)
 
 @app.route('/')
 def home():
+    print("Filer i /app:", os.listdir("/app"))
     return send_file('index.html')
 
 
@@ -86,7 +87,6 @@ def submit():
 
     except Exception as e:
         print(f"Fel vid uppladdning: {e}")
-
         return jsonify({
             "status": "error",
             "message": str(e)
