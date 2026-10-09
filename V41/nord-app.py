@@ -57,6 +57,7 @@ def submit():
             "id": entry_id,
             "name": data.get("name", "Okänd"),
             "mail": data.get("mail") or data.get("email", ""),
+            "category": data.get("category", "Annat"),
             "message": data.get("msg", ""),
             "created": now_str,
             "image": image_url,

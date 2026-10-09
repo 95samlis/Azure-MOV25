@@ -40,7 +40,8 @@ form{
 }
 
 input,
-textarea{
+textarea,
+select{
     padding:10px;
     font-size:16px;
 }
@@ -92,6 +93,17 @@ footer{
             id="mail"
             name="mail"
             required>
+
+        <label for="category">Kategori</label>
+        <select id="category" name="category" required>
+            <option value="">Välj kategori</option>
+            <option value="Värme">Värme</option>
+            <option value="Vatten">Vatten</option>
+            <option value="Lås">Lås</option>
+            <option value="El">El</option>
+            <option value="Ventilation">Ventilation</option>
+            <option value="Annat">Annat</option>
+        </select>
 
         <label for="msg">Beskriv ditt ärende</label>
         <textarea
