@@ -45,3 +45,17 @@ Jag valde den här lösningen eftersom den passar en webbportal som har varieran
 Jag har använt tydliga resursnamn som visar vad resurserna används till. Namngivningen följer mönstret typ-nordvik-funktion, med undantag för resurser som har andra namnkrav i Azure.
 
 Jag  har även lagt till taggarna Department, Environment och Project. De används för att koppla resurserna till rätt avdelning, miljö och projekt. Taggarna gör det också enklare att följa upp kostnader i Cost Management.
+
+## IAM och RBAC – identiteter och behörigheter
+
+| Användare/resurs | Behörighet och funktion |
+|:-----------------|:------------------------|
+| Hyresgäster | Måste autentisera sig mot portalen för att skapa sina ärenden. |
+| Förvaltare | Gruppen `grp-nordvik-forvaltare` har *Edit* i SharePoint för att hantera ärenden. Har inga tilldelade Azure-behörigheter. |
+| Ekonomi | Gruppen `grp-nordvik-ekonomi` har *Read* i SharePoint och *Cost Management Reader* i Azure för att läsa kostnadsinformation. |
+| `id-nordvik-app` | Hanterad identitet som portalen använder för att autentisera sig mot Azure Storage. |
+| `nordvik-arenden` | `id-nordvik-app` har rollen *Storage Blob Data Contributor* på containern. |
+| `nordvik-dokument` | `id-nordvik-app` har rollen *Storage Blob Data Contributor* på containern. |
+
+<img width="2400" height="1242" alt="nordvik-arkitektur" src="https://github.com/user-attachments/assets/19d83d9c-0941-4342-90ac-c71e670389a5" />
+
