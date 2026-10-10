@@ -65,7 +65,7 @@ Jag  har även lagt till taggarna Department, Environment och Project. De använ
 
 VM:s ger större kontroll över OS, men kräver mer administration. För att hantera högre belastning hade jag kunnat använda VM Scale Sets med flera virtuella maskiner. Det hade dock inneburit fler maskiner att hantera och potentiellt högre kostnader.
 
-Containers kör applikationen i en isolerad miljö utan att jag behöver hantera ett eget operativsystem för varje instans. Jag körde på Container Apps eftersom jag enkelt kan justera resurserna och antalet repliker. Varje replik har `1vCPU` och `2GiB` minne. Jag har satt minst 2 och högst 10 repliker. Vid högre belastning kan Azure automatiskt skapa fler repliker och när belastningen minskar kan antalet anpassas igen. De två minsta replikerna ger redundans om en instans slutar fungera.
+Containers kör applikationen i en isolerad miljö utan att jag behöver hantera ett eget operativsystem för varje instans. Jag körde på Container Apps eftersom jag enkelt kan justera resurserna och antalet repliker. Varje replik har `1vCPU` och `2GB` minne. Jag har satt minst 2 och högst 10 repliker. Vid högre belastning kan Azure automatiskt skapa fler repliker och när belastningen minskar kan antalet anpassas igen. De två minsta replikerna ger redundans om en instans slutar fungera.
 
 Jag tyckte att detta passade Nordviks behov bättre än flera virtuella maskiner, eftersom jag kan anpassa kapaciteten efter trafiken och slipper administrera VM-infrastrukturen. Det kan också ge lägre kostnader, även om den faktiska kostnaden beror på belastningen och konfigurationen.
 
