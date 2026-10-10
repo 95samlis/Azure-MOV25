@@ -30,7 +30,6 @@ Jag valde den här lösningen eftersom den passar en webbportal som har varieran
 | `stnordviksamlis9501` | Lagrar ärenden, bilder och dokument. |
 | `id-nordvik-app` | Ger portalen en identitet för säker åtkomst till lagringen. |
 | `managedEnvironment-rgnordvik-8918` | Körmiljö för Azure Container Apps. |
-| `NetworkWatcher_swedencentral` | Azure-resurs för nätverksövervakning och felsökning. |
 | `workspacergnordvik8e03` | Log Analytics-arbetsyta för loggar och felsökning. |
 
 
