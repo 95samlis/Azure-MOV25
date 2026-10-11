@@ -88,6 +88,24 @@ Parameterfilen innehåller namn och region för lagringskontot, containern, ACR 
 
 ---
 
+## Blob Storage och livscykelhantering
+
+Jag har delat upp lagringen i två privata containrar:
+
+- `nordvik-arenden` – felanmälningar och bilder.
+- `nordvik-dokument` – kontrakt och besiktningsprotokoll.
+
+För att minska lagringskostnaderna har jag satt upp tre livscykelregler:
+
+- **Ärenden:** Flyttas från *Hot* till *Cool* efter 90 dagar och raderas efter 365 dagar.
+- **Dokument:** Flyttas från *Hot* till *Cool* efter 90 dagar.
+
+<img width="2062" height="368" alt="Skärmbild 2026-10-11 220410" src="https://github.com/user-attachments/assets/90655cae-7575-4322-baab-89845334f0c0" />
+
+
+
+---
+
 ## Skapandet av Container Apps Environment och Container App
 
 ### Container Apps Environment
@@ -228,3 +246,68 @@ På detta sätt kan samma flöde hantera både kritiska och icke-kritiska ärend
 ## Flödets struktur för hantering av felanmälningar
 
 <img width="1316" height="1450" alt="Skärmbild 2026-10-11 204025" src="https://github.com/user-attachments/assets/aa11a53c-2376-4d7f-8f20-8aa5f7568c56" />
+
+## Testning och verifiering
+
+Flödet testas med olika typer av felanmälningar för att kontrollera att rätt väg och åtgärder används beroende på kategori och om en bild finns bifogad.
+
+### Test 1 – Icke-kritiskt ärende utan bild
+
+<img width="1312" height="976" alt="Test1 1" src="https://github.com/user-attachments/assets/af930322-71c9-4921-ab0f-67d5959d9964" />
+
+<img width="970" height="332" alt="test 1 2" src="https://github.com/user-attachments/assets/90457a55-b0f6-491c-8d73-82fc91d7e4c0" />
+
+---
+
+### Test 2 – Icke-kritiskt ärende med bild
+
+<img width="1306" height="1092" alt="Test2 1" src="https://github.com/user-attachments/assets/f1f53ac4-6a16-48db-bfe2-8c962f79d800" />
+
+<img width="1386" height="442" alt="Test2 2" src="https://github.com/user-attachments/assets/f5aa3f49-39e0-4a06-8917-6b05d7e95efc" />
+
+<img width="1078" height="1642" alt="Test2 3" src="https://github.com/user-attachments/assets/022bcc33-3cca-4042-9808-a790ded3eb8d" />
+
+Förvaltaren är inloggad och har behörighet att ändra poster i SharePoint-listan. 
+Öppnad länk till bifogad bild
+
+<img width="800" height="852" alt="Skärmbild 2026-10-11 211348" src="https://github.com/user-attachments/assets/6bd71c03-7505-4fea-9345-d8ab7cf0ab92" />
+
+---
+
+### Test 3 – Kritiskt ärende utan bild
+
+<img width="1316" height="986" alt="test3" src="https://github.com/user-attachments/assets/106ece7f-a8c0-407f-82d9-74cca52f974a" />
+
+Flödet hamnar i rätt gren samt mail kom fram direkt till ansvarig.
+
+<img width="654" height="1002" alt="Test3 1" src="https://github.com/user-attachments/assets/db24a4a7-bb52-45d2-a7cb-401885dd8958" />
+
+<img width="1130" height="592" alt="Skärmbild 2026-10-11 212721" src="https://github.com/user-attachments/assets/5e877b36-d9c5-4bc2-b6e8-842c7713fb05" />
+
+### Test 4 – Kritiskt ärende med bild
+
+<img width="1396" height="1246" alt="Skärmbild 2026-10-11 213018" src="https://github.com/user-attachments/assets/ee60e83f-17a2-4b5e-99b1-4320a391c444" />
+
+Testet visar att ett kritiskt ärende med kategorin Vatten fungerar. Namn, e-post, kategori och beskrivning visas, och bilden finns med som bilaga.
+
+<img width="1134" height="698" alt="image" src="https://github.com/user-attachments/assets/30455722-7ba0-463d-9454-b722736f3b93" />
+
+<img width="1134" height="698" alt="Skärmbild 2026-10-11 213853" src="https://github.com/user-attachments/assets/ba7a1a1e-4939-46bb-a7ea-da5a03c83e1c" />
+
+---
+
+### Test – Behörigheter i SharePoint-listan
+
+Behörigheten testades med två olika användare. Förvaltare har behörighet att redigera ärenden, medan ekonomi endast har läsbehörighet.
+
+Förvaltaren kunde öppna och redigera ärenden i listan. Ekonomianvändaren kunde inte redigera.
+
+Testet visar att rätt behörigheter är tilldelade till respektive grupp.
+
+<img width="1490" height="974" alt="erik konomi skrivskydd" src="https://github.com/user-attachments/assets/26f9dfce-9188-4670-9952-78cfc12da2b3" />
+
+<img width="1262" height="1002" alt="fredrik forvaltare edit" src="https://github.com/user-attachments/assets/fa7a408b-aac5-49f8-a433-17c1477ddc91" />
+
+
+
+
