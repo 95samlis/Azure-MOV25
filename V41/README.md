@@ -188,9 +188,9 @@ Jag testade portalen med en inbjuden extern användare och en användare som int
 
 
 <img width="1810" height="224" alt="au 01" src="https://github.com/user-attachments/assets/eb8be5fc-f63d-42b5-914f-a2d081b76a1e" />
-<img width="1000" height="90" alt="externuser" src="https://github.com/user-attachments/assets/e83591ba-6847-403b-a1dc-e1ff2606a3b7" />
+<img width="1000" height="120" alt="externuser" src="https://github.com/user-attachments/assets/e83591ba-6847-403b-a1dc-e1ff2606a3b7" />
 
-<img width="600" height="500" alt="lyckadinlogg" src="https://github.com/user-attachments/assets/23f96c3a-6846-4f11-b0eb-791ace62a05a" /><img width="600" height="600" alt="inloggruta" src="https://github.com/user-attachments/assets/dcfde3b1-f3ae-4c6f-aefd-2267c94afde1" />
+<img width="600" height="500" alt="lyckadinlogg" src="https://github.com/user-attachments/assets/23f96c3a-6846-4f11-b0eb-791ace62a05a" /><img width="600" height="500" alt="inloggruta" src="https://github.com/user-attachments/assets/dcfde3b1-f3ae-4c6f-aefd-2267c94afde1" />
 
 
 <img width="800" height="400" alt="Behörighettest inloggportal" src="https://github.com/user-attachments/assets/895f825b-a3aa-45fd-bf66-130e7e72df54" />
