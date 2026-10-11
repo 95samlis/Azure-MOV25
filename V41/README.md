@@ -290,9 +290,9 @@ Flödet hamnar i rätt gren samt mail kom fram direkt till ansvarig.
 
 Testet visar att ett kritiskt ärende med kategorin Vatten fungerar. Namn, e-post, kategori och beskrivning visas, och bilden finns med som bilaga.
 
-<img width="1134" height="698" alt="image" src="https://github.com/user-attachments/assets/30455722-7ba0-463d-9454-b722736f3b93" />
+<img width="800" height="499" alt="image" src="https://github.com/user-attachments/assets/30455722-7ba0-463d-9454-b722736f3b93" />
 
-<img width="1134" height="698" alt="Skärmbild 2026-10-11 213853" src="https://github.com/user-attachments/assets/ba7a1a1e-4939-46bb-a7ea-da5a03c83e1c" />
+<img width="800" height="400" alt="Skärmbild 2026-10-11 213853" src="https://github.com/user-attachments/assets/ba7a1a1e-4939-46bb-a7ea-da5a03c83e1c" />
 
 ---
 
