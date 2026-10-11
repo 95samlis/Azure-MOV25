@@ -24,7 +24,7 @@ Jag valde den här lösningen eftersom den passar en webbportal som har varieran
 
 | Resursnamn | Funktion |
 |:-----------|:---------|
-| `rg-nordvik` | Samlar projektets huvudsakliga Azure-resurser. |
+| `rg-nordvik` | Samlar projektets Azure-resurser. |
 | `ca-nordvik-portal` | Kör Nordviks webbportal. |
 | `acrnordviksamlis9501` | Lagrar containeravbildningen som används av portalen. |
 | `stnordviksamlis9501` | Lagrar ärenden, bilder och dokument. |
@@ -84,6 +84,7 @@ Templaten skapar följande resurser:
 - **RBAC-rolltilldelningar** som ger den hanterade identiteten rollen *Storage Blob Data Contributor* på båda containrarna.
 
 Parameterfilen innehåller namn och region för lagringskontot, containern, ACR och den hanterade identiteten. Det gör det enklare att ange rätt värden när infrastrukturen skapas.
+
 *Container Apps-miljön och appen skapades manuellt på grund av problem med ARM-distributionen i vald region.*
 
 ---
