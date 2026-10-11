@@ -265,7 +265,7 @@ Flödet testas med olika typer av felanmälningar för att kontrollera att rätt
 
 <img width="1386" height="442" alt="Test2 2" src="https://github.com/user-attachments/assets/f5aa3f49-39e0-4a06-8917-6b05d7e95efc" />
 
-<img width="1078" height="1000" alt="Test2 3" src="https://github.com/user-attachments/assets/022bcc33-3cca-4042-9808-a790ded3eb8d" />
+<img width="1078" height="1200" alt="Test2 3" src="https://github.com/user-attachments/assets/022bcc33-3cca-4042-9808-a790ded3eb8d" />
 
 Förvaltaren är inloggad och har behörighet att ändra poster i SharePoint-listan. 
 Öppnad länk till bifogad bild
