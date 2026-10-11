@@ -309,5 +309,26 @@ Testet visar att rätt behörigheter är tilldelade till respektive grupp.
 <img width="1262" height="1002" alt="fredrik forvaltare edit" src="https://github.com/user-attachments/assets/fa7a408b-aac5-49f8-a433-17c1477ddc91" />
 
 
+---
 
+## Budget och kostnadsuppföljning
+
+Nordvik har en månadsbudget på 2500:- för Azure. Jag har ställt in varningar vid:
+
+- 50, 75 och 90 % av kostnaden
+- 70 % av den beräknade kostnaden
+
+Taggarna `Department`, `Environment` och `Project` används för att följa upp kostnaderna för olika delar av verksamheten.
+
+<img width="1392" height="266" alt="budget2" src="https://github.com/user-attachments/assets/e1ac753e-3c2e-4e01-8c08-6fc73516381f" />
+
+---
+
+### Test av ekonomigruppens behörigheter
+
+Ekonomigruppen kan läsa kostnadsinformation i Cost Management. När jag testade med ekonomianvändaren visades inga Azure-resursgrupper. Behörigheten är avgränsad till kostnadsområdet och ger inte gruppen åtkomst till projektets resursgrupper.
+
+<img width="1704" height="1108" alt="ekonomi behörigheter" src="https://github.com/user-attachments/assets/d45b9fd7-1591-400e-8d7d-51fe695c3bc5" />
+<img width="2050" height="952" alt="bh ek" src="https://github.com/user-attachments/assets/906c05bb-0516-4a85-81ac-5aa6099d02b9" />
+<img width="2408" height="1054" alt="erikekonomicost" src="https://github.com/user-attachments/assets/99dfde46-81f5-4498-a8f6-c81d665db35b" />
 
