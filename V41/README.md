@@ -253,19 +253,19 @@ Flödet testas med olika typer av felanmälningar för att kontrollera att rätt
 
 ### Test 1 – Icke-kritiskt ärende utan bild
 
-<img width="1312" height="976" alt="Test1 1" src="https://github.com/user-attachments/assets/af930322-71c9-4921-ab0f-67d5959d9964" />
+<img width="1000" height="500" alt="Test1 1" src="https://github.com/user-attachments/assets/af930322-71c9-4921-ab0f-67d5959d9964" />
 
-<img width="970" height="332" alt="test 1 2" src="https://github.com/user-attachments/assets/90457a55-b0f6-491c-8d73-82fc91d7e4c0" />
+<img width="970" height="200" alt="test 1 2" src="https://github.com/user-attachments/assets/90457a55-b0f6-491c-8d73-82fc91d7e4c0" />
 
 ---
 
 ### Test 2 – Icke-kritiskt ärende med bild
 
-<img width="1306" height="1092" alt="Test2 1" src="https://github.com/user-attachments/assets/f1f53ac4-6a16-48db-bfe2-8c962f79d800" />
+<img width="800" height="600" alt="Test2 1" src="https://github.com/user-attachments/assets/f1f53ac4-6a16-48db-bfe2-8c962f79d800" />
 
 <img width="1386" height="442" alt="Test2 2" src="https://github.com/user-attachments/assets/f5aa3f49-39e0-4a06-8917-6b05d7e95efc" />
 
-<img width="1078" height="1642" alt="Test2 3" src="https://github.com/user-attachments/assets/022bcc33-3cca-4042-9808-a790ded3eb8d" />
+<img width="1078" height="1000" alt="Test2 3" src="https://github.com/user-attachments/assets/022bcc33-3cca-4042-9808-a790ded3eb8d" />
 
 Förvaltaren är inloggad och har behörighet att ändra poster i SharePoint-listan. 
 Öppnad länk till bifogad bild
