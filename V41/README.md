@@ -12,7 +12,7 @@ Lösningen ska innehålla säker lagring av ärenden, bilder och dokument, kontr
 
 ## Översikt och planering
 
-Jag har valt att bygga Nordviks hyresgästportal i Microsoft Azure med en containerbaserad webbapplikation. Portalen körs i Azure Container Apps. Det gör att applikationen kan köras utan att jag behöver hantera en egen virtuell server.
+Jag har valt att bygga Nordviks hyresgästportal i Azure med en containerbaserad webbapplikation. Portalen körs i Azure Container Apps. Det gör att appen kan köras utan att jag behöver hantera en egen VM.
 
 Bilder och ärendedata lagras i Azure Blob Storage. Portalen använder en hanterad identitet för att få åtkomst till lagringen utan att behöva lagra inloggningsuppgifter i koden.
 
@@ -44,7 +44,7 @@ Jag valde den här lösningen eftersom den passar en webbportal som har varieran
 
 Jag har använt tydliga resursnamn som visar vad resurserna används till. Namngivningen följer mönstret typ-nordvik-funktion, med undantag för resurser som har andra namnkrav i Azure.
 
-Jag  har även lagt till taggarna Department, Environment och Project. De används för att koppla resurserna till rätt avdelning, miljö och projekt. Taggarna gör det också enklare att följa upp kostnader i Cost Management.
+Jag har även lagt till taggarna Department, Environment och Project. De används för att koppla resurserna till rätt avdelning, miljö och projekt. Taggarna gör det också enklare att följa upp kostnader i Cost Management.
 
 ## IAM och RBAC – identiteter och behörigheter
 
@@ -232,6 +232,9 @@ Flödets funktion bygger främst på fyra villkor som styr hur en felanmälan sk
 Det första villkoret **Is Json** kontrollerar vilken filtyp som har kommit in. Eftersom både JSON-filer och PNG-bilder triggar flödet går endast JSON-filer vidare, medan PNG-filer stoppas i den falska grenen.
 
 Det andra villkoret **Is category critical** kontrollerar vilken kategori ärendet tillhör. Kategorierna **Värme**, **Vatten** och **Lås** räknas som kritiska och hanteras därför genom en separat väg i flödet.
+
+<img width="836" height="180" alt="Skärmbild 2026-10-11 231452" src="https://github.com/user-attachments/assets/0044b18c-3f18-4471-94bc-f07b45553e1b" />
+
 
 Beroende på om ärendet är kritiskt eller inte används sedan ett separat villkor för att kontrollera om ärendet innehåller en bild.
 
