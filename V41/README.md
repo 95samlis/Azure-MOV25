@@ -196,6 +196,8 @@ Jag testade portalen med en inbjuden extern användare och en användare som int
 
 <img width="800" height="400" alt="Behörighettest inloggportal" src="https://github.com/user-attachments/assets/895f825b-a3aa-45fd-bf66-130e7e72df54" />
 
+Testet visar att portalen kräver autentisering och att en användare som inte är inbjuden inte kan logga in.
+
 ---
 
 ### Defense in Depth 
@@ -203,9 +205,26 @@ Jag testade portalen med en inbjuden extern användare och en användare som int
 Jag har använt flera säkerhetslager för att skydda portalen och dess data. Användare måste logga in för att komma åt portalen. En obehörig användare nekas åtkomst. Portalen använder Managed Identity för att komma åt Azure Storage utan att lagringsnyckeln finns i koden. Lagringscontainrarna är privata och behörigheter styr vem som får komma åt dem. Anslutningen till portalen använder HTTPS.
 
 
-
-
-
-Testet visar att portalen kräver autentisering och att en användare som inte är inbjuden inte kan logga in.
-
 ---
+
+## Flödets funktion Power Automate
+
+Flödets funktion bygger främst på fyra villkor som styr hur en felanmälan ska hanteras.
+
+Det första villkoret **Is Json** kontrollerar vilken filtyp som har kommit in. Eftersom både JSON-filer och PNG-bilder triggar flödet går endast JSON-filer vidare, medan PNG-filer stoppas i den falska grenen.
+
+Det andra villkoret **Is category critical** kontrollerar vilken kategori ärendet tillhör. Kategorierna **Värme**, **Vatten** och **Lås** räknas som kritiska och hanteras därför genom en separat väg i flödet.
+
+Beroende på om ärendet är kritiskt eller inte används sedan ett separat villkor för att kontrollera om ärendet innehåller en bild.
+
+- **Kritiskt ärende → Condition image**  
+  Kontrollerar om en bild finns. Om en bild finns läggs den till i SharePoint-ärendet och ett kritiskt e-postmeddelande skickas. Om ingen bild finns skapas ärendet utan bild och e-post skickas utan bilaga.
+
+- **Icke-kritiskt ärende → Image condition**  
+  Kontrollerar på samma sätt om en bild finns. Om en bild finns läggs den till i SharePoint-ärendet och en Teams-notis skickas. Om ingen bild finns skapas ärendet utan bild och Teams-notisen skickas utan bild.
+
+På detta sätt kan samma flöde hantera både kritiska och icke-kritiska ärenden, samt ärenden med eller utan bifogad bild.
+
+## Flödets struktur för hantering av felanmälningar
+
+<img width="1316" height="1450" alt="Skärmbild 2026-10-11 204025" src="https://github.com/user-attachments/assets/aa11a53c-2376-4d7f-8f20-8aa5f7568c56" />
