@@ -196,6 +196,15 @@ Jag testade portalen med en inbjuden extern användare och en användare som int
 
 <img width="800" height="400" alt="Behörighettest inloggportal" src="https://github.com/user-attachments/assets/895f825b-a3aa-45fd-bf66-130e7e72df54" />
 
+---
+
+### Defense in Depth 
+
+Jag har använt flera säkerhetslager för att skydda portalen och dess data. Användare måste logga in för att komma åt portalen. En obehörig användare nekas åtkomst. Portalen använder Managed Identity för att komma åt Azure Storage utan att lagringsnyckeln finns i koden. Lagringscontainrarna är privata och behörigheter styr vem som får komma åt dem. Anslutningen till portalen använder HTTPS.
+
+
+
+
 
 Testet visar att portalen kräver autentisering och att en användare som inte är inbjuden inte kan logga in.
 
