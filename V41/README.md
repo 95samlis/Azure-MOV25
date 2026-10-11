@@ -111,9 +111,9 @@ Inställningarna gör webbappen tillgänglig via en offentlig HTTPS-adress, meda
 
 ### Resultat
 
-<img width="1120" height="956" alt="Skärmbild 2026-10-11 180359" src="https://github.com/user-attachments/assets/3bbbe85e-9735-424b-881c-b5bae06b14ff" />
+<img width="700" height="500" alt="Skärmbild 2026-10-11 180359" src="https://github.com/user-attachments/assets/3bbbe85e-9735-424b-881c-b5bae06b14ff" />
 
-<img width="1022" height="932" alt="Skärmbild 2026-10-11 180612" src="https://github.com/user-attachments/assets/4353f738-8e5e-4a56-b8e1-e6007af40ab0" />
+<img width="700" height="500" alt="Skärmbild 2026-10-11 180612" src="https://github.com/user-attachments/assets/4353f738-8e5e-4a56-b8e1-e6007af40ab0" />
 
 
 
